@@ -19,3 +19,6 @@ footer {
     background-color: #5a6268;
     padding: 25px 15px 15px;
 }
+footer a {
+    color: inherit;
+}

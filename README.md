@@ -6,4 +6,4 @@ https://benzhaomin.github.io/bdiefinder/
 
 # Contributing
 
-To add SKUs or search engines please submit a pull request against data.js
+To add SKUs or search engines please submit a pull request against [data.js](js/data.js)

@@ -179,17 +179,13 @@ let products = [{
     'name': 'Corsair Dominator',
     'code': 'CMD',
     'size': [
-        '16G',
         '32G'
     ],
     'speed': [
-        '3000C15',
         '3600C16',
     ],
     'color': [],
     'sku': [
-        'CMD16GX4M2B3000C15',
-
         'CMD32GX4M4B3600C16'
     ]
 }, {

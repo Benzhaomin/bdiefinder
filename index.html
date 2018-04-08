@@ -1,0 +1,87 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>B-Die Finder</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <main role="main" class="container">
+        <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+            <h1 class="display-4">Samsung B-Die DDR Finder</h1>
+            <p class="lead">
+             This tool can generate links to search pages on Amazon/Newegg/etc for a bunch of similar sticks, all B-Die.<br/>
+             For more details and a full list of verified B-Die sticks see
+             <a href="https://www.reddit.com/r/Amd/comments/62vp2g/clearing_up_any_samsung_bdie_confusion_eg_on/" target="_blank">this reddit post</a>.
+            </p>
+        </div>
+
+        <section>
+            <h2>Model number</h2>
+            <p class="lead">
+                Filter known B-Die SKUs or add custom ones.
+            </p>
+
+            <div class="form-group">
+             <div class="btn-group" role="group" id="model-filters">
+             </div>
+            </div>
+
+            <div class="form-group">
+             <div class="btn-group" role="group" id="speed-filters">
+             </div>
+            </div>
+
+            <div class="form-group">
+             <textarea id='skus'></textarea>
+            </div>
+        </section>
+
+        <section>
+            <h2>Retailers</h2>
+            <p class="lead">
+             Build search links for these websites. You can use presets for your country or add any number of custom search engines.
+            </p>
+
+            <div class="form-group">
+             <div class="btn-group" role="group" id="country-presets">
+             </div>
+            </div>
+
+            <div class="form-group">
+             <textarea id='sites'></textarea>
+            </div>
+        </section>
+
+        <section>
+            <h2>Links</h2>
+            <p class="lead">
+             Links to search engines for each SKU
+            </p>
+
+            <div class="form-group">
+             <button id="refresh" class="btn btn-large btn-primary">Refresh links</button>
+            </div>
+
+            <div id="results">
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>This website is totally independent from any retailer or manufacturer and doesn't generate any revenue.</p>
+            <p>SKUs listed here are known to be B-Dies but manufacturers could switch to other chips. Purchase at your own risk.</p>
+        </div>
+    </footer>
+
+    <script src='js/vendor/jquery-3.3.1.slim.min.js'></script>
+    <script src='js/data.js'></script>
+    <script src='js/main.js'></script>
+</body>
+</html>

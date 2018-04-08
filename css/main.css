@@ -1,0 +1,21 @@
+textarea {
+    width: 100%;
+    min-height: 130px;
+}
+
+#results h3 {
+    text-transform: capitalize;
+}
+#results .row {
+    margin-bottom: 30px;
+}
+
+#refresh {
+    display: none;
+}
+
+footer {
+    color: #FAFAFA;
+    background-color: #5a6268;
+    padding: 25px 15px 15px;
+}

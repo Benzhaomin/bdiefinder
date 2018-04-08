@@ -85,10 +85,11 @@ function addButton(text, value, $target) {
 }
 
 function addSku($site, sku) {
-    let $div = $('<div class="col col-md-3 col-sm-6">');
+    let $div = $('<div class="col col-md-3 col-sm-4 col-6 mb-2">');
     let $a = $('<a>');
     let url = $site.prop('data-url').replace('%s', sku);
     $a.prop('href', url);
+    $a.prop('target', '_blank');
     $a.text(sku);
     $div.append($a);
     $site.append($div);
@@ -114,7 +115,7 @@ function showResults() {
         let hostname = $('<a>').prop('href', site).prop('hostname').replace('www.', '');
         $results.append($('<h3>').text(hostname));
 
-        let $site = $('<div class="row">');
+        let $site = $('<div class="row mb-3">');
         $site.prop('data-url', site);
         skus.forEach(sku => addSku($site, sku));
         $results.append($site);

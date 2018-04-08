@@ -6,9 +6,6 @@ textarea {
 #results h3 {
     text-transform: capitalize;
 }
-#results .row {
-    margin-bottom: 30px;
-}
 
 #refresh {
     display: none;
@@ -21,4 +18,15 @@ footer {
 }
 footer a {
     color: inherit;
+}
+
+/* fix for button groups not breaking on smaller screens */
+.btn-group {
+    display: inline;
+}
+.btn-group button {
+    border-radius: 0;
+}
+.btn-group .btn + .btn {
+    margin-left: 0;
 }

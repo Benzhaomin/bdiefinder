@@ -233,7 +233,7 @@ let sites = [{
 }, {
     'country': 'ca',
     'name': 'Amazon',
-    'url': 'https://www.amazon.ca/field-keywords=%s'
+    'url': 'https://www.amazon.ca/s/field-keywords=%s'
 }, {
     'country': 'ca',
     'name': 'Newegg Canada',

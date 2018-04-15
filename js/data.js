@@ -1,4 +1,42 @@
 let products = [{
+    'name': 'Corsair Dominator',
+    'code': 'CMD',
+    'size': [
+        '32G'
+    ],
+    'speed': [
+        '3600C16',
+    ],
+    'color': [],
+    'sku': [
+        'CMD32GX4M4B3600C16'
+    ]
+}, {
+    'name': 'Corsair Vengeance',
+    'code': 'CMK',
+    'size': [
+        '32G'
+    ],
+    'speed': [
+        '3400C16',
+        '3466C16',
+        '3600C16',
+        '3600C18',
+        '4000C19'
+    ],
+    'color': [],
+    'sku': [
+        'CMU32GX4M4B3400C16', // FIXME: missing when filtering by model
+
+        'CMK32GX4M4B3466C16',
+
+        'CMK32GX4M4B3600C16',
+
+        'CMK32GX4M4B3600C18',
+
+        'CMK32GX4M4B4000C19'
+    ]
+}, {
     'name': 'G.Skill Trident Z',
     'code': 'TZ',
     'size': [
@@ -175,42 +213,30 @@ let products = [{
         'F4-3200C14D-16GFX'
     ]
 }, {
-    'name': 'Corsair Dominator',
-    'code': 'CMD',
+    'name': 'Team Dark Pro',
+    'code': 'TDP',
     'size': [
-        '32G'
+        '16G'
     ],
     'speed': [
-        '3600C16',
+        '3200C14',
     ],
     'color': [],
     'sku': [
-        'CMD32GX4M4B3600C16'
+        'TDPGD416G3200HC14ADC01'
     ]
 }, {
-    'name': 'Corsair Vengeance',
-    'code': 'CMK',
+    'name': 'Team T-Force',
+    'code': 'TXD',
     'size': [
-        '32G'
+        '16G'
     ],
     'speed': [
-        '3400C16',
-        '3466C16',
-        '3600C16',
-        '3600C18',
-        '4000C19'
+        '3733C18',
     ],
     'color': [],
     'sku': [
-        'CMU32GX4M4B3400C16', // FIXME: missing when filtering by model
-
-        'CMK32GX4M4B3466C16',
-
-        'CMK32GX4M4B3600C16',
-
-        'CMK32GX4M4B3600C18',
-
-        'CMK32GX4M4B4000C19'
+        'TXD416G3733HC18ADC01'
     ]
 }];
 

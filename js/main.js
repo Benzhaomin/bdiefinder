@@ -49,8 +49,12 @@ function filterSkus() {
 
     let $speed = $("#speed-filters button.active");
     if ($speed.length) {
-        let speed = $speed.val();
-        skus = skus.filter(sku => sku.indexOf(speed) != -1);
+        let speedl = $speed.val();
+        skus = skus.filter(sku => {
+			let speed = speedl.split('C')[0];
+			let latency = 'C' + speedl.split('C')[1];			
+			return sku.indexOf(speed) != -1 && sku.indexOf(latency) != -1;
+		});
     }
 
     setSkus(skus);

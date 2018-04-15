@@ -1,4 +1,4 @@
-function setupBrandFilters() {
+function setupModelFilters() {
     let $container = $("#model-filters");
     window.store.products.forEach(product => {
         let $button = addButton(product.name, product.code, $container);
@@ -43,8 +43,8 @@ function filterSkus() {
 
     let $model = $("#model-filters button.active");
     if ($model.length) {
-        let model = $model.val();
-        skus = skus.filter(sku => sku.indexOf(model) != -1);
+        let models = $model.val().split(',');
+        skus = skus.filter(sku => models.some(model => sku.indexOf(model) != -1));
     }
 
     let $speed = $("#speed-filters button.active");
@@ -128,7 +128,7 @@ function showResults() {
 
 $(document).ready(function() {
     setupCountryPresets();
-    setupBrandFilters();
+    setupModelFilters();
     setupSpeedFilters();
     filterSkus();
 

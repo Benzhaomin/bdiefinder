@@ -1,6 +1,8 @@
 let products = [{
     'name': 'Corsair Dominator',
-    'code': 'CMD',
+    'code': [
+		'CMD'
+	],
     'size': [
         '32G'
     ],
@@ -13,7 +15,10 @@ let products = [{
     ]
 }, {
     'name': 'Corsair Vengeance',
-    'code': 'CMK',
+    'code': [
+		'CMK',
+		'CMU'
+	],
     'size': [
         '32G'
     ],
@@ -26,7 +31,7 @@ let products = [{
     ],
     'color': [],
     'sku': [
-        'CMU32GX4M4B3400C16', // FIXME: missing when filtering by model
+        'CMU32GX4M4B3400C16',
 
         'CMK32GX4M4B3466C16',
 
@@ -38,7 +43,9 @@ let products = [{
     ]
 }, {
     'name': 'G.Skill Trident Z',
-    'code': 'TZ',
+    'code': [
+		'TZ'
+	],
     'size': [
         '16G',
         '32G'
@@ -148,7 +155,9 @@ let products = [{
     ]
 }, {
     'name': 'G.Skill Ripjaws V',
-    'code': 'GV',
+    'code': [
+		'GV'
+	],
     'size': [
         '16G',
         '32G',
@@ -199,7 +208,9 @@ let products = [{
     ]
 }, {
     'name': 'G.Skill Flare X',
-    'code': 'FX',
+    'code': [
+		'FX'
+	],
     'size': [
         '16G'
     ],
@@ -227,7 +238,9 @@ let products = [{
     ]
 }, {
     'name': 'Team T-Force',
-    'code': 'TXD',
+    'code': [
+		'TXD'
+	],
     'size': [
         '16G'
     ],

@@ -118,7 +118,6 @@ let products = [{
     'speed': [
         '2800C14',
         '3000C14',
-        '3000C14',
         '3200C15',
         '3200C14',
         '3466C16',
@@ -219,14 +218,6 @@ let skus = products.map(product => product.sku);
 skus = skus.reduce((acc, val) => acc.concat(val), []);
 
 let sites = [{
-    'country': 'us',
-    'name': 'Amazon',
-    'url': 'https://www.amazon.com/s/field-keywords=%s'
-}, {
-    'country': 'us',
-    'name': 'Newegg US',
-    'url': 'https://www.newegg.com/Product/ProductList.aspx?Submit=ENE&DEPA=0&Description=%s'
-}, {
     'country': 'ca',
     'name': 'Amazon',
     'url': 'https://www.amazon.ca/s/field-keywords=%s'
@@ -236,32 +227,56 @@ let sites = [{
     'url': 'https://www.newegg.ca/Product/ProductList.aspx?Submit=ENE&DEPA=0&Description=%s'
 }, {
     'country': 'ca',
-    'name': 'NCIX',
-    'url': 'https://www.ncix.com/search/?q=%s'
+    'name': 'Memory Express',
+    'url': 'https://www.memoryexpress.com/Search/Products?Search=%s'
 }, {
     'country': 'de',
     'name': 'Amazon Germany',
     'url': 'https://www.amazon.de/s/field-keywords=%s'
 }, {
     'country': 'de',
-    'name': 'Idealo Germany',
-    'url': 'https://www.idealo.de/preisvergleich/ProductCategory/26831.html?q=%s'
-}, {
-    'country': 'de',
     'name': 'Alternate',
     'url': 'https://www.alternate.de/html/search.html?query=%s'
+}, {
+    'country': 'de',
+    'name': 'Caseking',
+    'url': 'https://www.caseking.de/search?sSearch=%s'
+}, {
+    'country': 'de',
+    'name': 'Mindfactory',
+    'url': 'https://www.mindfactory.de/search_result.php?search_query=%s'
+}, {
+    'country': 'es',
+    'name': 'Amazon Spain',
+    'url': 'https://www.amazon.es/s/field-keywords=%s'
+}, {
+    'country': 'es',
+    'name': 'PC Componentes',
+    'url': 'https://www.pccomponentes.com/buscar/?query=%s'
 }, {
     'country': 'fr',
     'name': 'Amazon France',
     'url': 'https://www.amazon.fr/s/field-keywords=%s'
 }, {
     'country': 'fr',
-    'name': 'Idealo France',
-    'url': 'https://www.idealo.fr/cat/26831/ram-ddr4.html?q=%s'
+    'name': 'Hardware.fr',
+    'url': 'https://shop.hardware.fr/search/+ftxt-%s'
+}, {
+    'country': 'fr',
+    'name': 'Materiel.net',
+    'url': 'https://www.materiel.net/achat/%s'
+}, {
+    'country': 'fr',
+    'name': 'Rue du commerce',
+    'url': 'https://www.rueducommerce.fr/recherche/%s'
 }, {
     'country': 'it',
     'name': 'Amazon Italy',
     'url': 'https://www.amazon.it/s/field-keywords=%s'
+}, {
+    'country': 'it',
+    'name': 'ePrice',
+    'url': 'https://www.eprice.it/search/qs=%s'
 }, {
     'country': 'uk',
     'name': 'Amazon UK',
@@ -270,6 +285,14 @@ let sites = [{
     'country': 'uk',
     'name': 'Overclockers UK',
     'url': 'https://www.overclockers.co.uk/search?sSearch=%s'
+}, {
+    'country': 'us',
+    'name': 'Amazon',
+    'url': 'https://www.amazon.com/s/field-keywords=%s'
+}, {
+    'country': 'us',
+    'name': 'Newegg US',
+    'url': 'https://www.newegg.com/Product/ProductList.aspx?Submit=ENE&DEPA=0&Description=%s'
 }];
 
 window.store = {sites: sites, products: products, skus: skus};

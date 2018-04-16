@@ -340,6 +340,10 @@ let sites = [{
     'country': 'us',
     'name': 'Newegg US',
     'url': 'https://www.newegg.com/Product/ProductList.aspx?Submit=ENE&DEPA=0&Description=%s'
+}, {
+    'country': 'br',
+    'name': 'Kabum',
+    'url': 'https://www.kabum.com.br/cgi-local/site/listagem/listagem.cgi?string=%s&btnG='
 }];
 
 window.store = {sites: sites, products: products, skus: skus};

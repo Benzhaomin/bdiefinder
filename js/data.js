@@ -231,10 +231,14 @@ let products = [{
     ],
     'speed': [
         '3200C14',
+        '3600C16',
+        '3866C18'
     ],
     'color': [],
     'sku': [
-        'TDPGD416G3200HC14ADC01'
+        'TDPGD416G3200HC14ADC01',
+	'TDPGD416G3600HC16ADC01',
+	'TDPGD416G3866HC18GDC01'
     ]
 }, {
     'name': 'Team T-Force',

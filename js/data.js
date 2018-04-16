@@ -344,6 +344,10 @@ let sites = [{
     'country': 'br',
     'name': 'Kabum',
     'url': 'https://www.kabum.com.br/cgi-local/site/listagem/listagem.cgi?string=%s&btnG='
+}, {
+    'country': 'ca',
+    'name': 'Canada Computers',
+    'url': 'https://www.canadacomputers.com/search_results.php?search_in=&keywords=%s'
 }];
 
 window.store = {sites: sites, products: products, skus: skus};

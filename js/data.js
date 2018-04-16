@@ -118,6 +118,10 @@ let skus = [
 ];
 
 let sites = [{
+    'country': 'br',
+    'name': 'Kabum',
+    'url': 'https://www.kabum.com.br/cgi-local/site/listagem/listagem.cgi?string=%s&btnG='
+}, {
     'country': 'ca',
     'name': 'Amazon',
     'url': 'https://www.amazon.ca/s/field-keywords=%s'
@@ -129,6 +133,10 @@ let sites = [{
     'country': 'ca',
     'name': 'Memory Express',
     'url': 'https://www.memoryexpress.com/Search/Products?Search=%s'
+}, {
+    'country': 'ca',
+    'name': 'Canada Computers',
+    'url': 'https://www.canadacomputers.com/search_results.php?search_in=&keywords=%s'
 }, {
     'country': 'de',
     'name': 'Amazon Germany',
@@ -182,6 +190,22 @@ let sites = [{
     'name': 'ePrice',
     'url': 'https://www.eprice.it/search/qs=%s'
 }, {
+    'country': 'pl',
+    'name': 'x-kom',
+    'url': 'https://www.x-kom.pl/szukaj?q=%s'
+}, {
+    'country': 'pl',
+    'name': 'morele.net',
+    'url': 'https://www.morele.net/wyszukiwarka/0/0/,,,,,,,,,,,,/1/?q=%s'
+}, {
+    'country': 'pl',
+    'name': 'Proline',
+    'url': 'https://proline.pl/?qp=%s'
+}, {
+    'country': 'pl',
+    'name': 'emag',
+    'url': 'https://www.emag.pl/search/%s'
+}, {
     'country': 'uk',
     'name': 'Amazon UK',
     'url': 'https://www.amazon.co.uk/s/field-keywords=%s'
@@ -197,14 +221,6 @@ let sites = [{
     'country': 'us',
     'name': 'Newegg US',
     'url': 'https://www.newegg.com/Product/ProductList.aspx?Submit=ENE&DEPA=0&Description=%s'
-}, {
-    'country': 'br',
-    'name': 'Kabum',
-    'url': 'https://www.kabum.com.br/cgi-local/site/listagem/listagem.cgi?string=%s&btnG='
-}, {
-    'country': 'ca',
-    'name': 'Canada Computers',
-    'url': 'https://www.canadacomputers.com/search_results.php?search_in=&keywords=%s'
 }];
 
 window.store = {sites: sites, skus: skus};

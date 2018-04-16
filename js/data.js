@@ -282,6 +282,10 @@ let sites = [{
     'url': 'https://www.caseking.de/search?sSearch=%s'
 }, {
     'country': 'de',
+    'name': 'Geizhals',
+    'url': 'https://geizhals.de/?fs=%s'
+}, {
+    'country': 'de',
     'name': 'Mindfactory',
     'url': 'https://www.mindfactory.de/search_result.php?search_query=%s'
 }, {

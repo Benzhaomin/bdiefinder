@@ -340,6 +340,10 @@ let sites = [{
     'country': 'us',
     'name': 'Newegg US',
     'url': 'https://www.newegg.com/Product/ProductList.aspx?Submit=ENE&DEPA=0&Description=%s'
+}, {
+    'country': 'ca',
+    'name': 'Canada Computers',
+    'url': 'https://www.canadacomputers.com/search_results.php?search_in=&keywords=%s'
 }];
 
 window.store = {sites: sites, products: products, skus: skus};

@@ -24,32 +24,58 @@
         </div>
 
         <section>
-            <h2>SKU</h2>
+            <h2>
+                Filters
+                <button id="reset" class="btn btn-sm btn-primary">Reset</button>
+            </h2>
             <p class="lead">
                 Filter known B-Die SKUs or add custom ones.
             </p>
 
             <div class="form-group">
-                <div class="btn-group btn-group-justified" role="group" id="model-filters">
+                <div class="row">
+                    <label class="col-1">Brand</label>
+                    <div class="col-11 btn-group btn-group-justified" role="group" id="model-filters">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <label class="col-1" title="MT/s">Speed</label>
+                    <div class="col-11 btn-group btn-group-justified" role="group" id="speed-filters">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <label class="col-1">Cas</label>
+                    <div class="col-11 btn-group btn-group-justified" role="group" id="cas-filters">
+                    </div>
+                </div>
+
+                <!-- FIXME
+                <div class="row">
+                    <label class="col-1" title="ns">Latency</label>
+                    <div class="col-11 btn-group btn-group-justified" role="group" id="latency-filters">
+                    </div>
+                </div>
+                -->
+
+                <div class="row">
+                    <label class="col-1" title="GB">Size</label>
+                    <div class="col-11 btn-group btn-group-justified" role="group" id="size-filters" data-name="Size">
+                    </div>
                 </div>
             </div>
 
-            <div class="form-group">
-                <div class="btn-group btn-group-justified" role="group" id="speed-filters">
+            <div class="row">
+                <div class="col-12">
+                    <h4>SKUs <small>(<span id="count"></span>)</small></h4>
+                    <textarea id='skus'></textarea>
                 </div>
-            </div>
-
-            <div class="form-group">
-                <div class="btn-group btn-group-justified" role="group" id="size-filters">
-                </div>
-            </div>
-
-            <div class="form-group">
-                <textarea id='skus'></textarea>
             </div>
         </section>
 
         <section>
+            <br/>
             <h2>Retailers</h2>
             <p class="lead">
                 Build search links for these websites. You can use presets for your country or add any number of custom search engines.
@@ -90,6 +116,8 @@
 
         <script src='js/vendor/jquery-3.3.1.slim.min.js'></script>
         <script src='js/data.js'></script>
+        <script src='js/product.js'></script>
+        <script src='js/filter.js'></script>
         <script src='js/main.js'></script>
     </body>
     </html>

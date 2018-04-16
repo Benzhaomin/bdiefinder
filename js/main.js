@@ -1,91 +1,8 @@
-function setupModelFilters() {
-    let $container = $("#model-filters");
-    window.store.products.forEach(product => {
-        let $button = addButton(product.name, product.code, $container);
-        $button.click(e => {
-            let $speedFilters = $("#speed-filters");
-            let $selectedSpeed = $speedFilters.find("button.active");
-
-            setupSpeedFilters($button.hasClass('active') ? product.speed : null);
-            if ($selectedSpeed.length) {
-                $speedFilters.find('button[value="'+$selectedSpeed.val()+'"]').addClass('active');
-            }
-
-            let $sizeFilters = $("#size-filters");
-            let $selectedSize = $sizeFilters.find("button.active");
-
-            setupSizeFilters($button.hasClass('active') ? product.size : null);
-            if ($selectedSize.length) {
-                $sizeFilters.find('button[value="'+$selectedSize.val()+'"]').addClass('active');
-            }
-
-            filterSkus();
-        });
-    });
-}
-
-function setupSpeedFilters(speeds) {
-    let $container = $("#speed-filters");
-    $container.html('');
-    if (typeof speeds === "undefined" || speeds === null) {
-        speeds = window.store.products.map(product => product.speed);
-        speeds = speeds.reduce((acc, val) => acc.concat(val), []);
-    }
-    speeds = Array.from(new Set(speeds));
-    speeds.sort();
-    speeds.forEach(speed => {
-        let $button = addButton(speed, speed, $container);
-        $button.click(e => filterSkus());
-    });
-}
-
-function setupSizeFilters(sizes) {
-    let $container = $("#size-filters");
-    $container.html('');
-    if (typeof sizes === "undefined" || sizes === null) {
-        sizes = window.store.products.map(product => product.size);
-        sizes = sizes.reduce((acc, val) => acc.concat(val), []);
-    }
-    sizes = Array.from(new Set(sizes));
-    sizes.sort();
-    sizes.forEach(size => {
-        let $button = addButton(size, size, $container);
-        $button.click(e => filterSkus());
-    });
-}
-
 function setSkus(skus) {
     skus.sort();
     $('#skus').val(skus.join('\n'));
+    $('#count').text(skus.length);
     showResults();
-}
-
-function filterSkus() {
-    let skus = window.store.skus;
-
-    let $model = $("#model-filters button.active");
-    if ($model.length) {
-        let models = $model.val().split(',');
-        skus = skus.filter(sku => models.some(model => sku.indexOf(model) != -1));
-    }
-
-    let $speed = $("#speed-filters button.active");
-    if ($speed.length) {
-        let speedl = $speed.val();
-        skus = skus.filter(sku => {
-            let speed = speedl.split('C')[0];
-            let latency = 'C' + speedl.split('C')[1];
-            return sku.indexOf(speed) != -1 && sku.indexOf(latency) != -1;
-        });
-    }
-
-    let $size = $("#size-filters button.active");
-    if ($size.length) {
-        let size = $size.val();
-        skus = skus.filter(sku => sku.indexOf(size) != -1);
-    }
-
-    setSkus(skus);
 }
 
 function setupCountryPresets() {
@@ -93,7 +10,7 @@ function setupCountryPresets() {
     let countries = Array.from(new Set(window.store.sites.map(site => site.country)));
     countries.sort();
     countries.forEach(code => {
-        let $button = addButton(code.toUpperCase(), code, $container);
+        let $button = addToggle(code.toUpperCase(), code, $container);
         $button.click(e => setCountry(code));
     });
 }
@@ -105,7 +22,7 @@ function setCountry(code) {
     showResults();
 };
 
-function addButton(text, value, $target) {
+function addToggle(text, value, $target) {
     let $button = $('<button type="button" class="btn btn-secondary btn-sm">');
     $button.val(value).text(text);
     $button.appendTo($target);
@@ -156,10 +73,15 @@ function showResults() {
 
 $(document).ready(function() {
     setupCountryPresets();
-    setupModelFilters();
-    setupSpeedFilters();
-    setupSizeFilters();
-    filterSkus();
+
+    let filters = Filters(setSkus);
+    filters.add($("#model-filters"), 'brands', 'brand');
+    filters.add($("#speed-filters"), 'speeds', 'speed');
+    filters.add($("#cas-filters"), 'cass', 'cas');
+    // FIXME: filters.add($("#latency-filters"), 'latencies', 'latency');
+    filters.add($("#size-filters"), 'sizes', 'size');
+    filters.apply();
+    $("#reset").click(e => filters.reset());
 
     $("#refresh").click(e => showResults());
     $("textarea").on('input', e => $("#refresh").show());

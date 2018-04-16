@@ -1,3 +1,6 @@
+.form-group label {
+    text-align: right;
+}
 textarea {
     width: 100%;
     min-height: 130px;
@@ -5,6 +8,11 @@ textarea {
 
 #results h3 {
     text-transform: capitalize;
+}
+
+#reset {
+    display: none;
+    margin-top: -3px;
 }
 
 #refresh {
@@ -28,5 +36,5 @@ footer a {
     border-radius: 0;
 }
 .btn-group .btn + .btn {
-    margin-left: 0;
+    margin-left: 0px;
 }

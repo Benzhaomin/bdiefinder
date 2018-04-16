@@ -1,291 +1,121 @@
-let products = [{
-    'name': 'Corsair Dominator',
-    'code': [
-		'CMD'
-	],
-    'size': [
-        '32G'
-    ],
-    'speed': [
-        '3600C16',
-    ],
-    'color': [],
-    'sku': [
-        'CMD32GX4M4B3600C16'
-    ]
-}, {
-    'name': 'Corsair Vengeance',
-    'code': [
-		'CMK',
-		'CMU'
-	],
-    'size': [
-        '32G'
-    ],
-    'speed': [
-        '3400C16',
-        '3466C16',
-        '3600C16',
-        '3600C18',
-        '4000C19'
-    ],
-    'color': [],
-    'sku': [
-        'CMU32GX4M4B3400C16',
+let skus = [
+    // Corsair Dominator
+    'CMD32GX4M4B3600C16',
 
-        'CMK32GX4M4B3466C16',
+    // Corsair Vengeance
+    'CMU32GX4M4B3400C16',
+    'CMK32GX4M4B3466C16',
+    'CMK32GX4M4B3600C16',
+    'CMK32GX4M4B3600C18',
+    'CMK32GX4M4B4000C19',
 
-        'CMK32GX4M4B3600C16',
+    // Team Group Dark Pro
+    'TDPGD416G3200HC14ADC01',
+    'TDPGD416G3600HC16ADC01',
+    'TDPGD416G3866HC18GDC01',
 
-        'CMK32GX4M4B3600C18',
+    // Team Group T-Force
+    'TXD416G3733HC18ADC01',
 
-        'CMK32GX4M4B4000C19'
-    ]
-}, {
-    'name': 'G.Skill Trident Z',
-    'code': [
-		'TZ'
-	],
-    'size': [
-        '16G',
-        '32G'
-    ],
-    'speed': [
-        '3000C14',
-        '3200C16',
-        '3200C15',
-        '3200C14',
-        '3466C16',
-        '3600C17',
-        '3600C16',
-        '3600C15',
-        '3733C17',
-        '3866C18',
-        '4000C17',
-        '4000C19',
-        '4133C17',
-        '4133C19',
-        '4266C17',
-        '4266C19',
-        '4400C19',
-        '4500C19'
-    ],
-    'color': [
-        'TZ',
-        'TZA',
-        'TZR',
-        'TZKO',
-        'TZKKE',
-        'TZKW',
-        'TZKY',
-        'TZSK',
-        'TZSW',
-        'TZSWE',
-    ],
-    'sku': [
-        'F4-3000C14D-16GTZ',
-        'F4-3000C14D-16GTZR',
+    // G.Skill Flare X
+    'F4-3200C14D-16GFX',
 
-        'F4-3000C14D-32GTZ',
-        'F4-3000C14D-32GTZR',
+    // G.Skill Ripjaws V
+    'F4-2800C14D-32GVK',
+    'F4-3000C14D-16GVK',
+    'F4-3000C14D-16GVR',
+    'F4-3000C14D-32GVK',
+    'F4-3000C14D-32GVR',
+    'F4-3200C15D-16GVK',
+    'F4-3200C15D-16GVR',
+    'F4-3200C15D-32GVK',
+    'F4-3200C15D-32GVR',
+    'F4-3200C14D-16GVK',
+    'F4-3200C14D-16GVR',
+    'F4-3200C14D-32GVK',
+    'F4-3200C14D-32GVR',
+    'F4-3400C16D-32GVK',
+    'F4-3400C16D-32GVR',
+    'F4-3466C16D-16GVK',
+    'F4-3466C16D-16GVR',
+    'F4-3600C17D-16GVK',
+    'F4-3600C16D-16GVK',
 
-        'F4-3200C16D-32GTZA',
-
-        'F4-3200C15D-16GTZ',
-        'F4-3200C15D-16GTZKO',
-        'F4-3200C15D-16GTZKW',
-        'F4-3200C15D-16GTZKY',
-        'F4-3200C15D-16GTZSK',
-        'F4-3200C15D-16GTZSW',
-
-        'F4-3200C15D-32GTZ',
-        'F4-3200C15D-32GTZKO',
-        'F4-3200C15D-32GTZKW',
-        'F4-3200C15D-32GTZKY',
-        'F4-3200C15D-32GTZR',
-        'F4-3200C15D-32GTZSK',
-        'F4-3200C15D-32GTZSW',
-
-        'F4-3200C14D-16GTZ',
-        'F4-3200C14D-16GTZKO',
-        'F4-3200C14D-16GTZKW',
-        'F4-3200C14D-16GTZKY',
-        'F4-3200C14D-16GTZR',
-        'F4-3200C14D-16GTZRX',
-        'F4-3200C14D-16GTZSK',
-        'F4-3200C14D-16GTZSW',
-
-        'F4-3200C14D-32GTZ',
-        'F4-3200C14D-32GTZKO',
-        'F4-3200C14D-32GTZKW',
-        'F4-3200C14D-32GTZKY',
-        'F4-3200C14D-32GTZR',
-        'F4-3200C14D-32GTZSK',
-        'F4-3200C14D-32GTZSW',
-
-        'F4-3400C16D-32GTZ',
-
-        'F4-3466C16D-16GTZ',
-        'F4-3466C16D-16GTZKW',
-        'F4-3466C16D-16GTZR',
-        'F4-3466C16D-16GTZSK',
-        'F4-3466C16D-16GTZSW',
-
-        'F4-3600C17D-16GTZ',
-        'F4-3600C17D-16GTZKW',
-        'F4-3600C17D-16GTZR',
-        'F4-3600C17D-16GTZSW',
-
-        'F4-3600C16D-16GTZ',
-        'F4-3600C16D-16GTZKW',
-        'F4-3600C16D-16GTZR',
-        'F4-3600C16D-16GTZSW',
-
-        'F4-3600C15D-16GTZ',
-
-        'F4-3733C17D-16GTZA',
-        'F4-3733C17D-16GTZKW',
-        'F4-3733C17D-16GTZSW',
-
-        'F4-3866C18D-16GTZ',
-        'F4-3866C18D-16GTZKW',
-        'F4-3866C18D-16GTZR',
-        'F4-3866C18D-16GTZSW',
-
-        'F4-4000C17D-16GTZR',
-
-        'F4-4000C17Q-32GTZR',
-
-        'F4-4000C19D-16GTZ',
-        'F4-4000C19D-16GTZKW',
-        'F4-4000C19D-16GTZSW',
-
-        'F4-4133C17D-16GTZR',
-
-        'F4-4133C17Q-32GTZR',
-
-        'F4-4133C19D-16GTZA',
-
-        'F4-4266C17Q-32GTZR',
-
-        'F4-4266C19D-16GTZ',
-        'F4-4266C19D-16GTZA',
-        'F4-4266C19D-16GTZKW',
-        'F4-4266C19D-16GTZSW',
-        'F4-4266C19D-16GTZR',
-
-        'F4-4400C19D-16GTZSW',
-        'F4-4400C19D-16GTZKK',
-
-        'F4-4500C19D-16GTZKKE',
-        'F4-4500C19D-16GTZSWE',
-    ]
-}, {
-    'name': 'G.Skill Ripjaws V',
-    'code': [
-		'GV'
-	],
-    'size': [
-        '16G',
-        '32G',
-    ],
-    'speed': [
-        '2800C14',
-        '3000C14',
-        '3200C15',
-        '3200C14',
-        '3466C16',
-        '3600C17',
-        '3600C16'
-    ],
-    'color': [
-        'VR',
-        'VK'
-    ],
-    'sku': [
-        'F4-2800C14D-32GVK',
-
-        'F4-3000C14D-16GVK',
-        'F4-3000C14D-16GVR',
-
-        'F4-3000C14D-32GVK',
-        'F4-3000C14D-32GVR',
-
-        'F4-3200C15D-16GVK',
-        'F4-3200C15D-16GVR',
-
-        'F4-3200C15D-32GVK',
-        'F4-3200C15D-32GVR',
-
-        'F4-3200C14D-16GVK',
-        'F4-3200C14D-16GVR',
-
-        'F4-3200C14D-32GVK',
-        'F4-3200C14D-32GVR',
-
-        'F4-3400C16D-32GVK',
-        'F4-3400C16D-32GVR',
-
-        'F4-3466C16D-16GVK',
-        'F4-3466C16D-16GVR',
-
-        'F4-3600C17D-16GVK',
-
-        'F4-3600C16D-16GVK'
-    ]
-}, {
-    'name': 'G.Skill Flare X',
-    'code': [
-		'FX'
-	],
-    'size': [
-        '16G'
-    ],
-    'speed': [
-        '3200C14',
-    ],
-    'color': [
-        'FX'
-    ],
-    'sku': [
-        'F4-3200C14D-16GFX'
-    ]
-}, {
-    'name': 'Team Dark Pro',
-    'code': 'TDP',
-    'size': [
-        '16G'
-    ],
-    'speed': [
-        '3200C14',
-        '3600C16',
-        '3866C18'
-    ],
-    'color': [],
-    'sku': [
-        'TDPGD416G3200HC14ADC01',
-	'TDPGD416G3600HC16ADC01',
-	'TDPGD416G3866HC18GDC01'
-    ]
-}, {
-    'name': 'Team T-Force',
-    'code': [
-		'TXD'
-	],
-    'size': [
-        '16G'
-    ],
-    'speed': [
-        '3733C18',
-    ],
-    'color': [],
-    'sku': [
-        'TXD416G3733HC18ADC01'
-    ]
-}];
-
-let skus = products.map(product => product.sku);
-skus = skus.reduce((acc, val) => acc.concat(val), []);
+    // G.Skill Trident Z
+    'F4-3000C14D-16GTZ',
+    'F4-3000C14D-16GTZR',
+    'F4-3000C14D-32GTZ',
+    'F4-3000C14D-32GTZR',
+    'F4-3200C16D-32GTZA',
+    'F4-3200C15D-16GTZ',
+    'F4-3200C15D-16GTZKO',
+    'F4-3200C15D-16GTZKW',
+    'F4-3200C15D-16GTZKY',
+    'F4-3200C15D-16GTZSK',
+    'F4-3200C15D-16GTZSW',
+    'F4-3200C15D-32GTZ',
+    'F4-3200C15D-32GTZKO',
+    'F4-3200C15D-32GTZKW',
+    'F4-3200C15D-32GTZKY',
+    'F4-3200C15D-32GTZR',
+    'F4-3200C15D-32GTZSK',
+    'F4-3200C15D-32GTZSW',
+    'F4-3200C14D-16GTZ',
+    'F4-3200C14D-16GTZKO',
+    'F4-3200C14D-16GTZKW',
+    'F4-3200C14D-16GTZKY',
+    'F4-3200C14D-16GTZR',
+    'F4-3200C14D-16GTZRX',
+    'F4-3200C14D-16GTZSK',
+    'F4-3200C14D-16GTZSW',
+    'F4-3200C14D-32GTZ',
+    'F4-3200C14D-32GTZKO',
+    'F4-3200C14D-32GTZKW',
+    'F4-3200C14D-32GTZKY',
+    'F4-3200C14D-32GTZR',
+    'F4-3200C14D-32GTZSK',
+    'F4-3200C14D-32GTZSW',
+    'F4-3400C16D-32GTZ',
+    'F4-3466C16D-16GTZ',
+    'F4-3466C16D-16GTZKW',
+    'F4-3466C16D-16GTZR',
+    'F4-3466C16D-16GTZSK',
+    'F4-3466C16D-16GTZSW',
+    'F4-3600C17D-16GTZ',
+    'F4-3600C17D-16GTZKW',
+    'F4-3600C17D-16GTZR',
+    'F4-3600C17D-16GTZSW',
+    'F4-3600C16D-16GTZ',
+    'F4-3600C16D-16GTZKW',
+    'F4-3600C16D-16GTZR',
+    'F4-3600C16D-16GTZSW',
+    'F4-3600C15D-16GTZ',
+    'F4-3733C17D-16GTZA',
+    'F4-3733C17D-16GTZKW',
+    'F4-3733C17D-16GTZSW',
+    'F4-3866C18D-16GTZ',
+    'F4-3866C18D-16GTZKW',
+    'F4-3866C18D-16GTZR',
+    'F4-3866C18D-16GTZSW',
+    'F4-4000C17D-16GTZR',
+    'F4-4000C17Q-32GTZR',
+    'F4-4000C19D-16GTZ',
+    'F4-4000C19D-16GTZKW',
+    'F4-4000C19D-16GTZSW',
+    'F4-4133C17D-16GTZR',
+    'F4-4133C17Q-32GTZR',
+    'F4-4133C19D-16GTZA',
+    'F4-4266C17Q-32GTZR',
+    'F4-4266C19D-16GTZ',
+    'F4-4266C19D-16GTZA',
+    'F4-4266C19D-16GTZKW',
+    'F4-4266C19D-16GTZSW',
+    'F4-4266C19D-16GTZR',
+    'F4-4400C19D-16GTZSW',
+    'F4-4400C19D-16GTZKK',
+    'F4-4500C19D-16GTZKKE',
+    'F4-4500C19D-16GTZSWE',
+];
 
 let sites = [{
     'country': 'ca',
@@ -377,4 +207,4 @@ let sites = [{
     'url': 'https://www.canadacomputers.com/search_results.php?search_in=&keywords=%s'
 }];
 
-window.store = {sites: sites, products: products, skus: skus};
+window.store = {sites: sites, skus: skus};

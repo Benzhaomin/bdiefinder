@@ -61,19 +61,26 @@ let products = [{
         '3600C15',
         '3733C17',
         '3866C18',
+        '4000C17',
         '4000C19',
+        '4133C17',
         '4133C19',
-        '4266C19'
+        '4266C17',
+        '4266C19',
+        '4400C19',
+        '4500C19'
     ],
     'color': [
         'TZ',
         'TZA',
         'TZR',
         'TZKO',
+        'TZKKE',
         'TZKW',
         'TZKY',
         'TZSK',
         'TZSW',
+        'TZSWE',
     ],
     'sku': [
         'F4-3000C14D-16GTZ',
@@ -145,13 +152,33 @@ let products = [{
         'F4-3866C18D-16GTZR',
         'F4-3866C18D-16GTZSW',
 
+        'F4-4000C17D-16GTZR',
+
+        'F4-4000C17Q-32GTZR',
+
         'F4-4000C19D-16GTZ',
         'F4-4000C19D-16GTZKW',
         'F4-4000C19D-16GTZSW',
 
+        'F4-4133C17D-16GTZR',
+
+        'F4-4133C17Q-32GTZR',
+
         'F4-4133C19D-16GTZA',
 
-        'F4-4266C19D-16GTZ'
+        'F4-4266C17Q-32GTZR',
+
+        'F4-4266C19D-16GTZ',
+        'F4-4266C19D-16GTZA',
+        'F4-4266C19D-16GTZKW',
+        'F4-4266C19D-16GTZSW',
+        'F4-4266C19D-16GTZR',
+
+        'F4-4400C19D-16GTZSW',
+        'F4-4400C19D-16GTZKK',
+
+        'F4-4500C19D-16GTZKKE',
+        'F4-4500C19D-16GTZSWE',
     ]
 }, {
     'name': 'G.Skill Ripjaws V',

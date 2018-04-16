@@ -206,6 +206,26 @@ let sites = [{
     'name': 'emag',
     'url': 'https://www.emag.pl/search/%s'
 }, {
+    'country': 'pt',
+    'name': 'PC Diga',
+    'url': 'https://www.pcdiga.com/catalogsearch/result/?q=%s'
+}, {
+    'country': 'pt',
+    'name': 'Global Data',
+    'url': 'https://www.globaldata.pt/shop/advancedsearch/result/?q=%s'
+}, {
+    'country': 'pt',
+    'name': 'Chiptec',
+    'url': 'https://www.chiptec.net/catalogsearch/result/?cat=0&q=%s'
+}, {
+    'country': 'pt',
+    'name': 'Alientech',
+    'url': 'https://www.alientech.pt/?s=%s&post_type=product'
+}, {
+    'country': 'pt',
+    'name': 'Novo Atalho',
+    'url': 'https://www.novoatalho.pt/pt-PT/pesquisa.html?txton=products&txtsearch=%s'
+}, {
     'country': 'uk',
     'name': 'Amazon UK',
     'url': 'https://www.amazon.co.uk/s/field-keywords=%s'

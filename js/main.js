@@ -7,9 +7,16 @@ function setupModelFilters() {
             let $selectedSpeed = $speedFilters.find("button.active");
 
             setupSpeedFilters($button.hasClass('active') ? product.speed : null);
-
             if ($selectedSpeed.length) {
                 $speedFilters.find('button[value="'+$selectedSpeed.val()+'"]').addClass('active');
+            }
+
+            let $sizeFilters = $("#size-filters");
+            let $selectedSize = $sizeFilters.find("button.active");
+
+            setupSizeFilters($button.hasClass('active') ? product.size : null);
+            if ($selectedSize.length) {
+                $sizeFilters.find('button[value="'+$selectedSize.val()+'"]').addClass('active');
             }
 
             filterSkus();
@@ -28,6 +35,21 @@ function setupSpeedFilters(speeds) {
     speeds.sort();
     speeds.forEach(speed => {
         let $button = addButton(speed, speed, $container);
+        $button.click(e => filterSkus());
+    });
+}
+
+function setupSizeFilters(sizes) {
+    let $container = $("#size-filters");
+    $container.html('');
+    if (typeof sizes === "undefined" || sizes === null) {
+        sizes = window.store.products.map(product => product.size);
+        sizes = sizes.reduce((acc, val) => acc.concat(val), []);
+    }
+    sizes = Array.from(new Set(sizes));
+    sizes.sort();
+    sizes.forEach(size => {
+        let $button = addButton(size, size, $container);
         $button.click(e => filterSkus());
     });
 }
@@ -51,10 +73,16 @@ function filterSkus() {
     if ($speed.length) {
         let speedl = $speed.val();
         skus = skus.filter(sku => {
-			let speed = speedl.split('C')[0];
-			let latency = 'C' + speedl.split('C')[1];			
-			return sku.indexOf(speed) != -1 && sku.indexOf(latency) != -1;
-		});
+            let speed = speedl.split('C')[0];
+            let latency = 'C' + speedl.split('C')[1];
+            return sku.indexOf(speed) != -1 && sku.indexOf(latency) != -1;
+        });
+    }
+
+    let $size = $("#size-filters button.active");
+    if ($size.length) {
+        let size = $size.val();
+        skus = skus.filter(sku => sku.indexOf(size) != -1);
     }
 
     setSkus(skus);
@@ -130,6 +158,7 @@ $(document).ready(function() {
     setupCountryPresets();
     setupModelFilters();
     setupSpeedFilters();
+    setupSizeFilters();
     filterSkus();
 
     $("#refresh").click(e => showResults());

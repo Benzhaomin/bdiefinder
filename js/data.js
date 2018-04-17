@@ -17,6 +17,10 @@ let skus = [
     // Team Group T-Force
     'TXD416G3733HC18ADC01',
 
+    // Samsung ECC
+    'M391A1K43BB1-CRC',
+    'M391A2K43BB1-CRC',
+
     // G.Skill Flare X
     'F4-3200C14D-16GFX',
 

@@ -114,10 +114,21 @@ function GSkill(sku) {
     return Product(brand, sku, speed, cas, size, sticks, color, ecc);
 }
 
+// Samsung ECC (eg. M391A1K43BB1-CRC)
+let samsung_skus = {
+    'M391A1K43BB1-CRC': Product('Samsung ECC', 'M391A1K43BB1-CRC', '2400', '17', '8', '1', null, true),
+    'M391A2K43BB1-CRC': Product('Samsung ECC', 'M391A2K43BB1-CRC', '2400', '17', '16', '1', null, true),
+}
+
+function Samsung(sku) {
+    return samsung_skus[sku];
+}
+
 let sku_to_brand = {
     'C': Corsair,
     'F': GSkill,
     'T': TeamGroup,
+    'M': Samsung,
 };
 
 // turns any SKU into a Product
@@ -136,7 +147,7 @@ let set = (values) => {
 }
 
 function Products(products) {
-    let skus = () => Array.from(new Set(products.map(product => product.sku)));
+    let skus = () => sorted(set(products.map(product => product.sku)));
 
     let brand = value => Products(products.filter(product => !value || product.brand === value));
     let brands = () => sorted(set(products.map(product => product.brand)));
@@ -155,7 +166,11 @@ function Products(products) {
     };
 
     let size = value => Products(products.filter(product => !value || product.size === value));
-    let sizes = () => sorted(set(products.map(product => product.size)));
+    let sizes = () => {
+        let values = set(products.map(product => product.size));
+        values.sort((a,b) => parseInt(a) > parseInt(b));
+        return values;
+    };
 
     return {
         skus: skus,

@@ -226,6 +226,14 @@ let sites = [{
     'name': 'Novo Atalho',
     'url': 'https://www.novoatalho.pt/pt-PT/pesquisa.html?txton=products&txtsearch=%s'
 }, {
+    'country': 'ro',
+    'name': 'Price.ro',
+    'url': 'https://www.price.ro/index.php?action=q&text=%s'
+}, {
+    'country': 'ro',
+    'name': 'Compari',
+    'url': 'https://www.compari.ro/CategorySearch.php?st=%s'
+}, {
     'country': 'uk',
     'name': 'Amazon UK',
     'url': 'https://www.amazon.co.uk/s/field-keywords=%s'

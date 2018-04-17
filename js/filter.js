@@ -1,7 +1,7 @@
-let Filters = function(callback) {
+let Filters = (callback) => {
     let filters = [];
 
-    let add = function($container, valuescb, filtercb) {
+    let add = ($container, valuescb, filtercb) => {
         filters.push({
             'container': $container,
             'values': valuescb,
@@ -9,11 +9,11 @@ let Filters = function(callback) {
         });
     };
 
-    let show = function(products) {
+    let show = (products) => {
         callback(products.skus());
     };
 
-    let refresh = function(products) {
+    let refresh = (products) => {
         filters.forEach(filter => {
             filter.container.html('');
             products[filter.values]().forEach(value => {
@@ -28,7 +28,7 @@ let Filters = function(callback) {
         });
     };
 
-    let apply = function() {
+    let apply = () => {
         let products = window.store.products;
 
         filters.forEach(filter => {
@@ -46,7 +46,7 @@ let Filters = function(callback) {
         return products;
     };
 
-    let reset = function() {
+    let reset = () => {
         filters.forEach(filter => filter.container.find("button.active").removeClass('active'));
         apply();
     };

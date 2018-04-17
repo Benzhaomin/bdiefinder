@@ -8,6 +8,11 @@ h2 button.btn {
     margin-top: -3px;
 }
 
+.row > label {
+    margin-top: .25rem;
+    margin-bottom: .25rem;
+}
+
 footer {
     color: #FAFAFA;
     background-color: #5a6268;

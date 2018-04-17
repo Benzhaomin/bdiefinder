@@ -34,34 +34,34 @@
 
             <div class="form-group">
                 <div class="row">
-                    <label class="col-1">Brand</label>
-                    <div class="col-11 btn-group btn-group-justified" role="group" id="model-filters">
+                    <label class="col-md-1 col-12">Brand</label>
+                    <div class="col-md-11 col-12 btn-group btn-group-justified" role="group" id="model-filters">
                     </div>
                 </div>
 
                 <div class="row">
-                    <label class="col-1" title="MT/s">Speed</label>
-                    <div class="col-11 btn-group btn-group-justified" role="group" id="speed-filters">
+                    <label class="col-md-1 col-12" title="MT/s">Speed</label>
+                    <div class="col-md-11 col-12 btn-group btn-group-justified" role="group" id="speed-filters">
                     </div>
                 </div>
 
                 <div class="row">
-                    <label class="col-1">Cas</label>
-                    <div class="col-11 btn-group btn-group-justified" role="group" id="cas-filters">
+                    <label class="col-md-1 col-12">Cas</label>
+                    <div class="col-md-11 col-12 btn-group btn-group-justified" role="group" id="cas-filters">
                     </div>
                 </div>
 
                 <!-- FIXME
                     <div class="row">
-                        <label class="col-1" title="ns">Latency</label>
-                        <div class="col-11 btn-group btn-group-justified" role="group" id="latency-filters">
+                        <label class="col-md-1 col-2" title="ns">Latency</label>
+                        <div class="col-md-11 col-10 btn-group btn-group-justified" role="group" id="latency-filters">
                         </div>
                     </div>
                 -->
 
                 <div class="row">
-                    <label class="col-1" title="GB">Size</label>
-                    <div class="col-11 btn-group btn-group-justified" role="group" id="size-filters" data-name="Size">
+                    <label class="col-md-1 col-12 xs-mt-1" title="GB">Size</label>
+                    <div class="col-md-11 col-12 btn-group btn-group-justified" role="group" id="size-filters">
                     </div>
                 </div>
             </div>
@@ -83,21 +83,22 @@
 
             <div class="form-group">
                 <div class="row">
-                    <label class="col-1">Country</label>
-                    <div class="col-11 btn-group btn-group-justified" role="group" id="country-presets">
+                    <label class="col-md-1 col-12">Country</label>
+                    <div class="col-md-11 col-12 btn-group btn-group-justified" role="group" id="country-presets">
                     </div>
                 </div>
+            </div>
 
-                <div class="row">
-                    <div class="col-12">
-                        <h4>Sites <small>(<span id="sites-count">0</span>)</small></h4>
-                        <textarea id='sites'></textarea>
-                    </div>
+            <div class="row">
+                <div class="col-12">
+                    <h4>Sites <small>(<span id="sites-count">0</span>)</small></h4>
+                    <textarea id='sites'></textarea>
                 </div>
             </div>
         </section>
 
         <section>
+            <br/>
             <h2>Links <button id="refresh" class="btn btn-sm btn-primary">Refresh links</button></h2>
             <p class="lead">
                 Links to search engines for each SKU

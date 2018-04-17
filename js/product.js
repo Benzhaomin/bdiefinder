@@ -1,8 +1,9 @@
-function Product(brand, sku, speed, cas, size, sticks, color, ecc) {
+function Product(brand, series, sku, speed, cas, size, sticks, color, ecc) {
     let latency = null; // FIXME: String(Math.round(1/parseInt(cas) / parseInt(speed) * 10000000) / 10);
 
     return {
         'brand': brand,
+        'series': series,
         'sku': sku,
         'speed': speed,
         'cas': cas,
@@ -20,6 +21,7 @@ function Corsair(sku) {
     let regex = /C([A-Z]{2})(\d{2})GX(\d)M(\d)[A-Z](\d{4})C(\d{2})/g;
     let groups = regex.exec(sku);
     let brand = 'Corsair';
+    let series = '';
     let code = groups[1];
     let size = groups[2];
     let sticks = groups[4];
@@ -29,13 +31,13 @@ function Corsair(sku) {
     let ecc = false;
 
     if (code === 'MD') {
-        brand += ' Dominator';
+        series = 'Dominator';
     }
     else if (code === 'MK' || code === 'MU') {
-        brand += ' Vengeance';
+        series = 'Vengeance';
     }
 
-    return Product(brand, sku, speed, cas, size, sticks, color, ecc);
+    return Product(brand, series, sku, speed, cas, size, sticks, color, ecc);
 }
 
 // Team Group (eg. TXD416G3733HC18ADC01)
@@ -44,6 +46,7 @@ function TeamGroup(sku) {
     let regex = /T([A-Z]{1,3})D4(\d{2})G(\d{4})HC(\d{2})\w([DQ])C01/g;
     let groups = regex.exec(sku);
     let brand = 'Team';
+    let series = '';
     let code = groups[1];
     let size = groups[2];
     let speed = groups[3];
@@ -53,13 +56,13 @@ function TeamGroup(sku) {
     let ecc = false;
 
     if (code === 'DPG') {
-        brand += ' Dark Pro';
+        series = 'Dark Pro';
     }
     else if (code === 'X') {
-        brand += ' T-Xtrem';
+        series = 'T-Force XTREEM';
     }
 
-    return Product(brand, sku, speed, cas, size, sticks, color, ecc);
+    return Product(brand, series, sku, speed, cas, size, sticks, color, ecc);
 }
 
 // G-Skill (eg. F4-3200C14D-16GFX)
@@ -86,6 +89,7 @@ function GSkill(sku) {
     let regex = /F4\-(\d{4})C(\d{2})([DQ])\-(\d{2})G([A-Z]{2,6})/g;
     let groups = regex.exec(sku);
     let brand = 'G.Skill';
+    let series = '';
     let speed = groups[1];
     let cas = groups[2];
     let sticks = groups[3] === 'Q' ? 4 : 2;
@@ -95,34 +99,38 @@ function GSkill(sku) {
     let ecc = false;
 
     if (code.indexOf('TZ') === 0) {
-        brand += ' Trident Z';
+        series = 'Trident Z';
         color = gskill_colors[code.replace('TZ', '')];
     }
     else if (code.indexOf('FX') === 0) {
-        brand += ' Flare X';
+        series = 'Flare X';
+    }
+    else if (code.indexOf('SX') === 0) {
+        series = 'Sniper X';
     }
     else if (code[0] === 'V') {
-        brand += ' Ripjaws V';
+        series = 'Ripjaws V';
         color = gskill_colors[code[1]];
     }
 
-    return Product(brand, sku, speed, cas, size, sticks, color, ecc);
+    return Product(brand, series, sku, speed, cas, size, sticks, color, ecc);
 }
 
 // Samsung ECC (eg. M391A1K43BB1-CRC)
 function Samsung(sku) {
     return {
-        'M391A1K43BB1-CRC': Product('Samsung ECC', 'M391A1K43BB1-CRC', '2400', '17', '8', '1', null, true),
-        'M391A2K43BB1-CRC': Product('Samsung ECC', 'M391A2K43BB1-CRC', '2400', '17', '16', '1', null, true),
+        'M391A1K43BB1-CRC': Product('Samsung', 'ECC', 'M391A1K43BB1-CRC', '2400', '17', '8', '1', null, true),
+        'M391A2K43BB1-CRC': Product('Samsung', 'ECC', 'M391A2K43BB1-CRC', '2400', '17', '16', '1', null, true),
     }[sku];
 }
 
 // GeIL (eg. GEX416GB3200C16ADC)
 function Geil(sku) {
     // https://regex101.com/r/mOcKR8/7/
-    let regex = /([A-Z]{2,6})4(\d{1,2})GB(\d{4})C(\d{2})A?(\w)C/g;
+    let regex = /G([A-Z]{2,6})4(\d{1,2})GB(\d{4})C(\d{2})A?(\w)C/g;
     let groups = regex.exec(sku);
     let brand = 'GeIL';
+    let series = '';
     let code = groups[1];
     let speed = groups[3];
     let cas = groups[4];
@@ -132,10 +140,10 @@ function Geil(sku) {
     let ecc = false;
 
     if (code === 'EX') {
-        brand += ' Evo X';
+        series = 'Evo X';
     }
 
-    return Product(brand, sku, speed, cas, size, sticks, color, ecc);
+    return Product(brand, series, sku, speed, cas, size, sticks, color, ecc);
 }
 
 // KFA2 HOF (eg. HOF4CXLBS3600K17LD162K)
@@ -144,6 +152,7 @@ function KFA(sku) {
     let regex = /([A-Z]{3,6})4CXLBS(\d{4})K(\d{2})LD(\d{2})(\d)K/g;
     let groups = regex.exec(sku);
     let brand = 'KFA2';
+    let series = '';
     let code = groups[1];
     let speed = groups[2];
     let cas = groups[3];
@@ -153,16 +162,16 @@ function KFA(sku) {
     let ecc = false;
 
     if (code === 'HOF') {
-        brand += ' HOF';
+        series = 'HOF';
     }
 
-    return Product(brand, sku, speed, cas, size, sticks, color, ecc);
+    return Product(brand, series, sku, speed, cas, size, sticks, color, ecc);
 }
 
 // Crucial Ballistix Elite (eg. BLE2K8G4D34AEEAK) - no info on cas latency
 function Crucial(sku) {
     return {
-        'BLE2K8G4D34AEEAK': Product('Crucial Elite', 'BLE2K8G4D34AEEAK', '3466', '16', '16', '2', null, false),
+        'BLE2K8G4D34AEEAK': Product('Crucial', 'Ballistix Elite', 'BLE2K8G4D34AEEAK', '3466', '16', '16', '2', null, false),
     }[sku];
 }
 
@@ -195,6 +204,9 @@ function Products(products) {
     let brand = value => Products(products.filter(product => !value || product.brand === value));
     let brands = () => sorted(set(products.map(product => product.brand)));
 
+    let series = value => Products(products.filter(product => !value || product.series === value));
+    let seriess = () => sorted(set(products.map(product => product.series)));
+
     let speed = value => Products(products.filter(product => !value || product.speed === value));
     let speeds = () => sorted(set(products.map(product => product.speed)));
 
@@ -220,6 +232,9 @@ function Products(products) {
 
         brand: brand,
         brands: brands,
+
+        series: series,
+        seriess: seriess,
 
         speed: speed,
         speeds: speeds,

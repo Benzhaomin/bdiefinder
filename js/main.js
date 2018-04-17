@@ -76,6 +76,7 @@ $(document).ready(function() {
 
     let filters = Filters(setSkus);
     filters.add($("#model-filters"), 'brands', 'brand');
+    filters.add($("#series-filters"), 'seriess', 'series');
     filters.add($("#speed-filters"), 'speeds', 'speed');
     filters.add($("#cas-filters"), 'cass', 'cas');
     // FIXME: filters.add($("#latency-filters"), 'latencies', 'latency');

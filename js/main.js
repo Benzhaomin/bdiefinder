@@ -34,7 +34,7 @@ function addToggle(text, value, $target) {
 }
 
 function addSku($site, sku) {
-    let $div = $('<div class="col col-md-3 col-sm-4 col-6 mb-2">');
+    let $div = $('<div class="col col-md-3 col-sm-4 col-12 mb-2">');
     let $a = $('<a>');
     let url = $site.prop('data-url').replace('%s', sku);
     $a.prop('href', url);

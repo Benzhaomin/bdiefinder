@@ -124,11 +124,65 @@ function Samsung(sku) {
     return samsung_skus[sku];
 }
 
+// GeIL (eg. GEX416GB3200C16ADC)
+function Geil(sku) {
+    // https://regex101.com/r/mOcKR8/7/
+    let regex = /([A-Z]{2,6})4(\d{1,2})GB(\d{4})C(\d{2})A?(\w)C/g;
+    let groups = regex.exec(sku);
+    let brand = 'GeIL';
+    let code = groups[1];
+    let speed = groups[3];
+    let cas = groups[4];
+    let size = groups[2];
+    let sticks = groups[5] === 'Q' ? 4 : 2;
+    let color = null;
+    let ecc = false;
+
+    if (code === 'EX') {
+        brand += ' Evo X';
+    }
+
+    return Product(brand, sku, speed, cas, size, sticks, color, ecc);
+}
+
+// KFA2 HOF (eg. HOF4CXLBS3600K17LD162K)
+function KFA(sku) {
+    // https://regex101.com/r/WBL7z2/1
+    let regex = /([A-Z]{3,6})4CXLBS(\d{4})K(\d{2})LD(\d{2})(\d)K/g;
+    let groups = regex.exec(sku);
+    let brand = 'KFA2';
+    let code = groups[1];
+    let speed = groups[2];
+    let cas = groups[3];
+    let size = groups[4];
+    let sticks = groups[5];
+    let color = null;
+    let ecc = false;
+
+    if (code === 'HOF') {
+        brand += ' HOF';
+    }
+
+    return Product(brand, sku, speed, cas, size, sticks, color, ecc);
+}
+
+// Crucial Ballistix Elite (eg. BLE2K8G4D34AEEAK) - no info on cas latency
+let crucial_skus = {
+    'BLE2K8G4D34AEEAK': Product('Crucial Elite', 'BLE2K8G4D34AEEAK', '3466', '16', '16', '2', null, false),
+}
+
+function Crucial(sku) {
+    return crucial_skus[sku];
+}
+
 let sku_to_brand = {
     'C': Corsair,
     'F': GSkill,
     'T': TeamGroup,
     'M': Samsung,
+    'G': Geil,
+    'H': KFA,
+    'B': Crucial,
 };
 
 // turns any SKU into a Product

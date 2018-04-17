@@ -4,10 +4,20 @@ let skus = [
 
     // Corsair Vengeance
     'CMU32GX4M4B3400C16',
+    'CMU32GX4M4C3400C16',
     'CMK32GX4M4B3466C16',
     'CMK32GX4M4B3600C16',
     'CMK32GX4M4B3600C18',
     'CMK32GX4M4B4000C19',
+
+    // GeIL Evo X
+    'GEX416GB3200C16ADC',
+
+    // Crucial Elite
+    'BLE2K8G4D34AEEAK',
+
+    // KFA2 HOF
+    'HOF4CXLBS3600K17LD162K',
 
     // Team Group Dark Pro
     'TDPGD416G3200HC14ADC01',

@@ -158,6 +158,10 @@ let sites = [{
     'name': 'Mindfactory',
     'url': 'https://www.mindfactory.de/search_result.php?search_query=%s'
 }, {
+    'country': 'ee',
+    'name': 'Hinnavaatlus',
+    'url': 'https://www.hinnavaatlus.ee/search/?query=%s'
+}, {
     'country': 'es',
     'name': 'Amazon Spain',
     'url': 'https://www.amazon.es/s/field-keywords=%s'

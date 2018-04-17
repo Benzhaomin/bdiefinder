@@ -1,24 +1,24 @@
 function setSkus(skus) {
     skus.sort();
     $('#skus').val(skus.join('\n'));
-    $('#count').text(skus.length);
+    $('#sku-count').text(skus.length);
     showResults();
 }
 
 function setupCountryPresets() {
     let $container = $("#country-presets");
-    let countries = Array.from(new Set(window.store.sites.map(site => site.country)));
-    countries.sort();
-    countries.forEach(code => {
-        let $button = addToggle(code.toUpperCase(), code, $container);
-        $button.click(e => setCountry(code));
+    let countries = sorted(set(window.store.sites.map(site => site.country)));
+    countries.forEach(name => {
+        let $button = addToggle(name, name, $container);
+        $button.click(e => setCountry(name));
     });
 }
 
-function setCountry(code) {
-    let sites = code ? window.store.sites.filter(site => site.country == code) : window.store.sites;
+function setCountry(name) {
+    let sites = name ? window.store.sites.filter(site => site.country == name) : window.store.sites;
     let urls = sites.map(site => site.url).join('\n');
     $('#sites').val(urls);
+    $('#sites-count').text(sites.length);
     showResults();
 };
 

@@ -52,11 +52,11 @@
                 </div>
 
                 <!-- FIXME
-                <div class="row">
-                    <label class="col-1" title="ns">Latency</label>
-                    <div class="col-11 btn-group btn-group-justified" role="group" id="latency-filters">
+                    <div class="row">
+                        <label class="col-1" title="ns">Latency</label>
+                        <div class="col-11 btn-group btn-group-justified" role="group" id="latency-filters">
+                        </div>
                     </div>
-                </div>
                 -->
 
                 <div class="row">
@@ -68,7 +68,7 @@
 
             <div class="row">
                 <div class="col-12">
-                    <h4>SKUs <small>(<span id="count"></span>)</small></h4>
+                    <h4>SKUs <small>(<span id="sku-count">0</span>)</small></h4>
                     <textarea id='skus'></textarea>
                 </div>
             </div>
@@ -82,24 +82,26 @@
             </p>
 
             <div class="form-group">
-                <div class="btn-group" role="group" id="country-presets">
+                <div class="row">
+                    <label class="col-1">Country</label>
+                    <div class="col-11 btn-group btn-group-justified" role="group" id="country-presets">
+                    </div>
                 </div>
-            </div>
 
-            <div class="form-group">
-                <textarea id='sites'></textarea>
+                <div class="row">
+                    <div class="col-12">
+                        <h4>Sites <small>(<span id="sites-count">0</span>)</small></h4>
+                        <textarea id='sites'></textarea>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section>
-            <h2>Links</h2>
+            <h2>Links <button id="refresh" class="btn btn-sm btn-primary">Refresh links</button></h2>
             <p class="lead">
                 Links to search engines for each SKU
             </p>
-
-            <div class="form-group">
-                <button id="refresh" class="btn btn-large btn-primary">Refresh links</button>
-            </div>
 
             <div id="results">
             </div>

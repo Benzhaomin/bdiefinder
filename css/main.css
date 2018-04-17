@@ -1,22 +1,11 @@
-.form-group label {
-    text-align: right;
-}
 textarea {
     width: 100%;
     min-height: 130px;
 }
 
-#results h3 {
-    text-transform: capitalize;
-}
-
-#reset {
+h2 button.btn {
     display: none;
     margin-top: -3px;
-}
-
-#refresh {
-    display: none;
 }
 
 footer {
@@ -26,6 +15,10 @@ footer {
 }
 footer a {
     color: inherit;
+}
+
+#results h3 {
+    text-transform: capitalize;
 }
 
 /* fix for button groups not breaking on smaller screens */

@@ -118,139 +118,139 @@ let skus = [
 ];
 
 let sites = [{
-    'country': 'br',
+    'country': 'Brazil',
     'name': 'Kabum',
     'url': 'https://www.kabum.com.br/cgi-local/site/listagem/listagem.cgi?string=%s&btnG='
 }, {
-    'country': 'ca',
+    'country': 'Canada',
     'name': 'Amazon',
     'url': 'https://www.amazon.ca/s/field-keywords=%s'
 }, {
-    'country': 'ca',
+    'country': 'Canada',
     'name': 'Newegg Canada',
     'url': 'https://www.newegg.ca/Product/ProductList.aspx?Submit=ENE&DEPA=0&Description=%s'
 }, {
-    'country': 'ca',
+    'country': 'Canada',
     'name': 'Memory Express',
     'url': 'https://www.memoryexpress.com/Search/Products?Search=%s'
 }, {
-    'country': 'ca',
+    'country': 'Canada',
     'name': 'Canada Computers',
     'url': 'https://www.canadacomputers.com/search_results.php?search_in=&keywords=%s'
 }, {
-    'country': 'de',
+    'country': 'Germany',
     'name': 'Amazon Germany',
     'url': 'https://www.amazon.de/s/field-keywords=%s'
 }, {
-    'country': 'de',
+    'country': 'Germany',
     'name': 'Alternate',
     'url': 'https://www.alternate.de/html/search.html?query=%s'
 }, {
-    'country': 'de',
+    'country': 'Germany',
     'name': 'Caseking',
     'url': 'https://www.caseking.de/search?sSearch=%s'
 }, {
-    'country': 'de',
+    'country': 'Germany',
     'name': 'Geizhals',
     'url': 'https://geizhals.de/?fs=%s'
 }, {
-    'country': 'de',
+    'country': 'Germany',
     'name': 'Mindfactory',
     'url': 'https://www.mindfactory.de/search_result.php?search_query=%s'
 }, {
-    'country': 'ee',
+    'country': 'Estonia',
     'name': 'Hinnavaatlus',
     'url': 'https://www.hinnavaatlus.ee/search/?query=%s'
 }, {
-    'country': 'es',
+    'country': 'Spain',
     'name': 'Amazon Spain',
     'url': 'https://www.amazon.es/s/field-keywords=%s'
 }, {
-    'country': 'es',
+    'country': 'Spain',
     'name': 'PC Componentes',
     'url': 'https://www.pccomponentes.com/buscar/?query=%s'
 }, {
-    'country': 'fr',
+    'country': 'France',
     'name': 'Amazon France',
     'url': 'https://www.amazon.fr/s/field-keywords=%s'
 }, {
-    'country': 'fr',
+    'country': 'France',
     'name': 'Hardware.fr',
     'url': 'https://shop.hardware.fr/search/+ftxt-%s'
 }, {
-    'country': 'fr',
+    'country': 'France',
     'name': 'Materiel.net',
     'url': 'https://www.materiel.net/achat/%s'
 }, {
-    'country': 'fr',
+    'country': 'France',
     'name': 'Rue du commerce',
     'url': 'https://www.rueducommerce.fr/recherche/%s'
 }, {
-    'country': 'it',
+    'country': 'Italy',
     'name': 'Amazon Italy',
     'url': 'https://www.amazon.it/s/field-keywords=%s'
 }, {
-    'country': 'it',
+    'country': 'Italy',
     'name': 'ePrice',
     'url': 'https://www.eprice.it/search/qs=%s'
 }, {
-    'country': 'pl',
+    'country': 'Poland',
     'name': 'x-kom',
     'url': 'https://www.x-kom.pl/szukaj?q=%s'
 }, {
-    'country': 'pl',
+    'country': 'Poland',
     'name': 'morele.net',
     'url': 'https://www.morele.net/wyszukiwarka/0/0/,,,,,,,,,,,,/1/?q=%s'
 }, {
-    'country': 'pl',
+    'country': 'Poland',
     'name': 'Proline',
     'url': 'https://proline.pl/?qp=%s'
 }, {
-    'country': 'pl',
+    'country': 'Poland',
     'name': 'emag',
     'url': 'https://www.emag.pl/search/%s'
 }, {
-    'country': 'pt',
+    'country': 'Portugal',
     'name': 'PC Diga',
     'url': 'https://www.pcdiga.com/catalogsearch/result/?q=%s'
 }, {
-    'country': 'pt',
+    'country': 'Portugal',
     'name': 'Global Data',
     'url': 'https://www.globaldata.pt/shop/advancedsearch/result/?q=%s'
 }, {
-    'country': 'pt',
+    'country': 'Portugal',
     'name': 'Chiptec',
     'url': 'https://www.chiptec.net/catalogsearch/result/?cat=0&q=%s'
 }, {
-    'country': 'pt',
+    'country': 'Portugal',
     'name': 'Alientech',
     'url': 'https://www.alientech.pt/?s=%s&post_type=product'
 }, {
-    'country': 'pt',
+    'country': 'Portugal',
     'name': 'Novo Atalho',
     'url': 'https://www.novoatalho.pt/pt-PT/pesquisa.html?txton=products&txtsearch=%s'
 }, {
-    'country': 'ro',
+    'country': 'Romania',
     'name': 'Price.ro',
     'url': 'https://www.price.ro/index.php?action=q&text=%s'
 }, {
-    'country': 'ro',
+    'country': 'Romania',
     'name': 'Compari',
     'url': 'https://www.compari.ro/CategorySearch.php?st=%s'
 }, {
-    'country': 'uk',
+    'country': 'UK',
     'name': 'Amazon UK',
     'url': 'https://www.amazon.co.uk/s/field-keywords=%s'
 }, {
-    'country': 'uk',
+    'country': 'UK',
     'name': 'Overclockers UK',
     'url': 'https://www.overclockers.co.uk/search?sSearch=%s'
 }, {
-    'country': 'us',
+    'country': 'USA',
     'name': 'Amazon',
     'url': 'https://www.amazon.com/s/field-keywords=%s'
 }, {
-    'country': 'us',
+    'country': 'USA',
     'name': 'Newegg US',
     'url': 'https://www.newegg.com/Product/ProductList.aspx?Submit=ENE&DEPA=0&Description=%s'
 }];

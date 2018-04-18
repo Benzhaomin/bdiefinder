@@ -4,8 +4,8 @@
   "description": "Help build search links for every variants of known B-Die RAM sticks.",
   "private": "true",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack --mode development",
+    "test": "echo \"Coming soon (tm)\" && exit 1",
+    "dev": "webpack --mode development --watch",
     "build": "webpack --mode production",
     "lint": "github-lint"
   },

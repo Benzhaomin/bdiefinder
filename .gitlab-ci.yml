@@ -1,0 +1,17 @@
+image: node:9
+
+before_script:
+  - npm install
+
+cache:
+  paths:
+    - node_modules/
+
+test:lint:
+  script:
+    - npm run lint
+
+test:node:9:
+  script:
+    - npm run build
+#    - npm test

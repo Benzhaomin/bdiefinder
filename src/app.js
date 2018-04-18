@@ -10,7 +10,7 @@ import Filters from './filters'
 import {addToggle, setCountry, showResults, $} from './ui'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
-import '../dist/main.css'
+import './main.css'
 
 store.products = Products(skus.map(sku => parse(sku)))
 

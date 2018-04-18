@@ -1,12 +1,11 @@
 const webpack = require('webpack')
 const path = require('path')
-const __dirname = __dirname
 
 module.exports = {
   entry: './src/app.js',
   output: {
     filename: 'app.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist') // eslint-disable-line
   },
   module: {
     rules: [

@@ -1,0 +1,37 @@
+{
+  "name": "bdiefinder",
+  "version": "1.0.0",
+  "description": "Help build search links for every variants of known B-Die RAM sticks.",
+  "private": "true",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "lint": "github-lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Benzhaomin/bdiefinder.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "GPLv3",
+  "bugs": {
+    "url": "https://github.com/Benzhaomin/bdiefinder/issues"
+  },
+  "homepage": "https://benzhaomin.github.io/bdiefinder/",
+  "devDependencies": {
+    "css-loader": "^0.28.11",
+    "eslint": "^4.19.1",
+    "eslint-plugin-github": "^0.25.1",
+    "expose-loader": "^0.7.5",
+    "style-loader": "^0.21.0",
+    "webpack": "^4.6.0",
+    "webpack-cli": "^2.0.14"
+  },
+  "dependencies": {
+    "bootstrap": "^4.1.0",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.3"
+  }
+}

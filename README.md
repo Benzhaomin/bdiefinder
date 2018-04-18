@@ -7,3 +7,19 @@ https://benzhaomin.github.io/bdiefinder/
 # Contributing
 
 To add SKUs or search engines please submit a pull request against [data.js](js/data.js)
+
+# Installation
+
+```
+npm install
+```
+
+or with nodeenv
+
+```
+virtualenv3 env/python
+source env/python/bin/activate
+pip install nodeenv
+nodeenv env/node
+source env/node/bin/activate
+```

@@ -17,11 +17,11 @@ npm install
 or with nodeenv
 
 ```
-virtualenv3 env/python
-source env/python/bin/activate
+virtualenv env/python
+. env/python/bin/activate
 pip install nodeenv
 nodeenv env/node
-source env/node/bin/activate
+. env/node/bin/activate
 npm install
 ```
 

@@ -1,8 +1,9 @@
 const webpack = require('webpack')
 const path = require('path')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
-  entry: './src/app.js',
+  entry: './src/js/app.js',
   output: {
     filename: 'app.js',
     path: path.resolve(__dirname, 'dist') // eslint-disable-line
@@ -21,10 +22,6 @@ module.exports = {
             options: '$'
           }
         ]
-      },
-      {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader']
       }
     ]
   },
@@ -32,6 +29,15 @@ module.exports = {
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery'
-    })
+    }),
+    new CopyWebpackPlugin([
+      {
+        from: '**/*',
+        to: '.',
+        context: './src/',
+        ignore: ['*.js'],
+        flatten: true
+      }
+    ])
   ]
 }

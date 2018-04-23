@@ -2,14 +2,14 @@
  * Expose product filters as button groups
  */
 import {store} from './store'
-import {addToggle, setSkus, $} from './ui'
+import {addToggle, setSkus, ui} from './ui'
 
 export default function Filters() {
   const filters = []
 
-  function add($container, valuescb, filtercb) {
+  function add(uicontainer, valuescb, filtercb) {
     filters.push({
-      container: $container,
+      container: uicontainer,
       values: valuescb,
       filter: filtercb
     })
@@ -24,12 +24,12 @@ export default function Filters() {
       filter.container.html('')
 
       for (const value of products[filter.values]()) {
-        const $button = addToggle(value, value, filter.container)
+        const button = addToggle(value, value, filter.container)
         const count = products[filter.filter](value).skus().length
-        $button.prop('title', `${count} SKU ${count > 1 ? 's' : ''}`)
-        $button.click(e => apply(e))
+        button.attr('title', `${count} SKU${count > 1 ? 's' : ''}`)
+        button.on('click', e => apply(e))
         if (value === filter.value) {
-          $button.addClass('active')
+          button.addClass('active')
         }
       }
     }
@@ -39,8 +39,8 @@ export default function Filters() {
     let products = store.products
 
     for (const filter of filters) {
-      const $value = filter.container.find('button.active')
-      filter.value = $value.length ? $value.val() : null
+      const value = filter.container.find('button.active').first()
+      filter.value = value ? value.value : null
       products = products[filter.filter](filter.value)
     }
 
@@ -48,7 +48,11 @@ export default function Filters() {
     show(products)
 
     const filtered = products.skus().length < store.products.skus().length
-    $('#reset').toggle(filtered)
+    if (filtered) {
+      ui('#reset').first().style.display = 'initial'
+    } else {
+      ui('#reset').first().style.display = 'none'
+    }
 
     return products
   }
@@ -62,7 +66,6 @@ export default function Filters() {
 
   return {
     add,
-    apply,
     reset
   }
 }

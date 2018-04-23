@@ -7,31 +7,32 @@ import {Products} from './product'
 import {store} from './store'
 import parse from './parsers'
 import Filters from './filters'
-import {addToggle, setCountry, showResults, $} from './ui'
+import {addToggle, setCountry, showResults, ui, domready, onSitesChanged} from './ui'
 
 store.products = Products(skus.map(sku => parse(sku)))
 
-$(document).ready(function() {
+domready(function() {
   // skus filters
   const filters = Filters()
-  filters.add($('#model-filters'), 'brands', 'brand')
-  filters.add($('#series-filters'), 'seriess', 'series')
-  filters.add($('#speed-filters'), 'speeds', 'speed')
-  filters.add($('#cas-filters'), 'cass', 'cas')
-  filters.add($('#latency-filters'), 'latencies', 'latency')
-  filters.add($('#size-filters'), 'sizes', 'size')
-  filters.apply()
-  $('#reset').click(filters.reset)
+  filters.add(ui('#model-filters'), 'brands', 'brand')
+  filters.add(ui('#series-filters'), 'seriess', 'series')
+  filters.add(ui('#speed-filters'), 'speeds', 'speed')
+  filters.add(ui('#cas-filters'), 'cass', 'cas')
+  filters.add(ui('#latency-filters'), 'latencies', 'latency')
+  filters.add(ui('#size-filters'), 'sizes', 'size')
+  filters.reset()
+  ui('#reset').on('click', filters.reset)
 
   // countries presets
-  const $container = $('#country-presets')
+  const container = ui('#country-presets')
   const countries = sorted(set(sites.map(site => site.country)))
   for (const name of countries) {
-    const $button = addToggle(name, name, $container)
-    $button.click(() => setCountry(name))
+    const button = addToggle(name, name, container)
+    button.on('click', () => setCountry(name))
   }
+  onSitesChanged()
 
-  const $refresh = $('#refresh')
-  $refresh.click(showResults)
-  $('textarea').on('input', $refresh.show)
+  const refresh = ui('#refresh')
+  refresh.on('click', showResults)
+  ui('textarea').on('input', () => (refresh.first().style.display = 'initial'))
 })

@@ -18,7 +18,7 @@ $(document).ready(function() {
   filters.add($('#series-filters'), 'seriess', 'series')
   filters.add($('#speed-filters'), 'speeds', 'speed')
   filters.add($('#cas-filters'), 'cass', 'cas')
-  // FIXME: filters.add($("#latency-filters"), 'latencies', 'latency');
+  filters.add($('#latency-filters'), 'latencies', 'latency')
   filters.add($('#size-filters'), 'sizes', 'size')
   filters.apply()
   $('#reset').click(filters.reset)

@@ -3,8 +3,13 @@
  */
 import {sorted, set} from './python'
 
+// latency = cycle time here
+function getLatency(speed, cas) {
+  return 1 / (parseInt(speed) / 1000 / 2) * parseInt(cas)
+}
+
 export function Product(brand, series, sku, speed, cas, size, sticks, color, ecc) {
-  const latency = null // FIXME: String(Math.round(1/parseInt(cas) / parseInt(speed) * 10000000) / 10);
+  const latency = String(Math.round(getLatency(speed, cas) * 10) / 10)
 
   return {
     brand,

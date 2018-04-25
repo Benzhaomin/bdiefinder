@@ -1,6 +1,12 @@
 /**
  * Dirty UI functions
  */
+/* assets */
+import '../index.html'
+import '../main.css'
+import 'normalize.css'
+import '../icon.png'
+
 import {u} from 'umbrellajs'
 import {sites} from './data'
 
@@ -50,14 +56,12 @@ export function onSitesChanged() {
 }
 
 function addSku(site, sku) {
-  const div = ui('<div class="col col-md-3 col-sm-4 col-12 mb-2"></div>')
   const a = ui('<a></a>')
   const url = site.attr('data-url').replace('%s', sku)
   a.attr('href', url)
   a.attr('target', '_blank')
   a.text(sku)
-  div.append(a)
-  site.append(div)
+  site.append(a)
 }
 
 export function showResults() {
@@ -66,14 +70,13 @@ export function showResults() {
 
   const skus = getSkus()
   if (!skus.length) {
-    results.html('<div class="alert alert-warning" role="alert">Add at least one SKU</div>')
+    results.append('<div class="warning">Add at least one SKU</div>')
     return
   }
 
   const sites = getSites()
-
-  if (!sites) {
-    results.html('<div class="alert alert-warning" role="alert">Add at least one site</div>')
+  if (!sites.length) {
+    results.append('<div class="warning">Add at least one site</div>')
     return
   }
 
@@ -82,7 +85,7 @@ export function showResults() {
 
     results.append(`<h3>${domain}</h3>`)
 
-    const sitediv = ui(`<div class="row mb-3" data-url="${site}"></div>`)
+    const sitediv = ui(`<div data-url="${site}"></div>`)
     results.append(sitediv)
 
     for (const sku of skus) {
@@ -92,7 +95,7 @@ export function showResults() {
 }
 
 export function addToggle(text, value, target) {
-  const button = ui('<button type="button" class="btn btn-secondary btn-sm">')
+  const button = ui('<button type="button" class="toggle">')
   button.attr('value', value).text(text)
   target.append(button)
   button.on('click', () => {
@@ -102,7 +105,7 @@ export function addToggle(text, value, target) {
   return button
 }
 
-export function domready(fn) {
+export function domReady(fn) {
   if (document.attachEvent ? document.readyState === 'complete' : document.readyState !== 'loading') {
     fn()
   } else {

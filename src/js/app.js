@@ -7,11 +7,12 @@ import {Products} from './product'
 import {store} from './store'
 import parse from './parsers'
 import Filters from './filters'
-import {addToggle, setCountry, showResults, ui, domready, onSitesChanged} from './ui'
+import {addToggle, setCountry, showResults, ui, domReady, onSitesChanged} from './ui'
 
+/* Products */
 store.products = Products(skus.map(sku => parse(sku)))
 
-domready(function() {
+domReady(function() {
   // skus filters
   const filters = Filters()
   filters.add(ui('#model-filters'), 'brands', 'brand')
@@ -32,6 +33,7 @@ domready(function() {
   }
   onSitesChanged()
 
+  // results
   const refresh = ui('#refresh')
   refresh.on('click', showResults)
   ui('textarea').on('input', () => (refresh.first().style.display = 'initial'))

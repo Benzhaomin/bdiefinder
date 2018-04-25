@@ -1,6 +1,6 @@
 {
   "name": "bdiefinder",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": " Build search links for every variants of known B-Die RAM kits.",
   "private": "true",
   "scripts": {
@@ -22,9 +22,10 @@
   },
   "homepage": "https://benzhaomin.github.io/bdiefinder/",
   "devDependencies": {
-    "copy-webpack-plugin": "^4.5.1",
     "eslint": "^4.19.1",
     "eslint-plugin-github": "^0.25.1",
+    "file-loader": "^1.1.11",
+    "normalize.css": "^8.0.0",
     "push-dir": "^0.4.1",
     "umbrellajs": "^2.10.1",
     "webpack": "^4.6.0",

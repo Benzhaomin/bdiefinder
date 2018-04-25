@@ -131,8 +131,8 @@ function Geil(sku) {
 
 // KFA2 HOF (eg. HOF4CXLBS3600K17LD162K)
 function KFA(sku) {
-  // https://regex101.com/r/WBL7z2/1
-  const regex = /([A-Z]{3,6})4CXLBS(\d{4})K(\d{2})LD(\d{2})(\d)K/g
+  // https://regex101.com/r/WBL7z2/2
+  const regex = /([A-Z]{3,6})4.*?(\d{4})[A-Z](\d{2})[A-Z]{2}(\d{2})(\d)K/g
   const groups = regex.exec(sku)
   const brand = 'KFA2'
   const code = groups[1]

@@ -22,6 +22,7 @@ export const skus = [
 
   // KFA2 HOF
   'HOF4CXLBS3600K17LD162K',
+  'HOF4CXL1BST4000M19SF162K',
 
   // Team Group Dark Pro
   'TDPGD416G3200HC14ADC01',

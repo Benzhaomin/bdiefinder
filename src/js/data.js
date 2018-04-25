@@ -188,6 +188,16 @@ export const sites = [
     url: 'https://www.mindfactory.de/search_result.php?search_query=%s'
   },
   {
+    country: 'Greece',
+    name: 'Skroutz',
+    url: 'https://skroutz.gr/search?keyphrase=%s'
+  },
+  {
+    country: 'Greece',
+    name: 'Bestprice',
+    url: 'https://www.bestprice.gr/cat/2609/memory.html?q=%s'
+  },
+  {
     country: 'Estonia',
     name: 'Hinnavaatlus',
     url: 'https://www.hinnavaatlus.ee/search/?query=%s'

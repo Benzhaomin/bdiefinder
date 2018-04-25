@@ -1,0 +1,108 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>B-Die Finder</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="icon" href="icon.png">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<section id="intro">
+    <h1>
+        <img src="icon.png" width="45"/>
+        B-Die Finder
+    </h1>
+
+    <p class="lead">
+        This tool can generate links to search pages on Amazon/Newegg/etc for a bunch of similar kits, all Samsung
+        B-Die.<br/>
+        For more details on B-Die see <a href="https://www.reddit.com/r/Amd/comments/8clf15/bdie_finder/dxgd1d9/">this
+        reddit post</a>
+        and for a full list of verified B-Die kits see
+        <a href="https://www.reddit.com/r/Amd/comments/62vp2g/clearing_up_any_samsung_bdie_confusion_eg_on/"
+           target="_blank">this reddit post</a>
+        and <a href="https://www.reddit.com/r/Amd/comments/7d4qvt/i_compiled_a_list_of_samsung_bdie_ram_on_newegg/"
+               target="_blank">that one too</a>.
+    </p>
+</section>
+
+<section id="filters">
+    <h2>
+        Filters
+        <button id="reset" class="reveal">Reset</button>
+    </h2>
+
+    <p class="lead">
+        Filter known B-Die SKUs or add custom ones.
+    </p>
+
+    <label>Brand</label>
+    <div id="model-filters" class="button-group"></div>
+
+    <label>Series</label>
+    <div id="series-filters" class="button-group"></div>
+
+    <label title="not frequency (MT/s)">Speed</label>
+    <div id="speed-filters" class="button-group"></div>
+
+    <label>Cas</label>
+    <div id="cas-filters" class="button-group"></div>
+
+    <label title="first word access time (ns)">Latency</label>
+    <div id="latency-filters" class="button-group"></div>
+
+    <label title="total size (GB)">Size</label>
+    <div id="size-filters" class="button-group"></div>
+
+    <br/>
+
+    <h4>SKUs
+        <small>(<span id="sku-count">0</span>)</small>
+    </h4>
+    <textarea id='skus'></textarea>
+</section>
+
+<section id="retailers">
+    <h2>Retailers</h2>
+
+    <p class="lead">
+        Build search links for these websites. Use presets or add custom search engines.
+    </p>
+
+    <div id="country-presets" class="button-group"></div>
+
+    <br/>
+
+    <h4>Sites
+        <small>(<span id="sites-count">0</span>)</small>
+    </h4>
+    <textarea id='sites'></textarea>
+</section>
+
+<section id="links">
+    <h2>
+        Links
+        <button id="refresh" class="reveal">Refresh links</button>
+    </h2>
+
+    <div id="results"></div>
+</section>
+
+<footer>
+    <section id="footer">
+        <p>
+            This website is totally independent from any retailer or manufacturer and doesn't generate any revenue.
+            SKUs listed here are known to be B-Dies but manufacturers can change ICs. Purchase at your own risk.
+        </p>
+        <span><a href="https://github.com/Benzhaomin/bdiefinder" target="_blank">Source code</a></span>
+    </section>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

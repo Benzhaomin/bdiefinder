@@ -14,8 +14,8 @@ const CorsairColors = {
 
 // Corsair (eg. CMD32GX4M4B3600C16)
 function Corsair(sku) {
-  // https://regex101.com/r/lM1T9q/3
-  const regex = /C([A-Z]{2})(\d{2})GX(\d)M(\d)[A-Z](\d{4})C(\d{2})([A-Z])?/g
+  // https://regex101.com/r/lM1T9q/4
+  const regex = /C([A-Z]{2})(\d{2,3})GX(\d)M(\d)[A-Z](\d{4})C(\d{2})([A-Z])?/g
   const groups = regex.exec(sku)
   const brand = 'Corsair'
   const code = groups[1]
@@ -46,7 +46,7 @@ function TeamGroup(sku) {
   const size = groups[2]
   const speed = groups[3]
   const cas = groups[4]
-  const sticks = groups[5] === 'Q' ? 4 : 2
+  const sticks = groups[5] === 'Q' ? '4' : '2'
   const ecc = false
 
   let series = ''
@@ -92,19 +92,21 @@ const GskillTridentZColors = {
 const GskillRipjawsColors = {
   G: 'black',
   K: 'black',
+  KD: 'black', // with fans
   R: 'red',
+  RD: 'red', // with fans
   S: 'silver'
 }
 
 // G-Skill (eg. F4-3200C14D-16GFX)
 function GSkill(sku) {
-  // https://regex101.com/r/CjUiJS/3
-  const regex = /F4-(\d{4})C(\d{2})([DQ2]{1,2})-(\d{2})G([A-Z]{2,6})/g
+  // https://regex101.com/r/CjUiJS/4
+  const regex = /F4-(\d{4})C(\d{2})([DQ2]{1,2})-(\d{2,3})G([A-Z]{2,6})/g
   const groups = regex.exec(sku)
   const brand = 'G.Skill'
   const speed = groups[1]
   const cas = groups[2]
-  const sticks = groups[3] === 'Q2' ? 8 : groups[3] === 'Q' ? 4 : 2
+  const sticks = groups[3] === 'Q2' ? '8' : groups[3] === 'Q' ? '4' : '2'
   const size = groups[4]
   const code = groups[5]
   const ecc = false
@@ -126,7 +128,7 @@ function GSkill(sku) {
   return Product(brand, series, sku, speed, cas, size, sticks, color, ecc)
 }
 
-// Samsung ECC (eg. M391A1K43BB1-CRC)
+// Samsung (eg. M391A1K43BB1-CRC)
 function Samsung(sku) {
   // https://regex101.com/r/smbbzc/1
   const regex = /M3(\d{2})A(\d{1})K43(BB\d{1})-(C[A-Z]{2})/g
@@ -134,7 +136,7 @@ function Samsung(sku) {
   const brand = 'Samsung'
   const code = groups[4]
   const size = groups[2] === '2' ? '16' : '8'
-  const sticks = groups[2]
+  const sticks = '1'
   const color = null
   const ecc = groups[1] === '91'
   const series = ecc ? 'ECC' : 'NON-ECC'
@@ -165,7 +167,7 @@ function Geil(sku) {
   const speed = groups[3]
   const cas = groups[4]
   const size = groups[2]
-  const sticks = groups[5] === 'Q' ? 4 : 2
+  const sticks = groups[5] === 'Q' ? '4' : '2'
   const color = null
   const ecc = false
 
@@ -225,7 +227,7 @@ function Patriot(sku) {
   const series = 'Viper'
   const cas = `1${groups[5]}`
   const size = groups[3]
-  const sticks = 2
+  const sticks = '2'
   const color = null
   const ecc = false
 
@@ -239,15 +241,15 @@ function Patriot(sku) {
 
 // SuperTalent (eg. F3600UX16G)
 function SuperTalent(sku) {
-  // https://regex101.com/r/kKlg3h/2
-  const regex = /F(\d{4})U([AX])(\d{1,2})G/g
+  // https://regex101.com/r/kKlg3h/3
+  const regex = /F(\d{4})U([ABX])(\d{1,2})G/g
   const groups = regex.exec(sku)
   const brand = 'Super Talent'
   const series = 'Project X'
   const speed = groups[1]
   const cas = '17'
   const size = groups[3]
-  const sticks = groups[2] === 'A' ? 1 : 2
+  const sticks = groups[2] === 'X' ? '2' : '1'
   const color = null
   const ecc = false
 

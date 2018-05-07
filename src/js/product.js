@@ -10,6 +10,7 @@ function getLatency(speed, cas) {
 
 export function Product(brand, series, sku, speed, cas, size, sticks, color, ecc) {
   const latency = String(Math.round(getLatency(speed, cas) * 10) / 10)
+  const rank = parseInt(size) / parseInt(sticks) === 16 ? '2' : '1'
 
   return {
     brand,
@@ -20,6 +21,7 @@ export function Product(brand, series, sku, speed, cas, size, sticks, color, ecc
     latency,
     size,
     sticks,
+    rank,
     color,
     ecc
   }
@@ -63,6 +65,22 @@ export function Products(products) {
     return sorted(set(products.map(product => product.cas)))
   }
 
+  function sticks(value) {
+    return Products(products.filter(product => !value || product.sticks === value))
+  }
+
+  function stickss() {
+    return sorted(set(products.map(product => product.sticks)))
+  }
+
+  function rank(value) {
+    return Products(products.filter(product => !value || product.rank === value))
+  }
+
+  function ranks() {
+    return sorted(set(products.map(product => product.rank)))
+  }
+
   function latency(value) {
     return Products(products.filter(product => !value || product.latency === value))
   }
@@ -93,6 +111,10 @@ export function Products(products) {
     speeds,
     cas,
     cass,
+    sticks,
+    stickss,
+    rank,
+    ranks,
     latency,
     latencies,
     size,

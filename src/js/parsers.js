@@ -60,33 +60,41 @@ function TeamGroup(sku) {
   return Product(brand, series, sku, speed, cas, size, sticks, color, ecc)
 }
 
-const GskillColors = {
+const GskillTridentZColors = {
   '': 'silver-red',
   A: 'silver-red',
   B: 'silver-red',
-  G: 'black',
-  K: 'black',
   KK: 'black-black',
   KKE: 'black-black',
+  KKF: 'black-black',
   KW: 'black-white',
   KO: 'black-orange',
   KY: 'black-yellow',
-  R: 'red',
-  S: 'silver',
+  R: 'rgb',
+  RF: 'rgb',
+  RX: 'rgb',
   SK: 'silver-black',
   SW: 'silver-white',
-  SWE: 'silver-white'
+  SWE: 'silver-white',
+  SWF: 'silver-white'
+}
+
+const GskillRipjawsColors = {
+  G: 'black',
+  K: 'black',
+  R: 'red',
+  S: 'silver'
 }
 
 // G-Skill (eg. F4-3200C14D-16GFX)
 function GSkill(sku) {
-  // https://regex101.com/r/CjUiJS/2
-  const regex = /F4-(\d{4})C(\d{2})([DQ])-(\d{2})G([A-Z]{2,6})/g
+  // https://regex101.com/r/CjUiJS/3
+  const regex = /F4-(\d{4})C(\d{2})([DQ2]{1,2})-(\d{2})G([A-Z]{2,6})/g
   const groups = regex.exec(sku)
   const brand = 'G.Skill'
   const speed = groups[1]
   const cas = groups[2]
-  const sticks = groups[3] === 'Q' ? 4 : 2
+  const sticks = groups[3] === 'Q2' ? 8 : groups[3] === 'Q' ? 4 : 2
   const size = groups[4]
   const code = groups[5]
   const ecc = false
@@ -95,14 +103,14 @@ function GSkill(sku) {
   let color = null
   if (code.indexOf('TZ') === 0) {
     series = 'Trident Z'
-    color = GskillColors[code.replace('TZ', '')]
+    color = GskillTridentZColors[code.replace('TZ', '')]
   } else if (code.indexOf('FX') === 0) {
     series = 'Flare X'
   } else if (code.indexOf('SX') === 0) {
     series = 'Sniper X'
   } else if (code[0] === 'V') {
     series = 'Ripjaws V'
-    color = GskillColors[code[1]]
+    color = GskillRipjawsColors[code[1]]
   }
 
   return Product(brand, series, sku, speed, cas, size, sticks, color, ecc)

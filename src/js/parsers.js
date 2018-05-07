@@ -47,14 +47,24 @@ function TeamGroup(sku) {
   const speed = groups[3]
   const cas = groups[4]
   const sticks = groups[5] === 'Q' ? 4 : 2
-  const color = null
   const ecc = false
 
   let series = ''
-  if (code === 'DPG') {
-    series = 'Dark Pro'
+  let color = null
+  if (code === 'DPR') {
+    series = 'Xtreem Dark Pro'
+    color = 'red'
+  } else if (code === 'DPG') {
+    series = 'Xtreem Dark Pro'
+    color = 'grey'
+  } else if (code === 'XB') {
+    series = 'T-Force Xtreem' // 8Pack Edition
+  } else if (code === 'XG') {
+    series = 'T-Force Xtreem' // Gold
   } else if (code === 'X') {
-    series = 'T-Force XTREEM'
+    series = 'T-Force Xtreem' // Silver
+  } else if (code === 'L') {
+    series = 'T-Force Vulcan'
   }
 
   return Product(brand, series, sku, speed, cas, size, sticks, color, ecc)

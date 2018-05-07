@@ -168,6 +168,23 @@ function KFA(sku) {
   return Product(brand, series, sku, speed, cas, size, sticks, color, ecc)
 }
 
+// Kingston Hyper X (eg. HX436C17PB3K4/32)
+function Kingston(sku) {
+  // https://regex101.com/r/sZJJWU/1
+  const regex = /HX4(\d{2})C(\d{2})PB3K(\d)\/(\d{2})/g
+  const groups = regex.exec(sku)
+  const brand = 'Kingston'
+  const series = 'Hyper X'
+  const speed = `${groups[1]}00`
+  const cas = groups[2]
+  const size = groups[4]
+  const sticks = groups[3]
+  const color = null
+  const ecc = false
+
+  return Product(brand, series, sku, speed, cas, size, sticks, color, ecc)
+}
+
 // Crucial Ballistix Elite (eg. BLE2K8G4D34AEEAK) - no info on cas latency
 function Crucial(sku) {
   return {
@@ -178,12 +195,14 @@ function Crucial(sku) {
 // turns any SKU into a Product
 export default function parse(sku) {
   return {
-    C: Corsair,
-    F: GSkill,
-    T: TeamGroup,
-    M: Samsung,
-    G: Geil,
-    H: KFA,
-    B: Crucial
-  }[sku[0]](sku)
+    CM: Corsair,
+    F4: GSkill,
+    TD: TeamGroup,
+    TX: TeamGroup,
+    M3: Samsung,
+    GE: Geil,
+    HO: KFA,
+    HX: Kingston,
+    BL: Crucial
+  }[sku.slice(0, 2)](sku)
 }

@@ -185,6 +185,27 @@ function Kingston(sku) {
   return Product(brand, series, sku, speed, cas, size, sticks, color, ecc)
 }
 
+// Patriot Viper (eg. PV416G373C7K)
+function Patriot(sku) {
+  // https://regex101.com/r/yYVaIh/1
+  const regex = /P(V[EL]?)([WR])?4(\d{2})G(\d{3})C(\d{1})K/g
+  const groups = regex.exec(sku)
+  const brand = 'Patriot'
+  const series = 'Viper'
+  const cas = `1${groups[5]}`
+  const size = groups[3]
+  const sticks = 2
+  const color = null
+  const ecc = false
+
+  let speed = `${groups[4]}0`
+  if (speed === '3730') {
+    speed = '3733'
+  }
+
+  return Product(brand, series, sku, speed, cas, size, sticks, color, ecc)
+}
+
 // Crucial Ballistix Elite (eg. BLE2K8G4D34AEEAK) - no info on cas latency
 function Crucial(sku) {
   return {
@@ -203,6 +224,7 @@ export default function parse(sku) {
     GE: Geil,
     HO: KFA,
     HX: Kingston,
-    BL: Crucial
+    BL: Crucial,
+    PV: Patriot
   }[sku.slice(0, 2)](sku)
 }

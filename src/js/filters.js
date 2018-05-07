@@ -25,8 +25,6 @@ export default function Filters() {
 
       for (const value of products[filter.values]()) {
         const button = addToggle(value, value, filter.container)
-        const count = products[filter.filter](value).skus().length
-        button.attr('title', `${count} SKU${count > 1 ? 's' : ''}`)
         button.on('click', e => apply(e))
         if (value === filter.value) {
           button.addClass('active')

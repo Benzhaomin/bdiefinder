@@ -3,10 +3,19 @@
  */
 import {Product} from './product'
 
+const CorsairColors = {
+  null: 'black',
+  C: 'chrome',
+  M: 'black',
+  T: 'torque',
+  R: 'red',
+  W: 'white'
+}
+
 // Corsair (eg. CMD32GX4M4B3600C16)
 function Corsair(sku) {
-  // https://regex101.com/r/lM1T9q/1
-  const regex = /C([A-Z]{2})(\d{2})GX(\d)M(\d)[A-Z](\d{4})C(\d{2})/g
+  // https://regex101.com/r/lM1T9q/4
+  const regex = /C([A-Z]{2})(\d{2,3})GX(\d)M(\d)[A-Z](\d{4})C(\d{2})([A-Z])?/g
   const groups = regex.exec(sku)
   const brand = 'Corsair'
   const code = groups[1]
@@ -14,13 +23,13 @@ function Corsair(sku) {
   const sticks = groups[4]
   const speed = groups[5]
   const cas = groups[6]
-  const color = null
+  const color = CorsairColors[groups[7]]
   const ecc = false
 
   let series = ''
   if (code === 'MD') {
     series = 'Dominator'
-  } else if (code === 'MK' || code === 'MU') {
+  } else if (code === 'MK' || code === 'MU' || code === 'MR') {
     series = 'Vengeance'
   }
 
@@ -37,47 +46,67 @@ function TeamGroup(sku) {
   const size = groups[2]
   const speed = groups[3]
   const cas = groups[4]
-  const sticks = groups[5] === 'Q' ? 4 : 2
-  const color = null
+  const sticks = groups[5] === 'Q' ? '4' : '2'
   const ecc = false
 
   let series = ''
-  if (code === 'DPG') {
-    series = 'Dark Pro'
+  let color = null
+  if (code === 'DPR') {
+    series = 'Xtreem Dark Pro'
+    color = 'red'
+  } else if (code === 'DPG') {
+    series = 'Xtreem Dark Pro'
+    color = 'grey'
+  } else if (code === 'XB') {
+    series = 'T-Force Xtreem' // 8Pack Edition
+  } else if (code === 'XG') {
+    series = 'T-Force Xtreem' // Gold
   } else if (code === 'X') {
-    series = 'T-Force XTREEM'
+    series = 'T-Force Xtreem' // Silver
+  } else if (code === 'L') {
+    series = 'T-Force Vulcan'
   }
 
   return Product(brand, series, sku, speed, cas, size, sticks, color, ecc)
 }
 
-const GskillColors = {
+const GskillTridentZColors = {
   '': 'silver-red',
   A: 'silver-red',
   B: 'silver-red',
-  G: 'black',
-  K: 'black',
   KK: 'black-black',
   KKE: 'black-black',
+  KKF: 'black-black',
   KW: 'black-white',
   KO: 'black-orange',
   KY: 'black-yellow',
-  R: 'red',
-  S: 'silver',
+  R: 'rgb',
+  RF: 'rgb',
+  RX: 'rgb',
   SK: 'silver-black',
   SW: 'silver-white',
-  SWE: 'silver-white'
+  SWE: 'silver-white',
+  SWF: 'silver-white'
+}
+
+const GskillRipjawsColors = {
+  G: 'black',
+  K: 'black',
+  KD: 'black', // with fans
+  R: 'red',
+  RD: 'red', // with fans
+  S: 'silver'
 }
 
 // G-Skill (eg. F4-3200C14D-16GFX)
 function GSkill(sku) {
-  // https://regex101.com/r/CjUiJS/2
-  const regex = /F4-(\d{4})C(\d{2})([DQ])-(\d{2})G([A-Z]{2,6})/g
+  // https://regex101.com/r/CjUiJS/4
+  const regex = /F4-(\d{4})C(\d{2})([DQ2]{1,2})-(\d{2,3})G([A-Z]{2,6})/g
   const groups = regex.exec(sku)
   const brand = 'G.Skill'
   const speed = groups[1]
   const cas = groups[2]
-  const sticks = groups[3] === 'Q' ? 4 : 2
+  const sticks = groups[3] === 'Q2' ? '8' : groups[3] === 'Q' ? '4' : '2'
   const size = groups[4]
   const code = groups[5]
   const ecc = false
@@ -86,25 +115,46 @@ function GSkill(sku) {
   let color = null
   if (code.indexOf('TZ') === 0) {
     series = 'Trident Z'
-    color = GskillColors[code.replace('TZ', '')]
+    color = GskillTridentZColors[code.replace('TZ', '')]
   } else if (code.indexOf('FX') === 0) {
     series = 'Flare X'
   } else if (code.indexOf('SX') === 0) {
     series = 'Sniper X'
   } else if (code[0] === 'V') {
     series = 'Ripjaws V'
-    color = GskillColors[code[1]]
+    color = GskillRipjawsColors[code[1]]
   }
 
   return Product(brand, series, sku, speed, cas, size, sticks, color, ecc)
 }
 
-// Samsung ECC (eg. M391A1K43BB1-CRC)
+// Samsung (eg. M391A1K43BB1-CRC)
 function Samsung(sku) {
-  return {
-    'M391A1K43BB1-CRC': Product('Samsung', 'ECC', 'M391A1K43BB1-CRC', '2400', '17', '8', '1', null, true),
-    'M391A2K43BB1-CRC': Product('Samsung', 'ECC', 'M391A2K43BB1-CRC', '2400', '17', '16', '1', null, true)
-  }[sku]
+  // https://regex101.com/r/smbbzc/1
+  const regex = /M3(\d{2})A(\d{1})K43(BB\d{1})-(C[A-Z]{2})/g
+  const groups = regex.exec(sku)
+  const brand = 'Samsung'
+  const code = groups[4]
+  const size = groups[2] === '2' ? '16' : '8'
+  const sticks = '1'
+  const color = null
+  const ecc = groups[1] === '91'
+  const series = ecc ? 'ECC' : 'NON-ECC'
+
+  let speed = ''
+  let cas = ''
+  if (code === 'CPB') {
+    speed = '2133'
+    cas = '15'
+  } else if (code === 'CRC') {
+    speed = '2400'
+    cas = '17'
+  } else if (code === 'CTD') {
+    speed = '2666'
+    cas = '19'
+  }
+
+  return Product(brand, series, sku, speed, cas, size, sticks, color, ecc)
 }
 
 // GeIL (eg. GEX416GB3200C16ADC)
@@ -117,7 +167,7 @@ function Geil(sku) {
   const speed = groups[3]
   const cas = groups[4]
   const size = groups[2]
-  const sticks = groups[5] === 'Q' ? 4 : 2
+  const sticks = groups[5] === 'Q' ? '4' : '2'
   const color = null
   const ecc = false
 
@@ -151,6 +201,61 @@ function KFA(sku) {
   return Product(brand, series, sku, speed, cas, size, sticks, color, ecc)
 }
 
+// Kingston Hyper X (eg. HX436C17PB3K4/32)
+function Kingston(sku) {
+  // https://regex101.com/r/sZJJWU/1
+  const regex = /HX4(\d{2})C(\d{2})PB3K(\d)\/(\d{2})/g
+  const groups = regex.exec(sku)
+  const brand = 'Kingston'
+  const series = 'Hyper X'
+  const speed = `${groups[1]}00`
+  const cas = groups[2]
+  const size = groups[4]
+  const sticks = groups[3]
+  const color = null
+  const ecc = false
+
+  return Product(brand, series, sku, speed, cas, size, sticks, color, ecc)
+}
+
+// Patriot Viper (eg. PV416G373C7K)
+function Patriot(sku) {
+  // https://regex101.com/r/yYVaIh/1
+  const regex = /P(V[EL]?)([WR])?4(\d{2})G(\d{3})C(\d{1})K/g
+  const groups = regex.exec(sku)
+  const brand = 'Patriot'
+  const series = 'Viper'
+  const cas = `1${groups[5]}`
+  const size = groups[3]
+  const sticks = '2'
+  const color = null
+  const ecc = false
+
+  let speed = `${groups[4]}0`
+  if (speed === '3730') {
+    speed = '3733'
+  }
+
+  return Product(brand, series, sku, speed, cas, size, sticks, color, ecc)
+}
+
+// SuperTalent (eg. F3600UX16G)
+function SuperTalent(sku) {
+  // https://regex101.com/r/kKlg3h/3
+  const regex = /F(\d{4})U([ABX])(\d{1,2})G/g
+  const groups = regex.exec(sku)
+  const brand = 'Super Talent'
+  const series = 'Project X'
+  const speed = groups[1]
+  const cas = '17'
+  const size = groups[3]
+  const sticks = groups[2] === 'X' ? '2' : '1'
+  const color = null
+  const ecc = false
+
+  return Product(brand, series, sku, speed, cas, size, sticks, color, ecc)
+}
+
 // Crucial Ballistix Elite (eg. BLE2K8G4D34AEEAK) - no info on cas latency
 function Crucial(sku) {
   return {
@@ -161,12 +266,16 @@ function Crucial(sku) {
 // turns any SKU into a Product
 export default function parse(sku) {
   return {
-    C: Corsair,
-    F: GSkill,
-    T: TeamGroup,
-    M: Samsung,
-    G: Geil,
-    H: KFA,
-    B: Crucial
-  }[sku[0]](sku)
+    CM: Corsair,
+    F4: GSkill,
+    F3: SuperTalent,
+    TD: TeamGroup,
+    TX: TeamGroup,
+    M3: Samsung,
+    GE: Geil,
+    HO: KFA,
+    HX: Kingston,
+    BL: Crucial,
+    PV: Patriot
+  }[sku.slice(0, 2)](sku)
 }

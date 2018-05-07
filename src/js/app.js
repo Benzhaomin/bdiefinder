@@ -21,6 +21,8 @@ domReady(function() {
   filters.add(ui('#cas-filters'), 'cass', 'cas')
   filters.add(ui('#latency-filters'), 'latencies', 'latency')
   filters.add(ui('#size-filters'), 'sizes', 'size')
+  filters.add(ui('#sticks-filters'), 'stickss', 'sticks')
+  filters.add(ui('#rank-filters'), 'ranks', 'rank')
   filters.reset()
   ui('#reset').on('click', filters.reset)
 

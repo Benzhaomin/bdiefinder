@@ -118,10 +118,31 @@ function GSkill(sku) {
 
 // Samsung ECC (eg. M391A1K43BB1-CRC)
 function Samsung(sku) {
-  return {
-    'M391A1K43BB1-CRC': Product('Samsung', 'ECC', 'M391A1K43BB1-CRC', '2400', '17', '8', '1', null, true),
-    'M391A2K43BB1-CRC': Product('Samsung', 'ECC', 'M391A2K43BB1-CRC', '2400', '17', '16', '1', null, true)
-  }[sku]
+  // https://regex101.com/r/smbbzc/1
+  const regex = /M3(\d{2})A(\d{1})K43(BB\d{1})-(C[A-Z]{2})/g
+  const groups = regex.exec(sku)
+  const brand = 'Samsung'
+  const code = groups[4]
+  const size = groups[2] === '2' ? '16' : '8'
+  const sticks = groups[2]
+  const color = null
+  const ecc = groups[1] === '91'
+  const series = ecc ? 'ECC' : 'NON-ECC'
+
+  let speed = ''
+  let cas = ''
+  if (code === 'CPB') {
+    speed = '2133'
+    cas = '15'
+  } else if (code === 'CRC') {
+    speed = '2400'
+    cas = '17'
+  } else if (code === 'CTD') {
+    speed = '2666'
+    cas = '19'
+  }
+
+  return Product(brand, series, sku, speed, cas, size, sticks, color, ecc)
 }
 
 // GeIL (eg. GEX416GB3200C16ADC)

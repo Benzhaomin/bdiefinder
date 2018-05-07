@@ -83,6 +83,10 @@ export const skus = [
   // Samsung ECC
   'M391A1K43BB1-CRC',
   'M391A2K43BB1-CRC',
+  'M378A1K43BB2-CPB',
+  'M378A1K43BB2-CRC',
+  'M378A1K43BB2-CTD',
+  'M391A1K43BB0-CPB',
 
   // G.Skill Flare X
   'F4-3200C14D-16GFX',

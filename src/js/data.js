@@ -138,6 +138,11 @@ export const skus = [
 
 export const sites = [
   {
+    country: 'Australia',
+    name: 'PCPartPicker Australia',
+    url: 'https://au.pcpartpicker.com/search/?q=%s'
+  },
+  {
     country: 'Brazil',
     name: 'Kabum',
     url: 'https://www.kabum.com.br/cgi-local/site/listagem/listagem.cgi?string=%s&btnG='
@@ -149,8 +154,8 @@ export const sites = [
   },
   {
     country: 'Canada',
-    name: 'Newegg Canada',
-    url: 'https://www.newegg.ca/Product/ProductList.aspx?Submit=ENE&DEPA=0&Description=%s'
+    name: 'Canada Computers',
+    url: 'https://www.canadacomputers.com/search_results.php?search_in=&keywords=%s'
   },
   {
     country: 'Canada',
@@ -159,8 +164,38 @@ export const sites = [
   },
   {
     country: 'Canada',
-    name: 'Canada Computers',
-    url: 'https://www.canadacomputers.com/search_results.php?search_in=&keywords=%s'
+    name: 'Newegg Canada',
+    url: 'https://www.newegg.ca/Product/ProductList.aspx?Submit=ENE&DEPA=0&Description=%s'
+  },
+  {
+    country: 'Canada',
+    name: 'PCPartPicker Canada',
+    url: 'https://ca.pcpartpicker.com/search/?q=%s'
+  },
+  {
+    country: 'Estonia',
+    name: 'Hinnavaatlus',
+    url: 'https://www.hinnavaatlus.ee/search/?query=%s'
+  },
+  {
+    country: 'France',
+    name: 'Amazon France',
+    url: 'https://www.amazon.fr/s/field-keywords=%s'
+  },
+  {
+    country: 'France',
+    name: 'Hardware.fr',
+    url: 'https://shop.hardware.fr/search/+ftxt-%s'
+  },
+  {
+    country: 'France',
+    name: 'Materiel.net',
+    url: 'https://www.materiel.net/achat/%s'
+  },
+  {
+    country: 'France',
+    name: 'Rue du commerce',
+    url: 'https://www.rueducommerce.fr/recherche/%s'
   },
   {
     country: 'Germany',
@@ -198,41 +233,6 @@ export const sites = [
     url: 'https://www.bestprice.gr/cat/2609/memory.html?q=%s'
   },
   {
-    country: 'Estonia',
-    name: 'Hinnavaatlus',
-    url: 'https://www.hinnavaatlus.ee/search/?query=%s'
-  },
-  {
-    country: 'Spain',
-    name: 'Amazon Spain',
-    url: 'https://www.amazon.es/s/field-keywords=%s'
-  },
-  {
-    country: 'Spain',
-    name: 'PC Componentes',
-    url: 'https://www.pccomponentes.com/buscar/?query=%s'
-  },
-  {
-    country: 'France',
-    name: 'Amazon France',
-    url: 'https://www.amazon.fr/s/field-keywords=%s'
-  },
-  {
-    country: 'France',
-    name: 'Hardware.fr',
-    url: 'https://shop.hardware.fr/search/+ftxt-%s'
-  },
-  {
-    country: 'France',
-    name: 'Materiel.net',
-    url: 'https://www.materiel.net/achat/%s'
-  },
-  {
-    country: 'France',
-    name: 'Rue du commerce',
-    url: 'https://www.rueducommerce.fr/recherche/%s'
-  },
-  {
     country: 'Italy',
     name: 'Amazon Italy',
     url: 'https://www.amazon.it/s/field-keywords=%s'
@@ -241,6 +241,11 @@ export const sites = [
     country: 'Italy',
     name: 'ePrice',
     url: 'https://www.eprice.it/search/qs=%s'
+  },
+  {
+    country: 'New Zealand',
+    name: 'PCPartPicker New Zealand',
+    url: 'https://nz.pcpartpicker.com/search/?q=%s'
   },
   {
     country: 'Poland',
@@ -298,6 +303,16 @@ export const sites = [
     url: 'https://www.compari.ro/CategorySearch.php?st=%s'
   },
   {
+    country: 'Spain',
+    name: 'Amazon Spain',
+    url: 'https://www.amazon.es/s/field-keywords=%s'
+  },
+  {
+    country: 'Spain',
+    name: 'PC Componentes',
+    url: 'https://www.pccomponentes.com/buscar/?query=%s'
+  },
+  {
     country: 'UK',
     name: 'Amazon UK',
     url: 'https://www.amazon.co.uk/s/field-keywords=%s'
@@ -308,6 +323,11 @@ export const sites = [
     url: 'https://www.overclockers.co.uk/search?sSearch=%s'
   },
   {
+    country: 'UK',
+    name: 'PCPartPicker UK',
+    url: 'https://uk.pcpartpicker.com/search/?q=%s'
+  },
+  {
     country: 'USA',
     name: 'Amazon',
     url: 'https://www.amazon.com/s/field-keywords=%s'
@@ -316,5 +336,10 @@ export const sites = [
     country: 'USA',
     name: 'Newegg US',
     url: 'https://www.newegg.com/Product/ProductList.aspx?Submit=ENE&DEPA=0&Description=%s'
+  },
+  {
+    country: 'USA',
+    name: 'PCPartPicker',
+    url: 'https://pcpartpicker.com/search/?cc=us&q=%s'
   }
 ]

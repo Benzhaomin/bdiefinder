@@ -227,6 +227,23 @@ function Patriot(sku) {
   return Product(brand, series, sku, speed, cas, size, sticks, color, ecc)
 }
 
+// SuperTalent (eg. F3600UX16G)
+function SuperTalent(sku) {
+  // https://regex101.com/r/kKlg3h/2
+  const regex = /F(\d{4})U([AX])(\d{1,2})G/g
+  const groups = regex.exec(sku)
+  const brand = 'Super Talent'
+  const series = 'Project X'
+  const speed = groups[1]
+  const cas = '17'
+  const size = groups[3]
+  const sticks = groups[2] === 'A' ? 1 : 2
+  const color = null
+  const ecc = false
+
+  return Product(brand, series, sku, speed, cas, size, sticks, color, ecc)
+}
+
 // Crucial Ballistix Elite (eg. BLE2K8G4D34AEEAK) - no info on cas latency
 function Crucial(sku) {
   return {
@@ -239,6 +256,7 @@ export default function parse(sku) {
   return {
     CM: Corsair,
     F4: GSkill,
+    F3: SuperTalent,
     TD: TeamGroup,
     TX: TeamGroup,
     M3: Samsung,

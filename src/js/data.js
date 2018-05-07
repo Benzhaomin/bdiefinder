@@ -88,6 +88,12 @@ export const skus = [
   'M378A1K43BB2-CTD',
   'M391A1K43BB0-CPB',
 
+  // Super Talent
+  'F3600UA8G',
+  'F3600UX16G',
+  'F3733UA8G',
+  'F3733UX16G',
+
   // G.Skill Flare X
   'F4-3200C14D-16GFX',
   'F4-3200C14Q-32GFX',

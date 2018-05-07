@@ -3,10 +3,19 @@
  */
 import {Product} from './product'
 
+const CorsairColors = {
+  null: 'black',
+  C: 'chrome',
+  M: 'black',
+  T: 'torque',
+  R: 'red',
+  W: 'white'
+}
+
 // Corsair (eg. CMD32GX4M4B3600C16)
 function Corsair(sku) {
-  // https://regex101.com/r/lM1T9q/1
-  const regex = /C([A-Z]{2})(\d{2})GX(\d)M(\d)[A-Z](\d{4})C(\d{2})/g
+  // https://regex101.com/r/lM1T9q/3
+  const regex = /C([A-Z]{2})(\d{2})GX(\d)M(\d)[A-Z](\d{4})C(\d{2})([A-Z])?/g
   const groups = regex.exec(sku)
   const brand = 'Corsair'
   const code = groups[1]
@@ -14,13 +23,13 @@ function Corsair(sku) {
   const sticks = groups[4]
   const speed = groups[5]
   const cas = groups[6]
-  const color = null
+  const color = CorsairColors[groups[7]]
   const ecc = false
 
   let series = ''
   if (code === 'MD') {
     series = 'Dominator'
-  } else if (code === 'MK' || code === 'MU') {
+  } else if (code === 'MK' || code === 'MU' || code === 'MR') {
     series = 'Vengeance'
   }
 

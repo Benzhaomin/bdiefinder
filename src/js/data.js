@@ -515,6 +515,46 @@ export const sites = [
     url: 'https://www.pccomponentes.com/buscar/?query=%s'
   },
   {
+    country: 'Switzerland',
+    name: 'Digitec',
+    url: 'https://www.digitec.ch/de/Search?q=%s'
+  },  
+  {
+    country: 'Switzerland',
+    name: 'Brack',
+    url: 'https://www.brack.ch/search?query=%s'
+  },  
+  {
+    country: 'Switzerland',
+    name: 'Microspot',
+    url: 'https://www.microspot.ch/de/search?search=%s'
+  },  
+  {
+    country: 'Switzerland',
+    name: 'Alternate.ch',
+    url: 'https://www.alternate.ch/html/search.html?query=%s'
+  },  
+  {
+    country: 'Switzerland',
+    name: 'Steg',
+    url: 'https://www.steg-electronics.ch/de/article/articleSearch.aspx?TXTSEARCH=%s'
+  },  
+  {
+    country: 'Switzerland',
+    name: 'Techmania',
+    url: 'https://www.techmania.ch/Search/DoSearch?suche=%s'
+  },  
+  {
+    country: 'Switzerland',
+    name: 'Ricardo',
+    url: 'https://www.ricardo.ch/de/s/%s'
+  },  
+  {
+    country: 'Switzerland',
+    name: 'toppreise.ch',
+    url: 'https://www.toppreise.ch/index.php?search=%s'
+  },
+  {
     country: 'UK',
     name: 'Amazon UK',
     url: 'https://www.amazon.co.uk/s/field-keywords=%s'

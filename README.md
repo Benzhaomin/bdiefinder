@@ -17,7 +17,7 @@ npm install
 or with nodeenv
 
 ```
-virtualenv env/python
+python3 -m venv env/python
 . env/python/bin/activate
 pip install nodeenv
 nodeenv env/node

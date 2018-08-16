@@ -380,6 +380,11 @@ export const sites = [
     url: 'https://www.hinnavaatlus.ee/search/?query=%s'
   },
   {
+    country: 'Finland',
+    name: "Jimm's",
+    url: 'https://www.jimms.fi/fi/Product/Search2?q=%s'
+  },
+  {
     country: 'France',
     name: 'Amazon France',
     url: 'https://www.amazon.fr/s/field-keywords=%s'
@@ -518,37 +523,37 @@ export const sites = [
     country: 'Switzerland',
     name: 'Digitec',
     url: 'https://www.digitec.ch/de/Search?q=%s'
-  },  
+  },
   {
     country: 'Switzerland',
     name: 'Brack',
     url: 'https://www.brack.ch/search?query=%s'
-  },  
+  },
   {
     country: 'Switzerland',
     name: 'Microspot',
     url: 'https://www.microspot.ch/de/search?search=%s'
-  },  
+  },
   {
     country: 'Switzerland',
     name: 'Alternate.ch',
     url: 'https://www.alternate.ch/html/search.html?query=%s'
-  },  
+  },
   {
     country: 'Switzerland',
     name: 'Steg',
     url: 'https://www.steg-electronics.ch/de/article/articleSearch.aspx?TXTSEARCH=%s'
-  },  
+  },
   {
     country: 'Switzerland',
     name: 'Techmania',
     url: 'https://www.techmania.ch/Search/DoSearch?suche=%s'
-  },  
+  },
   {
     country: 'Switzerland',
     name: 'Ricardo',
     url: 'https://www.ricardo.ch/de/s/%s'
-  },  
+  },
   {
     country: 'Switzerland',
     name: 'toppreise.ch',

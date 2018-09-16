@@ -375,6 +375,31 @@ export const sites = [
     url: 'https://ca.pcpartpicker.com/search/?q=%s'
   },
   {
+    country: 'Denmark',
+    name: 'Komplett',
+    url: 'https://www.komplett.dk/search?q=%s'
+  },
+  {
+    country: 'Denmark',
+    name: 'Proshop',
+    url: 'https://www.proshop.dk/?s=%s'
+  },
+  {
+    country: 'Denmark',
+    name: 'Computersalg',
+    url: 'https://www.computersalg.dk/l/0/s?sq=%s'
+  },
+  {
+    country: 'Denmark',
+    name: 'Alternate',
+    url: 'https://www.alternate.dk/html/search.html?query=%s'
+  },
+  {
+    country: 'Denmark',
+    name: 'Elgiganten',
+    url: 'https://www.elgiganten.dk/search?SearchTerm=%s'
+  },
+  {
     country: 'Estonia',
     name: 'Hinnavaatlus',
     url: 'https://www.hinnavaatlus.ee/search/?query=%s'

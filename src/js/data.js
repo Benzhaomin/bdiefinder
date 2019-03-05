@@ -352,12 +352,12 @@ export const sites = [
   {
     country: 'Canada',
     name: 'Amazon',
-    url: 'https://www.amazon.ca/s/field-keywords=%s'
+    url: 'https://www.amazon.ca/s/k=%s'
   },
   {
     country: 'Canada',
     name: 'Canada Computers',
-    url: 'https://www.canadacomputers.com/search_results.php?search_in=&keywords=%s'
+    url: 'https://www.canadacomputers.com/search/results_details.php?language=en&keywords=%s'
   },
   {
     country: 'Canada',
@@ -367,7 +367,7 @@ export const sites = [
   {
     country: 'Canada',
     name: 'Newegg Canada',
-    url: 'https://www.newegg.ca/Product/ProductList.aspx?Submit=ENE&DEPA=0&Description=%s'
+    url: 'https://www.newegg.ca/Product/ProductList.aspx?Submit=ENE&DEPA=0&Order=BESTMATCH&Description=%s'
   },
   {
     country: 'Canada',
@@ -412,7 +412,7 @@ export const sites = [
   {
     country: 'France',
     name: 'Amazon France',
-    url: 'https://www.amazon.fr/s/field-keywords=%s'
+    url: 'https://www.amazon.fr/s/?k=%s'
   },
   {
     country: 'France',
@@ -422,7 +422,7 @@ export const sites = [
   {
     country: 'France',
     name: 'Materiel.net',
-    url: 'https://www.materiel.net/achat/%s'
+    url: 'https://www.materiel.net/recherche/%s'
   },
   {
     country: 'France',
@@ -432,7 +432,7 @@ export const sites = [
   {
     country: 'Germany',
     name: 'Amazon Germany',
-    url: 'https://www.amazon.de/s/field-keywords=%s'
+    url: 'https://www.amazon.de/s/?k=%s'
   },
   {
     country: 'Germany',
@@ -467,7 +467,7 @@ export const sites = [
   {
     country: 'Italy',
     name: 'Amazon Italy',
-    url: 'https://www.amazon.it/s/field-keywords=%s'
+    url: 'https://www.amazon.it/s/?k=%s'
   },
   {
     country: 'Italy',
@@ -587,7 +587,7 @@ export const sites = [
   {
     country: 'UK',
     name: 'Amazon UK',
-    url: 'https://www.amazon.co.uk/s/field-keywords=%s'
+    url: 'https://www.amazon.co.uk/s/?k=%s'
   },
   {
     country: 'UK',
@@ -602,7 +602,7 @@ export const sites = [
   {
     country: 'USA',
     name: 'Amazon',
-    url: 'https://www.amazon.com/s/field-keywords=%s'
+    url: 'https://www.amazon.com/s/?k=%s'
   },
   {
     country: 'USA',

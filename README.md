@@ -14,7 +14,7 @@ To add SKUs or search engines please submit a pull request against [data.js](src
 npm install
 ```
 
-or with nodeenv
+or with [nodeenv](https://github.com/ekalinin/nodeenv)
 
 ```
 python3 -m venv env/python

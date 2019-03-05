@@ -31,14 +31,10 @@
 </section>
 
 <section id="filters">
-    <h2>
-        Filters
-        <button id="reset" class="reveal">Reset</button>
-    </h2>
+    <h2>Filters</h2>
 
-    <p class="lead">
-        Filter known B-Die SKUs or add custom ones.
-    </p>
+    <label>Display</label>
+    <div id="display-filters" class="button-group"></div>
 
     <label>Brand</label>
     <div id="model-filters" class="button-group"></div>
@@ -66,35 +62,28 @@
 
     <br/>
 
-    <h4>SKUs
+    <h3 title="Feel free to add custom ones">SKUs
         <small>(<span id="sku-count">0</span>)</small>
-    </h4>
+
+    <button id="reset" class="reveal">Reset</button>
+    </h3>
     <textarea id='skus'></textarea>
 </section>
 
 <section id="retailers">
-    <h2>Retailers</h2>
-
-    <p class="lead">
-        Build search links for these websites. Use presets or add custom search engines.
-    </p>
+    <h2>Country</h2>
 
     <div id="country-presets" class="button-group"></div>
 
     <br/>
 
-    <h4>Sites
+    <h3 title="Feel free to add custom ones">Retailers
         <small>(<span id="sites-count">0</span>)</small>
-    </h4>
+    </h3>
     <textarea id='sites'></textarea>
 </section>
 
 <section id="links">
-    <h2>
-        Links
-        <button id="refresh" class="reveal">Refresh links</button>
-    </h2>
-
     <div id="results"></div>
 </section>
 

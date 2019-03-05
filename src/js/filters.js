@@ -11,6 +11,7 @@ export default function Filters() {
     filters.push({
       container: uicontainer,
       values: valuescb,
+      value: null,
       filter: filtercb
     })
   }
@@ -33,12 +34,18 @@ export default function Filters() {
     }
   }
 
-  function apply() {
+  function apply(selected) {
     let products = store.products
+    selected = selected || {'displays': 'Simple'}
 
     for (const filter of filters) {
-      const value = filter.container.find('button.active').first()
-      filter.value = value ? value.value : null
+      if (filter.values in selected) {
+        filter.value = selected[filter.values]
+      }
+      else {
+        const button = filter.container.find('button.active').first()
+        filter.value = button ? button.value : null
+      }
       products = products[filter.filter](filter.value)
     }
 
@@ -64,6 +71,7 @@ export default function Filters() {
 
   return {
     add,
-    reset
+    reset,
+    apply
   }
 }

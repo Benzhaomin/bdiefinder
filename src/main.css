@@ -34,7 +34,7 @@ h2 {
     font-size: 2rem;
 }
 
-h4 {
+h3 {
     font-size: 1.6rem;
 }
 
@@ -126,7 +126,6 @@ footer a {
 
 #results h3 {
     margin-top: 1.2rem;
-    text-transform: capitalize;
 }
 
 #results a {

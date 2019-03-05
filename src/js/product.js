@@ -8,6 +8,10 @@ function getLatency(speed, cas) {
   return (1 / (parseInt(speed) / 1000 / 2)) * parseInt(cas)
 }
 
+function isExotic(product) {
+  return product.speed < 3000 || product.speed > 3600 || product.size < 16 || product.size > 32 || product.ecc
+}
+
 export function Product(brand, series, sku, speed, cas, size, sticks, color, ecc) {
   const latency = String(Math.round(getLatency(speed, cas) * 10) / 10)
   const rank = parseInt(size) / parseInt(sticks) === 16 ? '2' : '1'
@@ -31,6 +35,14 @@ export function Product(brand, series, sku, speed, cas, size, sticks, color, ecc
 export function Products(products) {
   function skus() {
     return sorted(set(products.map(product => product.sku)))
+  }
+
+  function display(value) {
+    return Products(products.filter(product => !value || value == 'Full' || !isExotic(product)))
+  }
+
+  function displays() {
+    return products.some(product => !isExotic(product)) ? ['Simple', 'Full'] : ['Full']
   }
 
   function brand(value) {
@@ -103,6 +115,8 @@ export function Products(products) {
 
   return {
     skus,
+    display,
+    displays,
     brand,
     brands,
     series,

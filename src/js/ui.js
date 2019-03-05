@@ -1,6 +1,8 @@
 /**
  * Dirty UI functions
  */
+/* eslint eslint-comments/no-use: off */
+/* eslint-disable github/unescaped-html-literal */
 /* assets */
 import '../index.html'
 import '../main.css'
@@ -56,7 +58,7 @@ export function onSitesChanged() {
 }
 
 function addSku(site, sku) {
-  const a = ui('<a></a>')
+  const a = ui(`<a></a>`)
   const url = site.attr('data-url').replace('%s', sku)
   a.attr('href', url)
   a.attr('target', '_blank')
@@ -70,13 +72,13 @@ export function showResults() {
 
   const skus = getSkus()
   if (!skus.length) {
-    results.append('<div class="warning">Add at least one SKU</div>')
+    results.append(`<div class="warning">Add at least one SKU</div>`)
     return
   }
 
   const sites = getSites()
   if (!sites.length) {
-    results.append('<div class="warning">Add at least one site</div>')
+    results.append(`<div class="warning">Add at least one site</div>`)
     return
   }
 
@@ -95,7 +97,7 @@ export function showResults() {
 }
 
 export function addToggle(text, value, target) {
-  const button = ui('<button type="button" class="toggle">')
+  const button = ui(`<button type="button" class="toggle">`)
   button.attr('value', value).text(text)
   target.append(button)
   button.on('click', () => {

@@ -5,7 +5,7 @@ import {sorted, set} from './python'
 
 // latency = cycle time here
 function getLatency(speed, cas) {
-  return 1 / (parseInt(speed) / 1000 / 2) * parseInt(cas)
+  return (1 / (parseInt(speed) / 1000 / 2)) * parseInt(cas)
 }
 
 export function Product(brand, series, sku, speed, cas, size, sticks, color, ecc) {

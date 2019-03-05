@@ -7,7 +7,7 @@ import {Products} from './product'
 import {store} from './store'
 import parse from './parsers'
 import Filters from './filters'
-import {addToggle, setCountry, showResults, ui, domReady, onSitesChanged} from './ui'
+import {addToggle, toggleHidden, setCountry, showResults, ui, domReady, onSitesChanged} from './ui'
 
 /* Products */
 store.products = Products(skus.map(sku => parse(sku)))
@@ -15,6 +15,7 @@ store.products = Products(skus.map(sku => parse(sku)))
 domReady(function() {
   // skus filters
   const filters = Filters()
+  filters.add(ui('#display-filters'), 'displays', 'display')
   filters.add(ui('#model-filters'), 'brands', 'brand')
   filters.add(ui('#series-filters'), 'seriess', 'series')
   filters.add(ui('#speed-filters'), 'speeds', 'speed')
@@ -23,8 +24,13 @@ domReady(function() {
   filters.add(ui('#size-filters'), 'sizes', 'size')
   filters.add(ui('#sticks-filters'), 'stickss', 'sticks')
   filters.add(ui('#rank-filters'), 'ranks', 'rank')
-  filters.reset()
+  // TODO: restore filters from URL
+  filters.apply()
   ui('#reset').on('click', filters.reset)
+  ui('#advanced').on('click', () => {
+    ui('#advanced').toggleClass('active')
+    ui('.advanced').each(node => toggleHidden(node))
+  })
 
   // countries presets
   const container = ui('#country-presets')

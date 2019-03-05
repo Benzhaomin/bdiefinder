@@ -1,6 +1,6 @@
 {
   "name": "bdiefinder",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": " Build search links for every variants of known B-Die RAM kits.",
   "private": true,
   "scripts": {

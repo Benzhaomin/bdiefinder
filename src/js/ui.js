@@ -72,13 +72,13 @@ export function showResults() {
 
   const skus = getSkus()
   if (!skus.length) {
-    results.append(`<div class="warning">Add at least one SKU</div>`)
+    results.append(`<div class="warning">No SKU => no links</div>`)
     return
   }
 
   const sites = getSites()
   if (!sites.length) {
-    results.append(`<div class="warning">Add at least one site</div>`)
+    results.append(`<div class="warning">Choose a country or add at least one retailer</div>`)
     return
   }
 
@@ -105,6 +105,12 @@ export function addToggle(text, value, target) {
     button.siblings().removeClass('active')
   })
   return button
+}
+
+export function toggleHidden(element) {
+  element = ui(element)
+  const toggle = element.attr('aria-hidden') === 'false' ? 'true' : 'false'
+  element.attr('aria-hidden', toggle)
 }
 
 export function domReady(fn) {

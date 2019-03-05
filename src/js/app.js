@@ -7,7 +7,7 @@ import {Products} from './product'
 import {store} from './store'
 import parse from './parsers'
 import Filters from './filters'
-import {addToggle, setCountry, showResults, ui, domReady, onSitesChanged} from './ui'
+import {addToggle, toggleHidden, setCountry, showResults, ui, domReady, onSitesChanged} from './ui'
 
 /* Products */
 store.products = Products(skus.map(sku => parse(sku)))
@@ -27,6 +27,10 @@ domReady(function() {
   // TODO: restore filters from URL
   filters.apply()
   ui('#reset').on('click', filters.reset)
+  ui('#advanced').on('click', () => {
+    ui('#advanced').toggleClass('active')
+    ui('.advanced').each(node => toggleHidden(node))
+  })
 
   // countries presets
   const container = ui('#country-presets')

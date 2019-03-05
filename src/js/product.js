@@ -38,11 +38,11 @@ export function Products(products) {
   }
 
   function display(value) {
-    return Products(products.filter(product => !value || value == 'Full' || !isExotic(product)))
+    return Products(products.filter(product => !value || value === 'All' || !isExotic(product)))
   }
 
   function displays() {
-    return products.some(product => !isExotic(product)) ? ['Simple', 'Full'] : ['Full']
+    return products.some(product => !isExotic(product)) ? ['Common', 'All'] : ['All']
   }
 
   function brand(value) {

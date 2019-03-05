@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>B-Die Finder</title>
-    <meta name="description" content="">
+    <meta name="description" content="Get search links for Samsung B-Die DDR 4 memory kits on Amazon, Newegg and many more.">
+    <meta name="keywords" content="Samsung,B-Die,DDR">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="icon" href="icon.png">
@@ -19,8 +20,19 @@
     </h1>
 
     <p class="lead">
-        This tool can generate links to search pages on Amazon/Newegg/etc for a bunch of similar kits, all Samsung
-        B-Die.<br>
+        Get search links for Samsung B-Die DDR 4 memory kits on Amazon, Newegg and many more.<br>
+    </p>
+</section>
+
+<section id="filters">
+    <div class="button-group right">
+        <button id="reset" class="reveal">Reset</button>
+        <button id="advanced" class="toggle" title="Switch between the simple and advance UI">Toggle EZ mode</button>
+    </div>
+
+    <h3>Search <small>(<b id="sku-count">0</b> kits)</small></h3>
+
+    <p class="advanced" aria-hidden="true">
         Speed and timings
         <a href="https://www.reddit.com/r/Amd/comments/8clf15/bdie_finder/dxgd1d9/"
            target="_blank">explained on reddit</a>.
@@ -28,13 +40,11 @@
         <a href="https://www.hardwareluxx.de/community/f13/die-ultimative-hardwareluxx-samsung-8gb-b-die-liste-alle-hersteller-07-05-18-a-1161530.html"
                target="_blank">hardwareluxx.de</a>.
     </p>
-</section>
 
-<section id="filters">
-    <h2>Filters</h2>
-
-    <label>Display</label>
-    <div id="display-filters" class="button-group"></div>
+    <div class="advanced" aria-hidden="true">
+        <label title='include all kits or only common ones'>Display</label>
+        <div id="display-filters" class="button-group"></div>
+    </div>
 
     <label>Brand</label>
     <div id="model-filters" class="button-group"></div>
@@ -48,39 +58,44 @@
     <label>Cas</label>
     <div id="cas-filters" class="button-group"></div>
 
-    <label title="first word access time (ns)">Latency</label>
-    <div id="latency-filters" class="button-group"></div>
+    <div class="advanced" aria-hidden="true">
+        <label title="first word access time (ns)">Latency</label>
+        <div id="latency-filters" class="button-group"></div>
+    </div>
 
     <label title="total size (GB)">Size</label>
     <div id="size-filters" class="button-group"></div>
 
-    <label>Sticks</label>
-    <div id="sticks-filters" class="button-group"></div>
+    <div class="advanced" aria-hidden="true">
+        <label>Sticks</label>
+        <div id="sticks-filters" class="button-group"></div>
+    </div>
 
-    <label title="single or dual rank">Ranks</label>
-    <div id="rank-filters" class="button-group"></div>
+    <div class="advanced" aria-hidden="true">
+        <label title="single or dual rank">Ranks</label>
+        <div id="rank-filters" class="button-group"></div>
+    </div>
 
-    <br/>
+    <div class="advanced" aria-hidden="true">
+        <br/>
 
-    <h3 title="Feel free to add custom ones">SKUs
-        <small>(<span id="sku-count">0</span>)</small>
-
-    <button id="reset" class="reveal">Reset</button>
-    </h3>
-    <textarea id='skus'></textarea>
+        <h3>SKUs</h3>
+        <textarea id='skus'></textarea>
+        <br/>
+        <br/>
+    </div>
 </section>
 
-<section id="retailers">
-    <h2>Country</h2>
-
+<section id="country">
+    <h3>Country <small>(<b id="sites-count">0</b> retailers)</small></h3>
     <div id="country-presets" class="button-group"></div>
 
-    <br/>
+    <div class="advanced" aria-hidden="true">
+        <br/>
 
-    <h3 title="Feel free to add custom ones">Retailers
-        <small>(<span id="sites-count">0</span>)</small>
-    </h3>
-    <textarea id='sites'></textarea>
+        <h3>Retailers</h3>
+        <textarea id='sites'></textarea>
+    </div>
 </section>
 
 <section id="links">

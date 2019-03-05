@@ -36,13 +36,12 @@ export default function Filters() {
 
   function apply(selected) {
     let products = store.products
-    selected = selected || {'displays': 'Simple'}
+    selected = selected || {displays: 'Common'}
 
     for (const filter of filters) {
       if (filter.values in selected) {
         filter.value = selected[filter.values]
-      }
-      else {
+      } else {
         const button = filter.container.find('button.active').first()
         filter.value = button ? button.value : null
       }

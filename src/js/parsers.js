@@ -31,12 +31,42 @@ function ADATA(sku) {
   return Product(brand, series, sku, speed, cas, size, sticks, color, ecc)
 }
 
-// Apacer
+// Apacer (eg. EK.16GA5.GGBK2)
 function Apacer(sku) {
   return {
     'EK.16GA5.GGBK2': Product('Apacer', 'Blade', sku, '4133', '18', '16', '2', null, false),
     'EK.16GA4.GFAK2': Product('Apacer', 'Commando', sku, '3600', '17', '16', '2', null, false)
   }[sku]
+}
+
+// Avexir (eg. AVD4UZ136001708G-2BZ1RR)
+function Avexir(sku) {
+  // https://regex101.com/r/z0CUon/3
+  const regex = /AVD4UZ1([\d]{4})([\d]{2})[0]?([1,3,6]?[2,4,6,8])G-([\d])([\w]{3})([\w]{2})/g
+  const groups = regex.exec(sku)
+  const brand = 'Avexir'
+  const code = groups[5]
+  const size = (parseInt(groups[3]) * parseInt(groups[4])).toString()
+  const speed = groups[1]
+  const cas = groups[2]
+  const sticks = groups[4]
+  const ecc = false
+
+  let series = ''
+  if (code === 'BZ1') {
+    series = 'Blitz'
+  }
+
+  let color = groups[6]
+  if (color === 'RR') {
+    color = 'Red'
+  } else if (color === 'GY') {
+    color = 'Gold'
+  } else if (code === 'SW') {
+    color = 'White'
+  }
+
+  return Product(brand, series, sku, speed, cas, size, sticks, color, ecc)
 }
 
 const CorsairColors = {
@@ -302,6 +332,7 @@ function Crucial(sku) {
 // turns any SKU into a Product
 export default function parse(sku) {
   return {
+    AV: Avexir,
     AX: ADATA,
     BL: Crucial,
     CM: Corsair,

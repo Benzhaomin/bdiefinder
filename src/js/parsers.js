@@ -31,6 +31,14 @@ function ADATA(sku) {
   return Product(brand, series, sku, speed, cas, size, sticks, color, ecc)
 }
 
+// Apacer
+function Apacer(sku) {
+  return {
+    'EK.16GA5.GGBK2': Product('Apacer', 'Blade', sku, '4133', '18', '16', '2', null, false),
+    'EK.16GA4.GFAK2': Product('Apacer', 'Commando', sku, '3600', '17', '16', '2', null, false)
+  }[sku]
+}
+
 const CorsairColors = {
   null: 'black',
   C: 'chrome',
@@ -287,7 +295,7 @@ function SuperTalent(sku) {
 // Crucial Ballistix Elite (eg. BLE2K8G4D34AEEAK) - no info on cas latency
 function Crucial(sku) {
   return {
-    BLE2K8G4D34AEEAK: Product('Crucial', 'Ballistix Elite', 'BLE2K8G4D34AEEAK', '3466', '16', '16', '2', null, false)
+    BLE2K8G4D34AEEAK: Product('Crucial', 'Ballistix Elite', sku, '3466', '16', '16', '2', null, false)
   }[sku]
 }
 
@@ -295,16 +303,17 @@ function Crucial(sku) {
 export default function parse(sku) {
   return {
     AX: ADATA,
+    BL: Crucial,
     CM: Corsair,
-    F4: GSkill,
+    EK: Apacer,
     F3: SuperTalent,
-    TD: TeamGroup,
-    TX: TeamGroup,
-    M3: Samsung,
+    F4: GSkill,
     GE: Geil,
     HO: KFA,
     HX: Kingston,
-    BL: Crucial,
-    PV: Patriot
+    M3: Samsung,
+    PV: Patriot,
+    TD: TeamGroup,
+    TX: TeamGroup
   }[sku.slice(0, 2)](sku)
 }

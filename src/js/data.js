@@ -11,6 +11,10 @@ export const skus = [
   'AX4U413338G19-SR80',
   'AX4U413338G19-DR80',
 
+  // Apacer
+  'EK.16GA5.GGBK2',
+  'EK.16GA4.GFAK2',
+
   // Corsair Dominator
   'CMD16GX4M2B3600C18',
   'CMD32GX4M4B3600C16',

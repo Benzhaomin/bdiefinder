@@ -11,7 +11,7 @@ function ADATA(sku) {
   const brand = 'ADATA'
   const code = groups[5]
   const size = groups[2]
-  const sticks = groups[4] === 'Q' ? 4 : groups[4] === 'D' ? 2 : 1
+  const sticks = groups[4] === 'Q' ? '4' : groups[4] === 'D' ? '2' : '1'
   const speed = groups[1]
   const cas = groups[3]
   const color = null
@@ -305,17 +305,22 @@ function HOF(sku) {
   return Product(brand, series, sku, speed, cas, size, sticks, color, ecc)
 }
 
+const KingstonSeries = {
+  PB3: 'Hyper X Predator',
+  PB3A: 'Hyper X Predator RGB'
+}
+
 // Kingston Hyper X (eg. HX436C17PB3K4/32)
 function Kingston(sku) {
-  // https://regex101.com/r/sZJJWU/1
-  const regex = /HX4(\d{2})C(\d{2})PB3K(\d)\/(\d{2})/g
+  // https://regex101.com/r/sZJJWU/2
+  const regex = /HX4(\d{2})C(\d{2})(PB3A?)K?([\d]?)\/(\d{1,2})/g
   const groups = regex.exec(sku)
   const brand = 'Kingston'
-  const series = 'Hyper X'
-  const speed = `${groups[1]}00`
+  const series = KingstonSeries[groups[3]]
+  const speed = groups[1] === '13' ? '4133' : `${groups[1]}00`
   const cas = groups[2]
-  const size = groups[4]
-  const sticks = groups[3]
+  const size = groups[5]
+  const sticks = groups[4] || '1'
   const color = null
   const ecc = false
 

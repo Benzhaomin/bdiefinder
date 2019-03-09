@@ -161,6 +161,11 @@ const GskillTridentZColors = {
   SWF: 'silver-white'
 }
 
+const GskillTridentZRoyalColors = {
+  S: 'silver',
+  G: 'gold'
+}
+
 const GskillRipjawsColors = {
   G: 'black',
   K: 'black',
@@ -188,6 +193,9 @@ function GSkill(sku) {
   if (code.indexOf('TZ') === 0) {
     series = 'Trident Z'
     color = GskillTridentZColors[code.replace('TZ', '')]
+  } else if (code.indexOf('TR') === 0) {
+    series = 'Trident Z Royal'
+    color = GskillTridentZRoyalColors[code.replace('TR', '')]
   } else if (code.indexOf('FX') === 0) {
     series = 'Flare X'
   } else if (code.indexOf('SX') === 0) {
@@ -195,6 +203,8 @@ function GSkill(sku) {
   } else if (code[0] === 'V') {
     series = 'Ripjaws V'
     color = GskillRipjawsColors[code[1]]
+  } else if (code.indexOf('RS') === 0) {
+    series = 'Ripjaws so-dimm'
   }
 
   return Product(brand, series, sku, speed, cas, size, sticks, color, ecc)

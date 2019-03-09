@@ -239,23 +239,35 @@ function Samsung(sku) {
   return Product(brand, series, sku, speed, cas, size, sticks, color, ecc)
 }
 
-// GeIL (eg. GEX416GB3200C16ADC)
+const GeilSeries = {
+  EX: 'EVO X',
+  EXB: 'EVO X',
+  EXG: 'EVO X',
+  EXW: 'EVO X',
+  FR: 'EVO Forza',
+  PR: 'EVO Potenza',
+  WW: 'White Dragon',
+  LS: 'Super Luce RGB Sync'
+}
+
+// GEiL (eg. GEX416GB3200C16ADC)
 function Geil(sku) {
-  // https://regex101.com/r/mOcKR8/7/
-  const regex = /G([A-Z]{2,6})4(\d{1,2})GB(\d{4})C(\d{2})A?(\w)C/g
+  // https://regex101.com/r/mOcKR8/8
+  const regex = /G([A-Z]{2,6})\w(\d{1,2})GB(\d{4})C(\d{2})A?(\w)C/g
   const groups = regex.exec(sku)
-  const brand = 'GeIL'
-  const code = groups[1]
+  const brand = 'GEiL'
+  const series = GeilSeries[groups[1]] || 'das'
   const speed = groups[3]
   const cas = groups[4]
   const size = groups[2]
   const sticks = groups[5] === 'Q' ? '4' : '2'
-  const color = null
   const ecc = false
 
-  let series = ''
-  if (code === 'EX') {
-    series = 'Evo X'
+  let color = ''
+  if (sku.indexOf('EXG') > 0 || sku.indexOf('EXW') > 0) {
+    color = 'white'
+  } else if (sku.indexOf('EX4') > 0 || sku.indexOf('EXB') > 0) {
+    color = 'black'
   }
 
   return Product(brand, series, sku, speed, cas, size, sticks, color, ecc)
@@ -366,6 +378,10 @@ export default function parse(sku) {
     F3: SuperTalent,
     F4: GSkill,
     GE: Geil,
+    GF: Geil,
+    GL: Geil,
+    GP: Geil,
+    GW: Geil,
     HO: KFA,
     HX: Kingston,
     M3: Samsung,

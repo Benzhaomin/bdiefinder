@@ -273,23 +273,33 @@ function Geil(sku) {
   return Product(brand, series, sku, speed, cas, size, sticks, color, ecc)
 }
 
-// KFA2 HOF (eg. HOF4CXLBS3600K17LD162K)
-function KFA(sku) {
-  // https://regex101.com/r/WBL7z2/2
-  const regex = /([A-Z]{3,6})4.*?(\d{4})[A-Z](\d{2})[A-Z]{2}(\d{2})(\d)K/g
+// Hall of Fame / Galax (eg. HOF4CXLBS3600K17LD162C) or KFA2 (eg. HOF4CXLBS3600K17LD162K)
+function HOF(sku) {
+  // https://regex101.com/r/WBL7z2/4
+  const regex = /([A-Z]{3,6})4([A-Z]{3})1?([A-Z]{2,3})(\d{4})[A-Z](\d{2})[A-Z]{2}(\d{2})(\d)([CK])/g
   const groups = regex.exec(sku)
-  const brand = 'KFA2'
-  const code = groups[1]
-  const speed = groups[2]
-  const cas = groups[3]
-  const size = groups[4]
-  const sticks = groups[5]
+  const brand = groups[8] === 'K' ? 'KFA2' : 'Galax'
+  const code = groups[3]
+  const speed = groups[4]
+  const cas = groups[5]
+  let size = groups[6]
+  const sticks = groups[7]
   const color = null
   const ecc = false
 
   let series = ''
-  if (code === 'HOF') {
-    series = 'HOF'
+  if (code === 'BS') {
+    series = 'Hall of Fame'
+  } else if (code === 'BST') {
+    series = 'Hall of Fame Extreme'
+  } else if (code === 'CST') {
+    series = 'Hall of Fame II'
+  }
+
+  // GALAX HOF Extreme OC Lab Edition DDR4-4600MHz 16GB Kit
+  // see http://galaxstore.net/GALAX-HOF-Extreme-OC-Lab-Edition-DDR4-4600MHz-16GB-Kit_p_182.html
+  if (sku === 'HOF4KXL1BST4600S19TC081CZGG') {
+    size = '16'
   }
 
   return Product(brand, series, sku, speed, cas, size, sticks, color, ecc)
@@ -382,7 +392,7 @@ export default function parse(sku) {
     GL: Geil,
     GP: Geil,
     GW: Geil,
-    HO: KFA,
+    HO: HOF,
     HX: Kingston,
     M3: Samsung,
     PV: Patriot,

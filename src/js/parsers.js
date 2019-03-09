@@ -327,23 +327,27 @@ function Kingston(sku) {
   return Product(brand, series, sku, speed, cas, size, sticks, color, ecc)
 }
 
+const PatriotSeries = {
+  V: 'Viper 4',
+  VE: 'Viper 4 Elite',
+  VLW: 'Viper LED',
+  VR: 'Viper RGB',
+  VS: 'Viper Steel'
+}
+
 // Patriot Viper (eg. PV416G373C7K)
 function Patriot(sku) {
-  // https://regex101.com/r/yYVaIh/1
-  const regex = /P(V[EL]?)([WR])?4(\d{2})G(\d{3})C(\d{1})K/g
+  // https://regex101.com/r/yYVaIh/3
+  const regex = /P([VELWRS]*)4(\d{2})G(\d{3})C(\d{1})K/g
   const groups = regex.exec(sku)
   const brand = 'Patriot'
-  const series = 'Viper'
-  const cas = `1${groups[5]}`
-  const size = groups[3]
+  const series = PatriotSeries[groups[1]]
+  const speed = `${groups[3]}${groups[3][2]}`
+  const cas = `1${groups[4]}`
+  const size = groups[2]
   const sticks = '2'
   const color = null
   const ecc = false
-
-  let speed = `${groups[4]}0`
-  if (speed === '3730') {
-    speed = '3733'
-  }
 
   return Product(brand, series, sku, speed, cas, size, sticks, color, ecc)
 }

@@ -2,12 +2,12 @@
  * Main app
  */
 import {sorted, set} from './python'
-import {skus, sites} from './data'
+import {skus, sites, countries} from './data'
 import {Products} from './product'
 import {store} from './store'
 import parse from './parsers'
 import Filters from './filters'
-import {addToggle, toggleHidden, setCountry, showResults, ui, domReady, onSitesChanged} from './ui'
+import {addToggle, toggleHidden, setCountry, showResults, ui, domReady} from './ui'
 
 /* Products */
 store.products = Products(skus.map(sku => parse(sku)))
@@ -34,12 +34,19 @@ domReady(function() {
 
   // countries presets
   const container = ui('#country-presets')
-  const countries = sorted(set(sites.map(site => site.country)))
-  for (const name of countries) {
-    const button = addToggle(name, name, container)
-    button.on('click', () => setCountry(name))
+  const codes = sorted(set(sites.map(site => site.country)))
+  for (const code of codes) {
+    const button = addToggle(code, code, container, countries[code])
+    button.on('click', () => setCountry(code))
+
+    // TODO: restore filters from URL
+    if (code === 'WWW') {
+      button.addClass('active')
+    }
   }
-  onSitesChanged()
+
+  // TODO: restore filters from URL
+  setCountry('WWW')
 
   // results
   const refresh = ui('#refresh')

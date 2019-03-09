@@ -105,6 +105,20 @@ section {
     padding: 0 0.5rem;
 }
 
+table {
+    width: 100%;
+}
+th {
+    text-align: left;
+    background-color: rgba(0,0,0,.15);
+}
+td, th {
+    padding: .5rem;
+}
+tbody tr:nth-of-type(2n) {
+    background-color: rgba(0,0,0,.05);
+}
+
 .right {
     float: right;
 }
@@ -141,6 +155,7 @@ footer a {
 
 #results a {
     display: block;
+    font-size: 0.6rem;
 }
 
 div.warning {
@@ -180,9 +195,6 @@ div.warning {
     }
 
     #results a {
-        display: inline-block;
-        font-size: 0.8rem;
-        width: 25%;
     }
 
 }

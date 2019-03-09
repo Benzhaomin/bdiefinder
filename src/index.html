@@ -25,12 +25,7 @@
 </section>
 
 <section id="filters">
-    <div class="button-group right">
-        <button id="reset" class="reveal">Reset</button>
-        <button id="advanced" class="toggle" title="Switch between the simple and advance UI">Advanced Mode</button>
-    </div>
-
-    <h3>Search <small>(<b id="sku-count">0</b> kits)</small></h3>
+    <h3>Search</h3>
 
     <p>
         Speed and timings
@@ -41,14 +36,21 @@
                target="_blank">hardwareluxx.de</a>.
     </p>
 
+    <div class="button-group right">
+        <button id="reset" class="reveal">Reset</button>
+        <button id="advanced" class="toggle" title="Switch between the simple and advanced UI">Advanced Mode</button>
+    </div>
+
     <label title='include all kits or only common ones'>Display</label>
     <div id="display-filters" class="button-group"></div>
 
     <label>Brand</label>
     <div id="model-filters" class="button-group"></div>
 
-    <label>Series</label>
-    <div id="series-filters" class="button-group"></div>
+    <div class="advanced" aria-hidden="true">
+        <label>Series</label>
+        <div id="series-filters" class="button-group"></div>
+    </div>
 
     <label title="not frequency (MT/s)">Speed</label>
     <div id="speed-filters" class="button-group"></div>
@@ -74,6 +76,9 @@
         <div id="rank-filters" class="button-group"></div>
     </div>
 
+    <label>Country</label>
+    <div id="country-presets" class="button-group"></div>
+
     <div class="advanced" aria-hidden="true">
         <br/>
 
@@ -85,19 +90,34 @@
 </section>
 
 <section id="country">
-    <h3>Country <small>(<b id="sites-count">0</b> retailers)</small></h3>
-    <div id="country-presets" class="button-group"></div>
-
     <div class="advanced" aria-hidden="true">
-        <br/>
-
         <h3>Retailers</h3>
         <textarea id='sites'></textarea>
     </div>
 </section>
 
 <section id="links">
-    <div id="results"></div>
+    <div class="advanced" aria-hidden="true">
+        <button id="refresh" class="reveal">Refresh</button>
+        <br/>
+        <br/>
+    </div>
+
+    <h3><span id="sku-count">0</span><small> results</small></h3>
+
+    <table>
+    <thead>
+        <tr>
+            <th>Series</th>
+            <th>Speed</th>
+            <th>Size</th>
+            <th>SKU</th>
+            <th>Links</th>
+        </tr>
+    </thead>
+    <tbody id="results">
+    </tbody>
+    </table>
 </section>
 
 <footer>

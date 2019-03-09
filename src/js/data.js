@@ -495,254 +495,269 @@ export const skus = [
 
 export const sites = [
   {
-    country: 'Australia',
+    country: 'AU',
     name: 'PCPartPicker Australia',
     url: 'https://au.pcpartpicker.com/search/?q=%s'
   },
   {
-    country: 'Brazil',
+    country: 'BR',
     name: 'Kabum',
     url: 'https://www.kabum.com.br/cgi-local/site/listagem/listagem.cgi?string=%s&btnG='
   },
   {
-    country: 'Canada',
+    country: 'CA',
     name: 'Amazon',
     url: 'https://www.amazon.ca/s/k=%s'
   },
   {
-    country: 'Canada',
+    country: 'CA',
     name: 'Canada Computers',
     url: 'https://www.canadacomputers.com/search/results_details.php?language=en&keywords=%s'
   },
   {
-    country: 'Canada',
+    country: 'CA',
     name: 'Memory Express',
     url: 'https://www.memoryexpress.com/Search/Products?Search=%s'
   },
   {
-    country: 'Canada',
+    country: 'CA',
     name: 'Newegg Canada',
     url: 'https://www.newegg.ca/Product/ProductList.aspx?Submit=ENE&DEPA=0&Order=BESTMATCH&Description=%s'
   },
   {
-    country: 'Canada',
+    country: 'CA',
     name: 'PCPartPicker Canada',
     url: 'https://ca.pcpartpicker.com/search/?q=%s'
   },
   {
-    country: 'Denmark',
+    country: 'DK',
     name: 'Komplett',
     url: 'https://www.komplett.dk/search?q=%s'
   },
   {
-    country: 'Denmark',
+    country: 'DK',
     name: 'Proshop',
     url: 'https://www.proshop.dk/?s=%s'
   },
   {
-    country: 'Denmark',
+    country: 'DK',
     name: 'Computersalg',
     url: 'https://www.computersalg.dk/l/0/s?sq=%s'
   },
   {
-    country: 'Denmark',
+    country: 'DK',
     name: 'Alternate',
     url: 'https://www.alternate.dk/html/search.html?query=%s'
   },
   {
-    country: 'Denmark',
+    country: 'DK',
     name: 'Elgiganten',
     url: 'https://www.elgiganten.dk/search?SearchTerm=%s'
   },
   {
-    country: 'Estonia',
+    country: 'EE',
     name: 'Hinnavaatlus',
     url: 'https://www.hinnavaatlus.ee/search/?query=%s'
   },
   {
-    country: 'Finland',
+    country: 'FI',
     name: "Jimm's",
     url: 'https://www.jimms.fi/fi/Product/Search2?q=%s'
   },
   {
-    country: 'France',
+    country: 'FR',
     name: 'Amazon France',
-    url: 'https://www.amazon.fr/s/?k=%s'
+    url: 'https://www.amazon.fr/s?k=%s'
   },
   {
-    country: 'France',
+    country: 'FR',
     name: 'Hardware.fr',
     url: 'https://shop.hardware.fr/search/+ftxt-%s'
   },
   {
-    country: 'France',
+    country: 'FR',
     name: 'Materiel.net',
     url: 'https://www.materiel.net/recherche/%s'
   },
   {
-    country: 'France',
+    country: 'FR',
+    name: 'leDénicheur',
+    url: 'https://ledenicheur.fr/category.php?k=1790#rparams=ss=%s'
+  },
+  {
+    country: 'FR',
     name: 'Rue du commerce',
     url: 'https://www.rueducommerce.fr/recherche/%s'
   },
   {
-    country: 'Germany',
-    name: 'Amazon Germany',
-    url: 'https://www.amazon.de/s/?k=%s'
+    country: 'FR',
+    name: 'Top Achat',
+    url: 'https://www.topachat.com/pages/recherche.php?mc=%s'
   },
   {
-    country: 'Germany',
+    country: 'DE',
+    name: 'Amazon Germany',
+    url: 'https://www.amazon.de/s?k=%s'
+  },
+  {
+    country: 'DE',
     name: 'Alternate',
     url: 'https://www.alternate.de/html/search.html?query=%s'
   },
   {
-    country: 'Germany',
+    country: 'DE',
     name: 'Caseking',
     url: 'https://www.caseking.de/search?sSearch=%s'
   },
   {
-    country: 'Germany',
+    country: 'DE',
     name: 'Geizhals',
     url: 'https://geizhals.de/?fs=%s'
   },
   {
-    country: 'Germany',
+    country: 'DE',
     name: 'Mindfactory',
     url: 'https://www.mindfactory.de/search_result.php?search_query=%s'
   },
   {
-    country: 'Greece',
+    country: 'GR',
     name: 'Skroutz',
     url: 'https://skroutz.gr/search?keyphrase=%s'
   },
   {
-    country: 'Greece',
+    country: 'GR',
     name: 'Bestprice',
     url: 'https://www.bestprice.gr/cat/2609/memory.html?q=%s'
   },
   {
-    country: 'Italy',
+    country: 'IT',
     name: 'Amazon Italy',
     url: 'https://www.amazon.it/s/?k=%s'
   },
   {
-    country: 'Italy',
+    country: 'IT',
     name: 'ePrice',
     url: 'https://www.eprice.it/search/qs=%s'
   },
   {
-    country: 'New Zealand',
-    name: 'PCPartPicker New Zealand',
+    country: 'NZ',
+    name: 'PCPartPicker NZ',
     url: 'https://nz.pcpartpicker.com/search/?q=%s'
   },
   {
-    country: 'Poland',
+    country: 'PL',
     name: 'x-kom',
     url: 'https://www.x-kom.pl/szukaj?q=%s'
   },
   {
-    country: 'Poland',
+    country: 'PL',
     name: 'morele.net',
     url: 'https://www.morele.net/wyszukiwarka/0/0/,,,,,,,,,,,,/1/?q=%s'
   },
   {
-    country: 'Poland',
+    country: 'PL',
     name: 'Proline',
     url: 'https://proline.pl/?qp=%s'
   },
   {
-    country: 'Poland',
+    country: 'PL',
     name: 'emag',
     url: 'https://www.emag.pl/search/%s'
   },
   {
-    country: 'Portugal',
+    country: 'PT',
     name: 'PC Diga',
     url: 'https://www.pcdiga.com/catalogsearch/result/?q=%s'
   },
   {
-    country: 'Portugal',
+    country: 'PT',
     name: 'Global Data',
     url: 'https://www.globaldata.pt/shop/advancedsearch/result/?q=%s'
   },
   {
-    country: 'Portugal',
+    country: 'PT',
     name: 'Chiptec',
     url: 'https://www.chiptec.net/catalogsearch/result/?cat=0&q=%s'
   },
   {
-    country: 'Portugal',
+    country: 'PT',
     name: 'Alientech',
     url: 'https://www.alientech.pt/?s=%s&post_type=product'
   },
   {
-    country: 'Portugal',
+    country: 'PT',
     name: 'Novo Atalho',
     url: 'https://www.novoatalho.pt/pt-PT/pesquisa.html?txton=products&txtsearch=%s'
   },
   {
-    country: 'Romania',
+    country: 'RO',
     name: 'Price.ro',
     url: 'https://www.price.ro/index.php?action=q&text=%s'
   },
   {
-    country: 'Romania',
+    country: 'RO',
     name: 'Compari',
     url: 'https://www.compari.ro/CategorySearch.php?st=%s'
   },
   {
-    country: 'Spain',
+    country: 'ES',
     name: 'Amazon Spain',
-    url: 'https://www.amazon.es/s/field-keywords=%s'
+    url: 'https://www.amazon.es/s?k=%s'
   },
   {
-    country: 'Spain',
+    country: 'ES',
     name: 'PC Componentes',
     url: 'https://www.pccomponentes.com/buscar/?query=%s'
   },
   {
-    country: 'Switzerland',
+    country: 'SE',
+    name: 'Prisjakt',
+    url: 'https://www.prisjakt.nu/kategori.php?k=1790#rparams=ss=%s'
+  },
+  {
+    country: 'CH',
     name: 'Digitec',
     url: 'https://www.digitec.ch/de/Search?q=%s'
   },
   {
-    country: 'Switzerland',
+    country: 'CH',
     name: 'Brack',
     url: 'https://www.brack.ch/search?query=%s'
   },
   {
-    country: 'Switzerland',
+    country: 'CH',
     name: 'Microspot',
     url: 'https://www.microspot.ch/de/search?search=%s'
   },
   {
-    country: 'Switzerland',
+    country: 'CH',
     name: 'Alternate.ch',
     url: 'https://www.alternate.ch/html/search.html?query=%s'
   },
   {
-    country: 'Switzerland',
+    country: 'CH',
     name: 'Steg',
     url: 'https://www.steg-electronics.ch/de/article/articleSearch.aspx?TXTSEARCH=%s'
   },
   {
-    country: 'Switzerland',
+    country: 'CH',
     name: 'Techmania',
     url: 'https://www.techmania.ch/Search/DoSearch?suche=%s'
   },
   {
-    country: 'Switzerland',
+    country: 'CH',
     name: 'Ricardo',
     url: 'https://www.ricardo.ch/de/s/%s'
   },
   {
-    country: 'Switzerland',
+    country: 'CH',
     name: 'toppreise.ch',
     url: 'https://www.toppreise.ch/index.php?search=%s'
   },
   {
     country: 'UK',
     name: 'Amazon UK',
-    url: 'https://www.amazon.co.uk/s/?k=%s'
+    url: 'https://www.amazon.co.uk/s?k=%s'
   },
   {
     country: 'UK',
@@ -755,9 +770,14 @@ export const sites = [
     url: 'https://uk.pcpartpicker.com/search/?q=%s'
   },
   {
+    country: 'UK',
+    name: 'Scan',
+    url: 'https://www.scan.co.uk/search?q==%s'
+  },
+  {
     country: 'USA',
     name: 'Amazon',
-    url: 'https://www.amazon.com/s/?k=%s'
+    url: 'https://www.amazon.com/s?k=%s'
   },
   {
     country: 'USA',
@@ -768,5 +788,38 @@ export const sites = [
     country: 'USA',
     name: 'PCPartPicker',
     url: 'https://pcpartpicker.com/search/?cc=us&q=%s'
+  },
+  {
+    country: 'WWW',
+    name: 'PCPartPicker',
+    url: 'https://pcpartpicker.com/search/?q=%s'
+  },
+  {
+    country: 'WWW',
+    name: 'Google',
+    url: 'https://www.google.com/search?source=hp&q=%s'
   }
 ]
+
+export const countries = {
+  AU: 'Australia',
+  BR: 'Brazil',
+  CA: 'Canada',
+  CH: 'Switzerland',
+  DE: 'Germany',
+  DK: 'Denmark',
+  EE: 'Estonia',
+  ES: 'Spain',
+  FI: 'Finland',
+  FR: 'France',
+  GR: 'Greece',
+  IT: 'Italy',
+  NZ: 'New Zealand',
+  PL: 'Poland',
+  PT: 'Portugal',
+  RO: 'Romania',
+  SE: 'Sweden',
+  UK: 'UK',
+  USA: 'USA',
+  WWW: 'World-wide'
+}

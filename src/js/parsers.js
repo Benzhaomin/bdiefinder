@@ -110,10 +110,10 @@ function Corsair(sku) {
 
 // Team Group (eg. TXD416G3733HC18ADC01)
 function TeamGroup(sku) {
-  // https://regex101.com/r/z0CUon/3
-  const regex = /T([A-Z]{1,3})D4(\d{2})G(\d{4})HC(\d{2})\w([DQ])C01/g
+  // https://regex101.com/r/z0CUon/4
+  const regex = /T([\w]{1,3})D4(\d{2})G(\d{4})HC(\d{2})\w([DQ])C01/g
   const groups = regex.exec(sku)
-  const brand = 'Team'
+  const brand = 'Team Group'
   const code = groups[1]
   const size = groups[2]
   const speed = groups[3]
@@ -123,20 +123,21 @@ function TeamGroup(sku) {
 
   let series = ''
   let color = null
-  if (code === 'DPR') {
+  if (code.slice(0, 2) === 'DP') {
     series = 'Xtreem Dark Pro'
-    color = 'red'
-  } else if (code === 'DPG') {
-    series = 'Xtreem Dark Pro'
-    color = 'grey'
+    color = code[2] === 'R' ? 'red' : 'grey'
+  } else if (code === 'X') {
+    series = 'T-Force Xtreem' // Silver
   } else if (code === 'XB') {
     series = 'T-Force Xtreem' // 8Pack Edition
   } else if (code === 'XG') {
     series = 'T-Force Xtreem' // Gold
-  } else if (code === 'X') {
-    series = 'T-Force Xtreem' // Silver
+  } else if (code === 'XOB') {
+    series = 'T-Force Xtreem' // OnePageBook Edition
   } else if (code === 'L') {
     series = 'T-Force Vulcan'
+  } else if (code[0] === 'F') {
+    series = 'T-Force Night Hawk RGB'
   }
 
   return Product(brand, series, sku, speed, cas, size, sticks, color, ecc)
@@ -406,6 +407,8 @@ export default function parse(sku) {
     M3: Samsung,
     PV: Patriot,
     TD: TeamGroup,
+    TF: TeamGroup,
+    TL: TeamGroup,
     TX: TeamGroup
   }[sku.slice(0, 2)](sku)
 }

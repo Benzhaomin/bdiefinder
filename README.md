@@ -1,6 +1,6 @@
 # B-Die Finder
 
-Generate search links for every variants of known B-Die RAM kits.
+Get search links for Samsung B-Die DDR 4 memory kits on Amazon, Newegg and many more.
 
 https://benzhaomin.github.io/bdiefinder/
 
@@ -30,6 +30,8 @@ npm install
 ```
 npm run dev
 ```
+
+Get a list of missing SKUs with: `update_skus.sh`
 
 # Tests
 

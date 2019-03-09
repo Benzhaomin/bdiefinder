@@ -3,6 +3,34 @@
  */
 import {Product} from './product'
 
+// ADATA (eg. AX4U460038G19-DRZ)
+function ADATA(sku) {
+  // https://regex101.com/r/MWiKJR/1
+  const regex = /AX4U(\d{4})3(\d)G(\d{2})-([BSDQ])([\w]{1,2}[\d]{0,2})/g
+  const groups = regex.exec(sku)
+  const brand = 'ADATA'
+  const code = groups[5]
+  const size = groups[2]
+  const sticks = groups[4] === 'Q' ? 4 : groups[4] === 'D' ? 2 : 1
+  const speed = groups[1]
+  const cas = groups[3]
+  const color = null
+  const ecc = false
+
+  let series = ''
+  if (code === '' || code === 'RS' || code === 'R40') {
+    series = 'Spectrix D40'
+  } else if (code === 'R41' || code === 'T41') {
+    series = 'Spectrix D41'
+  } else if (code === 'R80') {
+    series = 'Spectrix D80'
+  } else if (code === 'RZ') {
+    series = 'XPG Z1'
+  }
+
+  return Product(brand, series, sku, speed, cas, size, sticks, color, ecc)
+}
+
 const CorsairColors = {
   null: 'black',
   C: 'chrome',
@@ -266,6 +294,7 @@ function Crucial(sku) {
 // turns any SKU into a Product
 export default function parse(sku) {
   return {
+    AX: ADATA,
     CM: Corsair,
     F4: GSkill,
     F3: SuperTalent,

@@ -95,8 +95,14 @@ function Corsair(sku) {
   let series = ''
   if (code === 'MD') {
     series = 'Dominator'
-  } else if (code === 'MK' || code === 'MU' || code === 'MR') {
+  } else if (code === 'MT') {
+    series = 'Dominator RGB'
+  } else if (code === 'MK' || code === 'MU') {
     series = 'Vengeance'
+  } else if (code === 'MR') {
+    series = 'Vengeance RGB'
+  } else if (code === 'MW') {
+    series = 'Vengeance RGB Pro'
   }
 
   return Product(brand, series, sku, speed, cas, size, sticks, color, ecc)

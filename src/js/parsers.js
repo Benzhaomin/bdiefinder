@@ -41,7 +41,7 @@ function Apacer(sku) {
 
 // Avexir (eg. AVD4UZ136001708G-2BZ1RR)
 function Avexir(sku) {
-  // https://regex101.com/r/z0CUon/3
+  // https://regex101.com/r/T7pqzr/1
   const regex = /AVD4UZ1([\d]{4})([\d]{2})[0]?([1,3,6]?[2,4,6,8])G-([\d])([\w]{3})([\w]{2})/g
   const groups = regex.exec(sku)
   const brand = 'Avexir'
@@ -324,9 +324,19 @@ function SuperTalent(sku) {
 
 // Crucial Ballistix Elite (eg. BLE2K8G4D34AEEAK) - no info on cas latency
 function Crucial(sku) {
-  return {
-    BLE2K8G4D34AEEAK: Product('Crucial', 'Ballistix Elite', sku, '3466', '16', '16', '2', null, false)
-  }[sku]
+  // https://regex101.com/r/WvBqxu/1
+  const regex = /BLE([\d]?)\w?([\d])G4D(\d{2})AEEAK/g
+  const groups = regex.exec(sku)
+  const brand = 'Crucial'
+  const series = 'Ballistix Elite'
+  const speed = `${groups[3]}00`
+  const cas = '17'
+  const sticks = groups[1] === '' ? '1' : groups[1]
+  const size = (parseInt(groups[2]) * parseInt(sticks)).toString()
+  const color = null
+  const ecc = false
+
+  return Product(brand, series, sku, speed, cas, size, sticks, color, ecc)
 }
 
 // turns any SKU into a Product

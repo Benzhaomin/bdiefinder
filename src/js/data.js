@@ -89,8 +89,12 @@ export const skus = [
 
   // GeIL TODO: most kits can't be found anywhere, adding them doesn't really help users
 
-  // Crucial Elite
-  'BLE2K8G4D34AEEAK',
+  // Crucial Ballistix Elite
+  'BLE2C8G4D36AEEAK',
+  'BLE2K8G4D36AEEAK',
+  'BLE4C8G4D36AEEAK',
+  'BLE4K8G4D36AEEAK',
+  'BLE8G4D36AEEAK',
 
   // KFA2 HOF
   'HOF4CXLBS3600K17LD162K',

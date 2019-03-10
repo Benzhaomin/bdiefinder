@@ -1,6 +1,6 @@
 # B-Die Finder
 
-Get search links for Samsung B-Die DDR 4 memory kits on Amazon, Newegg and many more.
+Find Samsung B-Die DDR 4 memory kits on Amazon, Newegg and many more.
 
 https://benzhaomin.github.io/bdiefinder/
 

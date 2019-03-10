@@ -6,8 +6,9 @@ import {skus, sites, countries} from './data'
 import {Products} from './product'
 import {store} from './store'
 import parse from './parsers'
+import identifier from './identifier'
 import Filters from './filters'
-import {addToggle, toggleHidden, setCountry, showResults, ui, domReady} from './ui'
+import {addToggle, toggleHidden, setCountry, onSkusChanged, ui, domReady} from './ui'
 
 /* Products */
 store.products = Products(skus.map(sku => parse(sku)))
@@ -26,7 +27,9 @@ domReady(function() {
   filters.add(ui('#rank-filters'), 'ranks', 'rank')
   // TODO: restore filters from URL
   filters.apply()
+
   ui('#reset').on('click', filters.reset)
+
   ui('#advanced').on('click', () => {
     ui('#advanced').toggleClass('active')
     ui('.advanced').each(node => toggleHidden(node))
@@ -48,8 +51,11 @@ domReady(function() {
   // TODO: restore filters from URL
   setCountry('WWW')
 
+  // identifier
+  identifier('#identifier')
+
   // results
   const refresh = ui('#refresh')
-  refresh.on('click', showResults)
-  ui('textarea').on('input', () => (refresh.first().style.display = 'initial'))
+  refresh.on('click', onSkusChanged)
+  ui('textarea').on('hange click blur paste', () => (refresh.first().style.display = 'block'))
 })

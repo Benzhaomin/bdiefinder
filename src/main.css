@@ -78,11 +78,8 @@ button:hover {
 }
 
 button.reveal {
-    background-color: #0074d9;
-}
-
-#reset {
     display: none;
+    background-color: #0074d9;
 }
 
 button.toggle {
@@ -103,6 +100,20 @@ p {
 section {
     margin-bottom: 1rem;
     padding: 0 0.5rem;
+}
+
+table {
+    width: 100%;
+}
+th {
+    text-align: left;
+    background-color: rgba(0,0,0,.15);
+}
+td, th {
+    padding: .5rem;
+}
+tbody tr:nth-of-type(2n) {
+    background-color: rgba(0,0,0,.05);
 }
 
 .right {
@@ -141,6 +152,7 @@ footer a {
 
 #results a {
     display: block;
+    font-size: 0.6rem;
 }
 
 div.warning {
@@ -148,6 +160,18 @@ div.warning {
     background-color: #fff3cd;
     padding: 0.8rem;
     border-radius: 4px;
+}
+
+#identifier div.results {
+    margin-top: 0.7rem;
+    padding: 1rem;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #2b2e34;
+}
+#identifier div.results.isbdie {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #ff8500;
 }
 
 @media (min-width: 68em) {
@@ -180,9 +204,6 @@ div.warning {
     }
 
     #results a {
-        display: inline-block;
-        font-size: 0.8rem;
-        width: 25%;
     }
 
 }

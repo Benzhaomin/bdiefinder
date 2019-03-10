@@ -3,7 +3,6 @@
  */
 /* eslint eslint-comments/no-use: off */
 /* eslint-disable github/unescaped-html-literal */
-/* assets */
 import '../index.html'
 import '../main.css'
 import 'normalize.css'
@@ -11,6 +10,7 @@ import '../icon.png'
 
 import {u} from 'umbrellajs'
 import {sites} from './data'
+import parse from './parsers'
 
 export const ui = u
 
@@ -52,18 +52,40 @@ function getSites() {
 }
 
 export function onSitesChanged() {
-  const sites = getSites()
-  ui('#sites-count').text(sites ? sites.length : 0)
   showResults()
 }
 
-function addSku(site, sku) {
-  const a = ui(`<a></a>`)
-  const url = site.attr('data-url').replace('%s', sku)
-  a.attr('href', url)
-  a.attr('target', '_blank')
-  a.text(sku)
-  site.append(a)
+function addSku(table, sku, retailers) {
+  let tr
+
+  try {
+    const product = parse(sku)
+    const details = product.color ? ` <small>(${product.color})</small>` : ''
+    tr = ui(`<tr>
+    <td>${product.brand} ${product.series} ${details}</td>
+    <td>${product.sku}</td>
+    <td>${product.speed}C${product.cas} / ${product.latency}ns</td>
+    <td>${product.sticks}x${product.size / product.sticks}GB / ${product.rank === '1' ? 'SR' : 'DR'}</td>
+    </tr>`)
+  } catch (e) {
+    tr = ui(`<tr>
+    <td></td>
+    <td>${sku}</td>
+    <td></td>
+    <td></td>
+    </tr>`)
+  }
+
+  table.append(tr)
+
+  // add links
+  const links = ui(`<td></td>`)
+
+  for (const retailer of retailers) {
+    links.append(ui(`<a target="_blank" href="${retailer.replace('%s', sku)}">${hostname(retailer)}</a>`))
+  }
+
+  tr.append(links)
 }
 
 export function showResults() {
@@ -76,29 +98,18 @@ export function showResults() {
     return
   }
 
-  const sites = getSites()
-  if (!sites.length) {
-    results.append(`<div class="warning">Choose a country or add at least one retailer</div>`)
-    return
-  }
-
-  for (const site of sites) {
-    const domain = hostname(site).replace('www.', '')
-
-    results.append(`<h3>${domain}</h3>`)
-
-    const sitediv = ui(`<div data-url="${site}"></div>`)
-    results.append(sitediv)
-
-    for (const sku of skus) {
-      addSku(sitediv, sku)
-    }
+  const retailers = getSites()
+  for (const sku of skus) {
+    addSku(results, sku, retailers)
   }
 }
 
-export function addToggle(text, value, target) {
+export function addToggle(text, value, target, title) {
   const button = ui(`<button type="button" class="toggle">`)
   button.attr('value', value).text(text)
+  if (title) {
+    button.attr('title', title)
+  }
   target.append(button)
   button.on('click', () => {
     button.toggleClass('active')

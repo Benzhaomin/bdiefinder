@@ -2,12 +2,13 @@
  * Main app
  */
 import {sorted, set} from './python'
-import {skus, sites} from './data'
+import {skus, sites, countries} from './data'
 import {Products} from './product'
 import {store} from './store'
 import parse from './parsers'
+import identifier from './identifier'
 import Filters from './filters'
-import {addToggle, toggleHidden, setCountry, showResults, ui, domReady, onSitesChanged} from './ui'
+import {addToggle, toggleHidden, setCountry, onSkusChanged, ui, domReady} from './ui'
 
 /* Products */
 store.products = Products(skus.map(sku => parse(sku)))
@@ -26,7 +27,9 @@ domReady(function() {
   filters.add(ui('#rank-filters'), 'ranks', 'rank')
   // TODO: restore filters from URL
   filters.apply()
+
   ui('#reset').on('click', filters.reset)
+
   ui('#advanced').on('click', () => {
     ui('#advanced').toggleClass('active')
     ui('.advanced').each(node => toggleHidden(node))
@@ -34,15 +37,25 @@ domReady(function() {
 
   // countries presets
   const container = ui('#country-presets')
-  const countries = sorted(set(sites.map(site => site.country)))
-  for (const name of countries) {
-    const button = addToggle(name, name, container)
-    button.on('click', () => setCountry(name))
+  const codes = sorted(set(sites.map(site => site.country)))
+  for (const code of codes) {
+    const button = addToggle(code, code, container, countries[code])
+    button.on('click', () => setCountry(code))
+
+    // TODO: restore filters from URL
+    if (code === 'WWW') {
+      button.addClass('active')
+    }
   }
-  onSitesChanged()
+
+  // TODO: restore filters from URL
+  setCountry('WWW')
+
+  // identifier
+  identifier('#identifier')
 
   // results
   const refresh = ui('#refresh')
-  refresh.on('click', showResults)
-  ui('textarea').on('input', () => (refresh.first().style.display = 'initial'))
+  refresh.on('click', onSkusChanged)
+  ui('textarea').on('hange click blur paste', () => (refresh.first().style.display = 'block'))
 })

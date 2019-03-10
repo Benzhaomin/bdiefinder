@@ -9,7 +9,20 @@ function getLatency(speed, cas) {
 }
 
 function isExotic(product) {
-  return product.speed < 3000 || product.speed > 3600 || product.size < 16 || product.size > 32 || product.ecc
+  if (!['3000', '3200', '3400', '3600'].includes(product.speed)) {
+    return true
+  }
+  if (!['16', '32'].includes(product.size)) {
+    return true
+  }
+  if (!['Corsair', 'Crucial', 'G.Skill', 'Kingston', 'Patriot', 'Team Group'].includes(product.brand)) {
+    return true
+  }
+  if (product.ecc) {
+    return true
+  }
+
+  return false
 }
 
 export function Product(brand, series, sku, speed, cas, size, sticks, color, ecc) {
@@ -38,11 +51,11 @@ export function Products(products) {
   }
 
   function display(value) {
-    return Products(products.filter(product => !value || value === 'All' || !isExotic(product)))
+    return Products(products.filter(product => !value || value === 'All kits' || !isExotic(product)))
   }
 
   function displays() {
-    return products.some(product => !isExotic(product)) ? ['Common', 'All'] : ['All']
+    return products.some(product => !isExotic(product)) ? ['Common kits', 'All kits'] : ['All kits']
   }
 
   function brand(value) {

@@ -36,7 +36,7 @@ export default function Filters() {
 
   function apply(selected) {
     let products = store.products
-    selected = selected || {displays: 'Common'}
+    selected = selected || {displays: 'Common kits'}
 
     for (const filter of filters) {
       if (filter.values in selected) {

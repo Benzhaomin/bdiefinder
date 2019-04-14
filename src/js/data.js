@@ -176,6 +176,12 @@ export const skus = [
   'HOF4CXLBS3200H14HD162K',
   'HOF4CXLBS4000M19SF162K',
 
+  // Inno3d iChill RGB
+  'RCX2-16G3600R',
+  'RCX2-16G3600A',
+  'RCX2-16G4000R',
+  'RCX2-16G4000A',
+
   // Kingston Hyper X
   'HX413C19PB3/8',
   'HX413C19PB3K2/16',

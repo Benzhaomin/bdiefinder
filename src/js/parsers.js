@@ -387,6 +387,52 @@ function Crucial(sku) {
   return Product(brand, series, sku, speed, cas, size, sticks, color, ecc)
 }
 
+// Inno3d iChill RGB (eg. RCX2-16G3600R) - no info on cas latency
+function Inno3d(sku) {
+  // https://regex101.com/r/R3HIDO/1
+  const regex = /RCX([\d])-([\d]{2})G(\d{4})([A|R])/g
+  const groups = regex.exec(sku)
+  const brand = 'Inno3d'
+  const series = 'iChill RGB'
+  const speed = groups[3]
+  const sticks = groups[1]
+  const size = groups[2]
+  const ecc = false
+
+  let cas = null
+  if (speed === '3600') {
+    cas = '17'
+  } else if (speed === '4000') {
+    cas = '19'
+  }
+
+  let color = groups[4]
+  if (color === 'A') {
+    color = 'Aura Sync'
+  } else if (color === 'R') {
+    color = 'RGB'
+  }
+
+  return Product(brand, series, sku, speed, cas, size, sticks, color, ecc)
+}
+
+// Zadak Shield (eg. ZD4-SHC3200C14-64GDSD)
+function Zadak(sku) {
+  // https://regex101.com/r/R3HIDO/1
+  const regex = /ZD4-SH[C|K]([\d]{4})C([\d]{2})-([\d]{2})G/g
+  const groups = regex.exec(sku)
+  const brand = 'Zadak'
+  const series = 'Shield'
+  const speed = groups[1]
+  const cas = groups[2]
+  const color = null
+  const sticks = '2'
+  const size = groups[3] === '08' ? '16' : groups[3]
+  const ecc = false
+
+  return Product(brand, series, sku, speed, cas, size, sticks, color, ecc)
+}
+
 // turns any SKU into a Product
 export default function parse(sku) {
   return {
@@ -406,9 +452,11 @@ export default function parse(sku) {
     HX: Kingston,
     M3: Samsung,
     PV: Patriot,
+    RC: Inno3d,
     TD: TeamGroup,
     TF: TeamGroup,
     TL: TeamGroup,
-    TX: TeamGroup
+    TX: TeamGroup,
+    ZD: Zadak
   }[sku.slice(0, 2)](sku)
 }

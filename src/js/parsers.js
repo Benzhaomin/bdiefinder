@@ -416,6 +416,23 @@ function Inno3d(sku) {
   return Product(brand, series, sku, speed, cas, size, sticks, color, ecc)
 }
 
+// Zadak Shield (eg. ZD4-SHC3200C14-64GDSD)
+function Zadak(sku) {
+  // https://regex101.com/r/R3HIDO/1
+  const regex = /ZD4-SH[C|K]([\d]{4})C([\d]{2})-([\d]{2})G/g
+  const groups = regex.exec(sku)
+  const brand = 'Zadak'
+  const series = 'Shield'
+  const speed = groups[1]
+  const cas = groups[2]
+  const color = null
+  const sticks = '2'
+  const size = groups[3] === '08' ? '16' : groups[3]
+  const ecc = false
+
+  return Product(brand, series, sku, speed, cas, size, sticks, color, ecc)
+}
+
 // turns any SKU into a Product
 export default function parse(sku) {
   return {
@@ -439,6 +456,7 @@ export default function parse(sku) {
     TD: TeamGroup,
     TF: TeamGroup,
     TL: TeamGroup,
-    TX: TeamGroup
+    TX: TeamGroup,
+    ZD: Zadak
   }[sku.slice(0, 2)](sku)
 }

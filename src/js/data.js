@@ -182,6 +182,17 @@ export const skus = [
   'RCX2-16G4000R',
   'RCX2-16G4000A',
 
+  // Gigabyte
+  // TODO: add suport for Gigabyte once they have more than a single kit
+  // 'GP-AR32C16S8K2SU416R',
+
+  // Zadak
+  /* TODO: Zadak kits can't actually be found anywhere yet
+  'ZD4-SHC3200C14-64GDSD',
+  'ZD4-SHC3600C17-64GDSD',
+  'ZD4-SHK4133C18-08GAS',
+  */
+
   // Kingston Hyper X
   'HX413C19PB3/8',
   'HX413C19PB3K2/16',
@@ -489,6 +500,7 @@ export const skus = [
 
 /* TODO: add so-dimm support
 
+  'AS16GGB30CFYBGD (78.D2GFH.4030B)',
   'CMSX32GX4M4X3600C16',
   'CMSX32GX4M4X3800C18',
   'CMSX32GX4M4X4000C19',

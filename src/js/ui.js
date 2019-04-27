@@ -45,10 +45,10 @@ function hostname(url) {
 }
 
 function getSites() {
-  const sites = ui('#sites')
+  const mysites = ui('#sites')
     .first()
     .value.split('\n')
-  return sites.filter(site => hostname(site))
+  return mysites.filter(site => hostname(site))
 }
 
 export function onSitesChanged() {

@@ -418,7 +418,7 @@ function Inno3d(sku) {
 
 // Zadak Shield (eg. ZD4-SHC3200C14-64GDSD)
 function Zadak(sku) {
-  // https://regex101.com/r/R3HIDO/1
+  // https://regex101.com/r/LTr1ZE/1/
   const regex = /ZD4-SH[C|K]([\d]{4})C([\d]{2})-([\d]{2})G/g
   const groups = regex.exec(sku)
   const brand = 'Zadak'

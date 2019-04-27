@@ -128,6 +128,10 @@ function TeamGroup(sku) {
     color = code[2] === 'R' ? 'red' : 'grey'
   } else if (code === 'X') {
     series = 'T-Force Xtreem' // Silver
+    color = 'silver'
+  } else if (code === 'XK') {
+    series = 'T-Force Xtreem' // Silver
+    color = 'black'
   } else if (code === 'XB') {
     series = 'T-Force Xtreem' // 8Pack Edition
   } else if (code === 'XG') {

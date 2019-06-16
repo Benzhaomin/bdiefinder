@@ -28,8 +28,8 @@
     "normalize.css": "^8.0.1",
     "push-dir": "^0.4.1",
     "umbrellajs": "^3.1.0",
-    "webpack": "^4.30.0",
-    "webpack-cli": "^3.3.1"
+    "webpack": "^4.34.0",
+    "webpack-cli": "^3.3.4"
   },
   "dependencies": {}
 }

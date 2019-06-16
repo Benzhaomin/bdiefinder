@@ -588,6 +588,11 @@ export const sites = [
     url: 'https://www.elgiganten.dk/search?SearchTerm=%s'
   },
   {
+    country: 'DK',
+    name: 'Prisjagt',
+    url: 'https://prisjagt.dk//search?search=%s'
+  },
+  {
     country: 'EE',
     name: 'Hinnavaatlus',
     url: 'https://www.hinnavaatlus.ee/search/?query=%s'
@@ -596,6 +601,11 @@ export const sites = [
     country: 'FI',
     name: "Jimm's",
     url: 'https://www.jimms.fi/fi/Product/Search2?q=%s'
+  },
+  {
+    country: 'FI',
+    name: 'Hintaopas',
+    url: 'https://hintaopas.fi/search?search=%s'
   },
   {
     country: 'FR',
@@ -615,7 +625,7 @@ export const sites = [
   {
     country: 'FR',
     name: 'leDénicheur',
-    url: 'https://ledenicheur.fr/category.php?k=1790#rparams=ss=%s'
+    url: 'https://ledenicheur.fr/search?search=%s'
   },
   {
     country: 'FR',
@@ -663,6 +673,11 @@ export const sites = [
     url: 'https://www.bestprice.gr/cat/2609/memory.html?q=%s'
   },
   {
+    country: 'IE',
+    name: 'PriceSpy',
+    url: 'https://pricespy.ie/search?search=%s'
+  },
+  {
     country: 'IT',
     name: 'Amazon Italy',
     url: 'https://www.amazon.it/s/?k=%s'
@@ -676,6 +691,11 @@ export const sites = [
     country: 'NZ',
     name: 'PCPartPicker NZ',
     url: 'https://nz.pcpartpicker.com/search/?q=%s'
+  },
+  {
+    country: 'NO',
+    name: 'Prisjakt',
+    url: 'https://www.prisjakt.no/search?search=%s'
   },
   {
     country: 'PL',
@@ -744,8 +764,13 @@ export const sites = [
   },
   {
     country: 'SE',
+    name: 'Komplett',
+    url: 'https://www.komplett.se/search?q=%s'
+  },
+  {
+    country: 'SE',
     name: 'Prisjakt',
-    url: 'https://www.prisjakt.nu/kategori.php?k=1790#rparams=ss=%s'
+    url: 'https://www.prisjakt.nu/search?search=%s'
   },
   {
     country: 'CH',
@@ -799,13 +824,18 @@ export const sites = [
   },
   {
     country: 'UK',
-    name: 'PCPartPicker UK',
-    url: 'https://uk.pcpartpicker.com/search/?q=%s'
+    name: 'Scan',
+    url: 'https://www.scan.co.uk/search?q==%s'
   },
   {
     country: 'UK',
-    name: 'Scan',
-    url: 'https://www.scan.co.uk/search?q==%s'
+    name: 'PriceSpy',
+    url: 'https://pricespy.co.uk/search?search=%s'
+  },
+  {
+    country: 'UK',
+    name: 'PCPartPicker UK',
+    url: 'https://uk.pcpartpicker.com/search/?q=%s'
   },
   {
     country: 'USA',
@@ -846,8 +876,10 @@ export const countries = {
   FI: 'Finland',
   FR: 'France',
   GR: 'Greece',
+  IE: 'Ireland',
   IT: 'Italy',
   NZ: 'New Zealand',
+  NO: 'Norway',
   PL: 'Poland',
   PT: 'Portugal',
   RO: 'Romania',

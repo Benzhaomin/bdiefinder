@@ -195,7 +195,10 @@ function GSkill(sku) {
 
   let series = ''
   let color = null
-  if (code.indexOf('TZ') === 0) {
+  if (code.indexOf('TZN') === 0) {
+    series = 'Trident Z Neo'
+    color = 'rgb'
+  } else if (code.indexOf('TZ') === 0) {
     series = 'Trident Z'
     color = GskillTridentZColors[code.replace('TZ', '')]
   } else if (code.indexOf('TR') === 0) {

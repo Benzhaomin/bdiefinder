@@ -4,15 +4,13 @@ DATAFILE='./src/js/data.js'
 TMPFILE='/tmp/bdiefinder.html'
 
 # get the forum page
-[ -f $TMPFILE ] || wget 'https://www.hardwareluxx.de/community/f13/die-ultimative-hardwareluxx-samsung-8gb-b-die-liste-alle-hersteller-02-03-19-a-1161530-print.html' -O $TMPFILE
+[ -f $TMPFILE ] || wget 'https://www.hardwareluxx.de/community/threads/die-ultimative-hardwareluxx-samsung-8gb-b-die-liste-alle-hersteller-17-01-20.1161530/' -O - | cat -v > $TMPFILE
 
 # find SKUS with 'ja' in the third column
 #
-# <tr valign="top" class="cms_table_grid_tr"><td class="cms_table_grid_td">ZD4-SHC3600C17-64GDSD</td>
-# <td class="cms_table_grid_td">2x32GB DDR4-3600 17-19-19-39 1.35V</td>
-# <td class="cms_table_grid_td">ja</td>
+# <tr><td>AX4U460038G19-DRZ</td><td>2x8GB DDR4-4600 19-26-26-46 1.50V</td><td>ja</td>
 #
-KITS=$(grep -B 2 '<td class="cms_table_grid_td">ja</td>' $TMPFILE | grep tr | sed 's/^<tr.*td">\(.*\)<\/td>/\1/')
+KITS=$(grep -o '<tr><td>[^<]*</td><td>[^<]*</td><td>ja</td>' $TMPFILE | sed "s/<tr><td>\([^<]*\)<\/td>.*/\1/")
 
 # output SKUS not found in DATAFILE
 for KIT in $KITS; do

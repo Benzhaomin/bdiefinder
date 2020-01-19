@@ -283,11 +283,12 @@ function Geil(sku) {
 
 // Hall of Fame / Galax (eg. HOF4CXLBS3600K17LD162C) or KFA2 (eg. HOF4CXLBS3600K17LD162K)
 function HOF(sku) {
-  // https://regex101.com/r/WBL7z2/4
-  const regex = /([A-Z]{3,6})4([A-Z]{3})1?([A-Z]{2,3})(\d{4})[A-Z](\d{2})[A-Z]{2}(\d{2})(\d)([CK])/g
+  // https://regex101.com/r/WBL7z2/5
+  const regex = /([A-Z]{3,6})4([A-Z]{3})[1,4]?([A-Z]{2,3})(\d{4})[A-Z](\d{2})[A-Z]{2}(\d{2})(\d)([CK])/g
   const groups = regex.exec(sku)
   const brand = groups[8] === 'K' ? 'KFA2' : 'Galax'
   const code = groups[3]
+  const code2 = groups[2]
   const speed = groups[4]
   const cas = groups[5]
   let size = groups[6]
@@ -298,8 +299,10 @@ function HOF(sku) {
   let series = ''
   if (code === 'BS') {
     series = 'Hall of Fame'
-  } else if (code === 'BST') {
+  } else if (code === 'BST' && code2 === 'CXL') {
     series = 'Hall of Fame Extreme'
+  } else if (code === 'BST' && code2 === 'CRL') {
+    series = 'Hall of Fame OC Lab Arduino'
   } else if (code === 'CST') {
     series = 'Hall of Fame II'
   }
@@ -340,13 +343,14 @@ const PatriotSeries = {
   VE: 'Viper 4 Elite',
   VLW: 'Viper LED',
   VR: 'Viper RGB',
-  VS: 'Viper Steel'
+  VS: 'Viper Steel',
+  VB: 'Viper Blackout'
 }
 
 // Patriot Viper (eg. PV416G373C7K)
 function Patriot(sku) {
-  // https://regex101.com/r/yYVaIh/3
-  const regex = /P([VELWRS]*)4(\d{2})G(\d{3})C(\d{1})K/g
+  // https://regex101.com/r/yYVaIh/4
+  const regex = /P([BVELWRS]*)4(\d{2})G(\d{3})C(\d{1})K/g
   const groups = regex.exec(sku)
   const brand = 'Patriot'
   const series = PatriotSeries[groups[1]]

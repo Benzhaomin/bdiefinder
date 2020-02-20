@@ -573,6 +573,21 @@ export const sites = [
     url: 'https://www.kabum.com.br/cgi-local/site/listagem/listagem.cgi?string=%s&btnG='
   },
   {
+    country: 'BR',
+    name: 'Pichau',
+    url: 'https://www.pichau.com.br/catalogsearch/result/?q=%s'
+  },
+  {
+    country: 'BR',
+    name: 'Terabyte Shop',
+    url: 'https://www.terabyteshop.com.br/busca?str=%s'
+  },
+  {
+    country: 'BR',
+    name: 'CraftMyBox',
+    url: 'https://www.craftmybox.com/pesquisar?q=%s'
+  },
+  {
     country: 'CA',
     name: 'Amazon',
     url: 'https://www.amazon.ca/s/k=%s'

@@ -564,8 +564,38 @@ export const skus = [
 export const sites = [
   {
     country: 'AU',
+    name: 'Static Ice',
+    url: 'http://staticice.com.au/cgi-bin/search.cgi?q=%s'
+  },
+  {
+    country: 'AU',
     name: 'PCPartPicker Australia',
     url: 'https://au.pcpartpicker.com/search/?q=%s'
+  },
+  {
+    country: 'AU',
+    name: 'PC Case Gear',
+    url: 'https://www.pccasegear.com/search?query=%s'
+  },
+  {
+    country: 'AU',
+    name: 'MSY',
+    url: 'https://msy.com.au/search?q=%s'
+  },
+  {
+    country: 'AU',
+    name: 'Newegg Australia',
+    url: 'https://www.newegg.com/global/au-en/p/pl?d=%s'
+  },
+  {
+    country: 'AU',
+    name: 'Amazon Australia',
+    url: 'https://www.amazon.com.au/s?k=%s'
+  },
+  {
+    country: 'AU',
+    name: 'Amazon US',
+    url: 'https://www.amazon.com/s?k=%s'
   },
   {
     country: 'BR',

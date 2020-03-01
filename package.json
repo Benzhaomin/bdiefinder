@@ -1,6 +1,6 @@
 {
   "name": "bdiefinder",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": " Find Samsung B-Die DDR 4 memory kits on Amazon, Newegg and many more.",
   "private": true,
   "scripts": {
@@ -28,8 +28,8 @@
     "normalize.css": "^8.0.1",
     "push-dir": "^0.4.1",
     "umbrellajs": "^3.1.0",
-    "webpack": "^4.40.2",
-    "webpack-cli": "^3.3.8"
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11"
   },
   "dependencies": {}
 }

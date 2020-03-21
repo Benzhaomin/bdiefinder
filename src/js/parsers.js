@@ -110,7 +110,7 @@ function Corsair(sku) {
 
 // Team Group (eg. TXD416G3733HC18ADC01)
 function TeamGroup(sku) {
-  // https://regex101.com/r/z0CUon/4
+  // https://regex101.com/r/z0CUon/5
   const regex = /T([\w]{1,3})D4(\d{2})G(\d{4})HC(\d{2})\w([DQ])C01/g
   const groups = regex.exec(sku)
   const brand = 'Team Group'
@@ -140,6 +140,8 @@ function TeamGroup(sku) {
     series = 'T-Force Xtreem' // OnePageBook Edition
   } else if (code === 'L') {
     series = 'T-Force Vulcan'
+  } else if (code == 'F10') {
+    series = 'Xtreem ARGB'
   } else if (code[0] === 'F') {
     series = 'T-Force Night Hawk RGB'
   }

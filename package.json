@@ -7,7 +7,7 @@
     "test": "echo \"Coming soon (tm)\" && exit 1",
     "dev": "webpack --mode development --watch",
     "build": "webpack --mode production",
-    "deploy": "npm run build; push-dir --dir=dist --branch=gh-pages --cleanup",
+    "deploy": "npm run lint; npm run build; push-dir --dir=dist --branch=gh-pages --cleanup",
     "lint": "github-lint"
   },
   "repository": {
@@ -22,14 +22,13 @@
   },
   "homepage": "https://benzhaomin.github.io/bdiefinder/",
   "devDependencies": {
-    "eslint": "^5.16.0",
-    "eslint-plugin-github": "^2.0.0",
-    "file-loader": "^3.0.1",
-    "normalize.css": "^8.0.1",
-    "push-dir": "^0.4.1",
-    "umbrellajs": "^3.1.0",
-    "webpack": "^4.42.0",
-    "webpack-cli": "^3.3.11"
-  },
-  "dependencies": {}
+    "eslint": "^6.8.0",
+    "eslint-plugin-github": "^3.4.1",
+    "file-loader": "^6.0.0",
+    "normalize.css": "*",
+    "push-dir": "*",
+    "umbrellajs": "*",
+    "webpack": "^4.42.1",
+    "webpack-cli": "*"
+  }
 }

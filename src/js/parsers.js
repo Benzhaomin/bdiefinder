@@ -140,7 +140,7 @@ function TeamGroup(sku) {
     series = 'T-Force Xtreem' // OnePageBook Edition
   } else if (code === 'L') {
     series = 'T-Force Vulcan'
-  } else if (code == 'F10') {
+  } else if (code === 'F10') {
     series = 'Xtreem ARGB'
   } else if (code[0] === 'F') {
     series = 'T-Force Night Hawk RGB'

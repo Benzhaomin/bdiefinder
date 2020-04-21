@@ -110,8 +110,8 @@ function Corsair(sku) {
 
 // Team Group (eg. TXD416G3733HC18ADC01)
 function TeamGroup(sku) {
-  // https://regex101.com/r/z0CUon/5
-  const regex = /T([\w]{1,3})D4(\d{2})G(\d{4})HC(\d{2})\w([DQ])C01/g
+  // https://regex101.com/r/z0CUon/6
+  const regex = /T([\w]{1,3})D4(\d{2})G(\d{4})HC(\d{2})\w([DQ])C?01/g
   const groups = regex.exec(sku)
   const brand = 'Team Group'
   const code = groups[1]
@@ -305,6 +305,8 @@ function HOF(sku) {
     series = 'Hall of Fame Extreme'
   } else if (code === 'BST' && code2 === 'CRL') {
     series = 'Hall of Fame OC Lab Arduino'
+  } else if (code === 'BST' && code2 === 'RJL') {
+    series = 'Hall of Fame OC Lab Water Cooling'
   } else if (code === 'CST') {
     series = 'Hall of Fame II'
   }

@@ -1,5 +1,5 @@
 /**
- * Brand specific implementations of SKU parsing
+ * Brand specific implementations of SKU parsing.
  */
 import {Product} from './product'
 
@@ -35,7 +35,7 @@ function ADATA(sku) {
 function Apacer(sku) {
   return {
     'EK.16GA5.GGBK2': Product('Apacer', 'Blade', sku, '4133', '18', '16', '2', null, false),
-    'EK.16GA4.GFAK2': Product('Apacer', 'Commando', sku, '3600', '17', '16', '2', null, false)
+    'EK.16GA4.GFAK2': Product('Apacer', 'Commando', sku, '3600', '17', '16', '2', null, false),
   }[sku]
 }
 
@@ -75,7 +75,7 @@ const CorsairColors = {
   M: 'black',
   T: 'torque',
   R: 'red',
-  W: 'white'
+  W: 'white',
 }
 
 // Corsair (eg. CMD32GX4M4B3600C16)
@@ -165,12 +165,12 @@ const GskillTridentZColors = {
   SK: 'silver-black',
   SW: 'silver-white',
   SWE: 'silver-white',
-  SWF: 'silver-white'
+  SWF: 'silver-white',
 }
 
 const GskillTridentZRoyalColors = {
   S: 'silver',
-  G: 'gold'
+  G: 'gold',
 }
 
 const GskillRipjawsColors = {
@@ -179,7 +179,7 @@ const GskillRipjawsColors = {
   KD: 'black', // with fans
   R: 'red',
   RD: 'red', // with fans
-  S: 'silver'
+  S: 'silver',
 }
 
 // G-Skill (eg. F4-3200C14D-16GFX)
@@ -257,7 +257,7 @@ const GeilSeries = {
   FR: 'EVO Forza',
   PR: 'EVO Potenza',
   WW: 'White Dragon',
-  LS: 'Super Luce RGB Sync'
+  LS: 'Super Luce RGB Sync',
 }
 
 // GEiL (eg. GEX416GB3200C16ADC)
@@ -322,7 +322,7 @@ function HOF(sku) {
 
 const KingstonSeries = {
   PB3: 'Hyper X Predator',
-  PB3A: 'Hyper X Predator RGB'
+  PB3A: 'Hyper X Predator RGB',
 }
 
 // Kingston Hyper X (eg. HX436C17PB3K4/32)
@@ -348,7 +348,7 @@ const PatriotSeries = {
   VLW: 'Viper LED',
   VR: 'Viper RGB',
   VS: 'Viper Steel',
-  VB: 'Viper Blackout'
+  VB: 'Viper Blackout',
 }
 
 // Patriot Viper (eg. PV416G373C7K)
@@ -472,6 +472,6 @@ export default function parse(sku) {
     TF: TeamGroup,
     TL: TeamGroup,
     TX: TeamGroup,
-    ZD: Zadak
+    ZD: Zadak,
   }[sku.slice(0, 2)](sku)
 }

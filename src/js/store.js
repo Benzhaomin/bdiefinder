@@ -1,6 +1,6 @@
 /**
- * Global data store
+ * Global data store.
  */
 export const store = {
-  products: []
+  products: [],
 }

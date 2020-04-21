@@ -1,5 +1,5 @@
 /**
- * Dirty UI functions
+ * Dirty UI functions.
  */
 /* eslint eslint-comments/no-use: off */
 /* eslint-disable github/unescaped-html-literal */
@@ -24,7 +24,7 @@ export function getSkus() {
   return ui('#skus')
     .first()
     .value.split('\n')
-    .filter(sku => sku.length > 0)
+    .filter((sku) => sku.length > 0)
 }
 
 export function onSkusChanged() {
@@ -34,8 +34,8 @@ export function onSkusChanged() {
 }
 
 export function setCountry(name) {
-  const mysites = name ? sites.filter(site => site.country === name) : []
-  ui('#sites').first().value = mysites.map(site => site.url).join('\n')
+  const mysites = name ? sites.filter((site) => site.country === name) : []
+  ui('#sites').first().value = mysites.map((site) => site.url).join('\n')
   onSitesChanged()
 }
 
@@ -45,10 +45,8 @@ function hostname(url) {
 }
 
 function getSites() {
-  const mysites = ui('#sites')
-    .first()
-    .value.split('\n')
-  return mysites.filter(site => hostname(site))
+  const mysites = ui('#sites').first().value.split('\n')
+  return mysites.filter((site) => hostname(site))
 }
 
 export function onSitesChanged() {

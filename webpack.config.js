@@ -6,7 +6,7 @@ module.exports = {
   entry: './src/js/app.js',
   output: {
     filename: 'app.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
   },
   module: {
     rules: [
@@ -15,10 +15,10 @@ module.exports = {
         use: [
           {
             loader: 'file-loader',
-            options: {name: '[name].[ext]'}
-          }
-        ]
-      }
-    ]
-  }
+            options: {name: '[name].[ext]'},
+          },
+        ],
+      },
+    ],
+  },
 }

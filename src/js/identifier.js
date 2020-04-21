@@ -1,5 +1,5 @@
 /**
- * SKU identifier using the SKU parsers
+ * SKU identifier using the SKU parsers.
  */
 /* eslint eslint-comments/no-use: off */
 /* eslint-disable github/unescaped-html-literal */
@@ -12,7 +12,7 @@ export default function identifier(div) {
   const idinput = container.find('input')
   const iddetails = container.find('div.results')
 
-  idinput.on('change click blur paste', function() {
+  idinput.on('change click blur paste', function () {
     const sku = idinput.first().value
 
     if (sku) {

@@ -1,5 +1,5 @@
 /**
- * Static data
+ * Static data.
  */
 
 export const skus = [
@@ -528,7 +528,7 @@ export const skus = [
   'F4-3600C16Q-64GTRS',
   'F4-3600C16D-32GTRG',
   'F4-3600C16Q-64GTRG',
-  'F4-4000C19D-32GTRS'
+  'F4-4000C19D-32GTRS',
 ]
 
 /* TODO: add so-dimm support
@@ -565,383 +565,383 @@ export const sites = [
   {
     country: 'AU',
     name: 'Static Ice',
-    url: 'http://staticice.com.au/cgi-bin/search.cgi?q=%s'
+    url: 'http://staticice.com.au/cgi-bin/search.cgi?q=%s',
   },
   {
     country: 'AU',
     name: 'PCPartPicker Australia',
-    url: 'https://au.pcpartpicker.com/search/?q=%s'
+    url: 'https://au.pcpartpicker.com/search/?q=%s',
   },
   {
     country: 'AU',
     name: 'PC Case Gear',
-    url: 'https://www.pccasegear.com/search?query=%s'
+    url: 'https://www.pccasegear.com/search?query=%s',
   },
   {
     country: 'AU',
     name: 'MSY',
-    url: 'https://msy.com.au/search?q=%s'
+    url: 'https://msy.com.au/search?q=%s',
   },
   {
     country: 'AU',
     name: 'Newegg Australia',
-    url: 'https://www.newegg.com/global/au-en/p/pl?d=%s'
+    url: 'https://www.newegg.com/global/au-en/p/pl?d=%s',
   },
   {
     country: 'AU',
     name: 'Amazon Australia',
-    url: 'https://www.amazon.com.au/s?k=%s'
+    url: 'https://www.amazon.com.au/s?k=%s',
   },
   {
     country: 'AU',
     name: 'Amazon US',
-    url: 'https://www.amazon.com/s?k=%s'
+    url: 'https://www.amazon.com/s?k=%s',
   },
   {
     country: 'BR',
     name: 'Kabum',
-    url: 'https://www.kabum.com.br/cgi-local/site/listagem/listagem.cgi?string=%s&btnG='
+    url: 'https://www.kabum.com.br/cgi-local/site/listagem/listagem.cgi?string=%s&btnG=',
   },
   {
     country: 'BR',
     name: 'Pichau',
-    url: 'https://www.pichau.com.br/catalogsearch/result/?q=%s'
+    url: 'https://www.pichau.com.br/catalogsearch/result/?q=%s',
   },
   {
     country: 'BR',
     name: 'Terabyte Shop',
-    url: 'https://www.terabyteshop.com.br/busca?str=%s'
+    url: 'https://www.terabyteshop.com.br/busca?str=%s',
   },
   {
     country: 'BR',
     name: 'CraftMyBox',
-    url: 'https://www.craftmybox.com/pesquisar?q=%s'
+    url: 'https://www.craftmybox.com/pesquisar?q=%s',
   },
   {
     country: 'CA',
     name: 'Amazon',
-    url: 'https://www.amazon.ca/s/k=%s'
+    url: 'https://www.amazon.ca/s/k=%s',
   },
   {
     country: 'CA',
     name: 'Canada Computers',
-    url: 'https://www.canadacomputers.com/search/results_details.php?language=en&keywords=%s'
+    url: 'https://www.canadacomputers.com/search/results_details.php?language=en&keywords=%s',
   },
   {
     country: 'CA',
     name: 'Memory Express',
-    url: 'https://www.memoryexpress.com/Search/Products?Search=%s'
+    url: 'https://www.memoryexpress.com/Search/Products?Search=%s',
   },
   {
     country: 'CA',
     name: 'Newegg Canada',
-    url: 'https://www.newegg.ca/Product/ProductList.aspx?Submit=ENE&DEPA=0&Order=BESTMATCH&Description=%s'
+    url: 'https://www.newegg.ca/Product/ProductList.aspx?Submit=ENE&DEPA=0&Order=BESTMATCH&Description=%s',
   },
   {
     country: 'CA',
     name: 'PCPartPicker Canada',
-    url: 'https://ca.pcpartpicker.com/search/?q=%s'
+    url: 'https://ca.pcpartpicker.com/search/?q=%s',
   },
   {
     country: 'DK',
     name: 'Komplett',
-    url: 'https://www.komplett.dk/search?q=%s'
+    url: 'https://www.komplett.dk/search?q=%s',
   },
   {
     country: 'DK',
     name: 'Proshop',
-    url: 'https://www.proshop.dk/?s=%s'
+    url: 'https://www.proshop.dk/?s=%s',
   },
   {
     country: 'DK',
     name: 'Computersalg',
-    url: 'https://www.computersalg.dk/l/0/s?sq=%s'
+    url: 'https://www.computersalg.dk/l/0/s?sq=%s',
   },
   {
     country: 'DK',
     name: 'Alternate',
-    url: 'https://www.alternate.dk/html/search.html?query=%s'
+    url: 'https://www.alternate.dk/html/search.html?query=%s',
   },
   {
     country: 'DK',
     name: 'Elgiganten',
-    url: 'https://www.elgiganten.dk/search?SearchTerm=%s'
+    url: 'https://www.elgiganten.dk/search?SearchTerm=%s',
   },
   {
     country: 'DK',
     name: 'Prisjagt',
-    url: 'https://prisjagt.dk//search?search=%s'
+    url: 'https://prisjagt.dk//search?search=%s',
   },
   {
     country: 'EE',
     name: 'Hinnavaatlus',
-    url: 'https://www.hinnavaatlus.ee/search/?query=%s'
+    url: 'https://www.hinnavaatlus.ee/search/?query=%s',
   },
   {
     country: 'FI',
     name: "Jimm's",
-    url: 'https://www.jimms.fi/fi/Product/Search2?q=%s'
+    url: 'https://www.jimms.fi/fi/Product/Search2?q=%s',
   },
   {
     country: 'FI',
     name: 'Hintaopas',
-    url: 'https://hintaopas.fi/search?search=%s'
+    url: 'https://hintaopas.fi/search?search=%s',
   },
   {
     country: 'FR',
     name: 'Amazon France',
-    url: 'https://www.amazon.fr/s?k=%s'
+    url: 'https://www.amazon.fr/s?k=%s',
   },
   {
     country: 'FR',
     name: 'Hardware.fr',
-    url: 'https://shop.hardware.fr/search/+ftxt-%s'
+    url: 'https://shop.hardware.fr/search/+ftxt-%s',
   },
   {
     country: 'FR',
     name: 'Materiel.net',
-    url: 'https://www.materiel.net/recherche/%s'
+    url: 'https://www.materiel.net/recherche/%s',
   },
   {
     country: 'FR',
     name: 'leDénicheur',
-    url: 'https://ledenicheur.fr/search?search=%s'
+    url: 'https://ledenicheur.fr/search?search=%s',
   },
   {
     country: 'FR',
     name: 'Rue du commerce',
-    url: 'https://www.rueducommerce.fr/recherche/%s'
+    url: 'https://www.rueducommerce.fr/recherche/%s',
   },
   {
     country: 'FR',
     name: 'Top Achat',
-    url: 'https://www.topachat.com/pages/recherche.php?mc=%s'
+    url: 'https://www.topachat.com/pages/recherche.php?mc=%s',
   },
   {
     country: 'DE',
     name: 'Amazon Germany',
-    url: 'https://www.amazon.de/s?k=%s'
+    url: 'https://www.amazon.de/s?k=%s',
   },
   {
     country: 'DE',
     name: 'Alternate',
-    url: 'https://www.alternate.de/html/search.html?query=%s'
+    url: 'https://www.alternate.de/html/search.html?query=%s',
   },
   {
     country: 'DE',
     name: 'Caseking',
-    url: 'https://www.caseking.de/search?sSearch=%s'
+    url: 'https://www.caseking.de/search?sSearch=%s',
   },
   {
     country: 'DE',
     name: 'Geizhals',
-    url: 'https://geizhals.de/?fs=%s'
+    url: 'https://geizhals.de/?fs=%s',
   },
   {
     country: 'DE',
     name: 'Mindfactory',
-    url: 'https://www.mindfactory.de/search_result.php?search_query=%s'
+    url: 'https://www.mindfactory.de/search_result.php?search_query=%s',
   },
   {
     country: 'GR',
     name: 'Skroutz',
-    url: 'https://skroutz.gr/search?keyphrase=%s'
+    url: 'https://skroutz.gr/search?keyphrase=%s',
   },
   {
     country: 'GR',
     name: 'Bestprice',
-    url: 'https://www.bestprice.gr/cat/2609/memory.html?q=%s'
+    url: 'https://www.bestprice.gr/cat/2609/memory.html?q=%s',
   },
   {
     country: 'IE',
     name: 'PriceSpy',
-    url: 'https://pricespy.ie/search?search=%s'
+    url: 'https://pricespy.ie/search?search=%s',
   },
   {
     country: 'IT',
     name: 'Amazon Italy',
-    url: 'https://www.amazon.it/s/?k=%s'
+    url: 'https://www.amazon.it/s/?k=%s',
   },
   {
     country: 'IT',
     name: 'ePrice',
-    url: 'https://www.eprice.it/search/qs=%s'
+    url: 'https://www.eprice.it/search/qs=%s',
   },
   {
     country: 'NZ',
     name: 'PCPartPicker NZ',
-    url: 'https://nz.pcpartpicker.com/search/?q=%s'
+    url: 'https://nz.pcpartpicker.com/search/?q=%s',
   },
   {
     country: 'NO',
     name: 'Prisjakt',
-    url: 'https://www.prisjakt.no/search?search=%s'
+    url: 'https://www.prisjakt.no/search?search=%s',
   },
   {
     country: 'PL',
     name: 'x-kom',
-    url: 'https://www.x-kom.pl/szukaj?q=%s'
+    url: 'https://www.x-kom.pl/szukaj?q=%s',
   },
   {
     country: 'PL',
     name: 'morele.net',
-    url: 'https://www.morele.net/wyszukiwarka/0/0/,,,,,,,,,,,,/1/?q=%s'
+    url: 'https://www.morele.net/wyszukiwarka/0/0/,,,,,,,,,,,,/1/?q=%s',
   },
   {
     country: 'PL',
     name: 'Proline',
-    url: 'https://proline.pl/?qp=%s'
+    url: 'https://proline.pl/?qp=%s',
   },
   {
     country: 'PL',
     name: 'emag',
-    url: 'https://www.emag.pl/search/%s'
+    url: 'https://www.emag.pl/search/%s',
   },
   {
     country: 'PT',
     name: 'PC Diga',
-    url: 'https://www.pcdiga.com/catalogsearch/result/?q=%s'
+    url: 'https://www.pcdiga.com/catalogsearch/result/?q=%s',
   },
   {
     country: 'PT',
     name: 'Global Data',
-    url: 'https://www.globaldata.pt/shop/advancedsearch/result/?q=%s'
+    url: 'https://www.globaldata.pt/shop/advancedsearch/result/?q=%s',
   },
   {
     country: 'PT',
     name: 'Chiptec',
-    url: 'https://www.chiptec.net/catalogsearch/result/?cat=0&q=%s'
+    url: 'https://www.chiptec.net/catalogsearch/result/?cat=0&q=%s',
   },
   {
     country: 'PT',
     name: 'Alientech',
-    url: 'https://www.alientech.pt/?s=%s&post_type=product'
+    url: 'https://www.alientech.pt/?s=%s&post_type=product',
   },
   {
     country: 'PT',
     name: 'Novo Atalho',
-    url: 'https://www.novoatalho.pt/pt-PT/pesquisa.html?txton=products&txtsearch=%s'
+    url: 'https://www.novoatalho.pt/pt-PT/pesquisa.html?txton=products&txtsearch=%s',
   },
   {
     country: 'RO',
     name: 'Price.ro',
-    url: 'https://www.price.ro/index.php?action=q&text=%s'
+    url: 'https://www.price.ro/index.php?action=q&text=%s',
   },
   {
     country: 'RO',
     name: 'Compari',
-    url: 'https://www.compari.ro/CategorySearch.php?st=%s'
+    url: 'https://www.compari.ro/CategorySearch.php?st=%s',
   },
   {
     country: 'ES',
     name: 'Amazon Spain',
-    url: 'https://www.amazon.es/s?k=%s'
+    url: 'https://www.amazon.es/s?k=%s',
   },
   {
     country: 'ES',
     name: 'PC Componentes',
-    url: 'https://www.pccomponentes.com/buscar/?query=%s'
+    url: 'https://www.pccomponentes.com/buscar/?query=%s',
   },
   {
     country: 'SE',
     name: 'Komplett',
-    url: 'https://www.komplett.se/search?q=%s'
+    url: 'https://www.komplett.se/search?q=%s',
   },
   {
     country: 'SE',
     name: 'Prisjakt',
-    url: 'https://www.prisjakt.nu/search?search=%s'
+    url: 'https://www.prisjakt.nu/search?search=%s',
   },
   {
     country: 'CH',
     name: 'Digitec',
-    url: 'https://www.digitec.ch/de/Search?q=%s'
+    url: 'https://www.digitec.ch/de/Search?q=%s',
   },
   {
     country: 'CH',
     name: 'Brack',
-    url: 'https://www.brack.ch/search?query=%s'
+    url: 'https://www.brack.ch/search?query=%s',
   },
   {
     country: 'CH',
     name: 'Microspot',
-    url: 'https://www.microspot.ch/de/search?search=%s'
+    url: 'https://www.microspot.ch/de/search?search=%s',
   },
   {
     country: 'CH',
     name: 'Alternate.ch',
-    url: 'https://www.alternate.ch/html/search.html?query=%s'
+    url: 'https://www.alternate.ch/html/search.html?query=%s',
   },
   {
     country: 'CH',
     name: 'Steg',
-    url: 'https://www.steg-electronics.ch/de/article/articleSearch.aspx?TXTSEARCH=%s'
+    url: 'https://www.steg-electronics.ch/de/article/articleSearch.aspx?TXTSEARCH=%s',
   },
   {
     country: 'CH',
     name: 'Techmania',
-    url: 'https://www.techmania.ch/Search/DoSearch?suche=%s'
+    url: 'https://www.techmania.ch/Search/DoSearch?suche=%s',
   },
   {
     country: 'CH',
     name: 'Ricardo',
-    url: 'https://www.ricardo.ch/de/s/%s'
+    url: 'https://www.ricardo.ch/de/s/%s',
   },
   {
     country: 'CH',
     name: 'toppreise.ch',
-    url: 'https://www.toppreise.ch/index.php?search=%s'
+    url: 'https://www.toppreise.ch/index.php?search=%s',
   },
   {
     country: 'UK',
     name: 'Amazon UK',
-    url: 'https://www.amazon.co.uk/s?k=%s'
+    url: 'https://www.amazon.co.uk/s?k=%s',
   },
   {
     country: 'UK',
     name: 'Overclockers UK',
-    url: 'https://www.overclockers.co.uk/search?sSearch=%s'
+    url: 'https://www.overclockers.co.uk/search?sSearch=%s',
   },
   {
     country: 'UK',
     name: 'Scan',
-    url: 'https://www.scan.co.uk/search?q==%s'
+    url: 'https://www.scan.co.uk/search?q==%s',
   },
   {
     country: 'UK',
     name: 'PriceSpy',
-    url: 'https://pricespy.co.uk/search?search=%s'
+    url: 'https://pricespy.co.uk/search?search=%s',
   },
   {
     country: 'UK',
     name: 'PCPartPicker UK',
-    url: 'https://uk.pcpartpicker.com/search/?q=%s'
+    url: 'https://uk.pcpartpicker.com/search/?q=%s',
   },
   {
     country: 'USA',
     name: 'Amazon',
-    url: 'https://www.amazon.com/s?k=%s'
+    url: 'https://www.amazon.com/s?k=%s',
   },
   {
     country: 'USA',
     name: 'Newegg US',
-    url: 'https://www.newegg.com/Product/ProductList.aspx?Submit=ENE&DEPA=0&Description=%s'
+    url: 'https://www.newegg.com/Product/ProductList.aspx?Submit=ENE&DEPA=0&Description=%s',
   },
   {
     country: 'USA',
     name: 'PCPartPicker',
-    url: 'https://pcpartpicker.com/search/?cc=us&q=%s'
+    url: 'https://pcpartpicker.com/search/?cc=us&q=%s',
   },
   {
     country: 'WWW',
     name: 'PCPartPicker',
-    url: 'https://pcpartpicker.com/search/?q=%s'
+    url: 'https://pcpartpicker.com/search/?q=%s',
   },
   {
     country: 'WWW',
     name: 'Google',
-    url: 'https://www.google.com/search?source=hp&q=%s'
-  }
+    url: 'https://www.google.com/search?source=hp&q=%s',
+  },
 ]
 
 export const countries = {
@@ -966,5 +966,5 @@ export const countries = {
   SE: 'Sweden',
   UK: 'UK',
   USA: 'USA',
-  WWW: 'World-wide'
+  WWW: 'World-wide',
 }

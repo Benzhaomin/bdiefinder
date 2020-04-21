@@ -1,5 +1,5 @@
 /**
- * Main app
+ * Main app.
  */
 import {sorted, set} from './python'
 import {skus, sites, countries} from './data'
@@ -11,9 +11,9 @@ import Filters from './filters'
 import {addToggle, toggleHidden, setCountry, onSkusChanged, ui, domReady} from './ui'
 
 /* Products */
-store.products = Products(skus.map(sku => parse(sku)))
+store.products = Products(skus.map((sku) => parse(sku)))
 
-domReady(function() {
+domReady(function () {
   // skus filters
   const filters = Filters()
   filters.add(ui('#display-filters'), 'displays', 'display')
@@ -32,12 +32,12 @@ domReady(function() {
 
   ui('#advanced').on('click', () => {
     ui('#advanced').toggleClass('active')
-    ui('.advanced').each(node => toggleHidden(node))
+    ui('.advanced').each((node) => toggleHidden(node))
   })
 
   // countries presets
   const container = ui('#country-presets')
-  const codes = sorted(set(sites.map(site => site.country)))
+  const codes = sorted(set(sites.map((site) => site.country)))
   for (const code of codes) {
     const button = addToggle(code, code, container, countries[code])
     button.on('click', () => setCountry(code))

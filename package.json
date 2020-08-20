@@ -27,8 +27,8 @@
     "file-loader": "^6.0.0",
     "normalize.css": "^8.0.1",
     "push-dir": "^0.4.1",
-    "umbrellajs": "^3.1.0",
-    "webpack": "^4.42.1",
-    "webpack-cli": "^3.3.11"
+    "umbrellajs": "^3.2.3",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
   }
 }

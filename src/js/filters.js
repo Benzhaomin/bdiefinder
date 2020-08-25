@@ -1,5 +1,5 @@
 /**
- * Expose product filters as button groups
+ * Expose product filters as button groups.
  */
 import {store} from './store'
 import {addToggle, setSkus, ui} from './ui'
@@ -11,7 +11,8 @@ export default function Filters() {
     filters.push({
       container: uicontainer,
       values: valuescb,
-      filter: filtercb
+      value: null,
+      filter: filtercb,
     })
   }
 
@@ -25,7 +26,7 @@ export default function Filters() {
 
       for (const value of products[filter.values]()) {
         const button = addToggle(value, value, filter.container)
-        button.on('click', e => apply(e))
+        button.on('click', (e) => apply(e))
         if (value === filter.value) {
           button.addClass('active')
         }
@@ -33,12 +34,17 @@ export default function Filters() {
     }
   }
 
-  function apply() {
+  function apply(selected) {
     let products = store.products
+    selected = selected || {displays: 'Common kits'}
 
     for (const filter of filters) {
-      const value = filter.container.find('button.active').first()
-      filter.value = value ? value.value : null
+      if (filter.values in selected) {
+        filter.value = selected[filter.values]
+      } else {
+        const button = filter.container.find('button.active').first()
+        filter.value = button ? button.value : null
+      }
       products = products[filter.filter](filter.value)
     }
 
@@ -64,6 +70,7 @@ export default function Filters() {
 
   return {
     add,
-    reset
+    reset,
+    apply,
   }
 }

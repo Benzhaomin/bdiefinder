@@ -910,16 +910,6 @@ export const sites = [
     url: 'https://www.techmania.ch/Search/DoSearch?suche=%s',
   },
   {
-    country: 'CH',
-    name: 'Ricardo',
-    url: 'https://www.ricardo.ch/de/s/%s',
-  },
-  {
-    country: 'CH',
-    name: 'Microspot',
-    url: 'https://www.microspot.ch/de/search?search=%s',
-  },
-  {
     country: 'UK',
     name: 'Amazon UK',
     url: 'https://www.amazon.co.uk/s?k=%s',

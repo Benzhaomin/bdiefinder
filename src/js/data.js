@@ -882,22 +882,22 @@ export const sites = [
   {
     country: 'CH',
     name: 'Digitec',
-    url: 'https://www.digitec.ch/de/Search?q=%s',
+    url: 'https://www.digitec.ch/producttype/ram-2?q=%s',
   },
   {
     country: 'CH',
     name: 'Brack',
-    url: 'https://www.brack.ch/search?query=%s',
+    url: 'https://www.brack.ch/it-multimedia/pc-komponenten/arbeitsspeicher/memory-ram?query=%s',
   },
   {
     country: 'CH',
-    name: 'Microspot',
-    url: 'https://www.microspot.ch/de/search?search=%s',
+    name: 'toppreise.ch',
+    url: 'https://www.toppreise.ch/index.php?search=%s',
   },
   {
     country: 'CH',
     name: 'Alternate.ch',
-    url: 'https://www.alternate.ch/html/search.html?query=%s',
+    url: 'https://www.alternate.ch/listing.xhtml?q=%s',
   },
   {
     country: 'CH',
@@ -916,8 +916,8 @@ export const sites = [
   },
   {
     country: 'CH',
-    name: 'toppreise.ch',
-    url: 'https://www.toppreise.ch/index.php?search=%s',
+    name: 'Microspot',
+    url: 'https://www.microspot.ch/de/search?search=%s',
   },
   {
     country: 'UK',

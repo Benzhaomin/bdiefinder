@@ -1,14 +1,14 @@
 {
   "name": "bdiefinder",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": " Find Samsung B-Die DDR 4 memory kits on Amazon, Newegg and many more.",
   "private": true,
   "scripts": {
-    "test": "echo \"Coming soon (tm)\" && exit 1",
+    "test": "echo \"Coming soon (tm)\" && exit 0",
     "dev": "webpack --mode development --watch",
     "build": "webpack --mode production",
-    "deploy": "npm run lint; npm run build; push-dir --dir=dist --branch=gh-pages --cleanup",
-    "lint": "github-lint"
+    "lint": "eslint src",
+    "deploy": "npm run lint; npm run build; push-dir --dir=dist --branch=gh-pages"
   },
   "repository": {
     "type": "git",
@@ -22,9 +22,9 @@
   },
   "homepage": "https://benzhaomin.github.io/bdiefinder/",
   "devDependencies": {
-    "eslint": "^6.8.0",
-    "eslint-plugin-github": "^3.4.1",
-    "file-loader": "^6.0.0",
+    "eslint": "^7.8.1",
+    "eslint-plugin-github": "^4.1.1",
+    "file-loader": "^6.1.0",
     "normalize.css": "^8.0.1",
     "push-dir": "^0.4.1",
     "umbrellajs": "^3.2.3",

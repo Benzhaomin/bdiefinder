@@ -1,6 +1,19 @@
 {
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "plugins": [
+    "github"
+  ],
   "extends": [
-    "plugin:github/es6",
-    "plugin:github/app"
-  ]
+    "plugin:github/recommended",
+    "plugin:github/browser"
+  ],
+  "rules": {
+    "prettier/prettier": "off"
+  }
 }

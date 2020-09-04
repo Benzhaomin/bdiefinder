@@ -4,7 +4,7 @@
 import {Product} from './product'
 
 // ADATA (eg. AX4U460038G19-DRZ)
-function ADATA(sku) {
+export function ADATA(sku) {
   // https://regex101.com/r/MWiKJR/1
   const regex = /AX4U(\d{4})3(\d)G(\d{2})-([BSDQ])([\w]{1,2}[\d]{0,2})/g
   const groups = regex.exec(sku)
@@ -32,7 +32,7 @@ function ADATA(sku) {
 }
 
 // Apacer (eg. EK.16GA5.GGBK2)
-function Apacer(sku) {
+export function Apacer(sku) {
   return {
     'EK.16GA5.GGBK2': Product('Apacer', 'Blade', sku, '4133', '18', '16', '2', null, false),
     'EK.16GA4.GFAK2': Product('Apacer', 'Commando', sku, '3600', '17', '16', '2', null, false),
@@ -40,7 +40,7 @@ function Apacer(sku) {
 }
 
 // Avexir (eg. AVD4UZ136001708G-2BZ1RR)
-function Avexir(sku) {
+export function Avexir(sku) {
   // https://regex101.com/r/T7pqzr/1
   const regex = /AVD4UZ1([\d]{4})([\d]{2})[0]?([1,3,6]?[2,4,6,8])G-([\d])([\w]{3})([\w]{2})/g
   const groups = regex.exec(sku)
@@ -79,7 +79,7 @@ const CorsairColors = {
 }
 
 // Corsair (eg. CMD32GX4M4B3600C16)
-function Corsair(sku) {
+export function Corsair(sku) {
   // https://regex101.com/r/lM1T9q/4
   const regex = /C([A-Z]{2})(\d{2,3})GX(\d)M(\d)[A-Z](\d{4})C(\d{2})([A-Z])?/g
   const groups = regex.exec(sku)
@@ -109,7 +109,7 @@ function Corsair(sku) {
 }
 
 // Team Group (eg. TXD416G3733HC18ADC01)
-function TeamGroup(sku) {
+export function TeamGroup(sku) {
   // https://regex101.com/r/z0CUon/6
   const regex = /T([\w]{1,3})D4(\d{2})G(\d{4})HC(\d{2})\w([DQ])C?01/g
   const groups = regex.exec(sku)
@@ -183,7 +183,7 @@ const GskillRipjawsColors = {
 }
 
 // G-Skill (eg. F4-3200C14D-16GFX)
-function GSkill(sku) {
+export function GSkill(sku) {
   // https://regex101.com/r/CjUiJS/4
   const regex = /F4-(\d{4})C(\d{2})([DQ2]{1,2})-(\d{2,3})G([A-Z]{2,6})/g
   const groups = regex.exec(sku)
@@ -221,7 +221,7 @@ function GSkill(sku) {
 }
 
 // Samsung (eg. M391A1K43BB1-CRC)
-function Samsung(sku) {
+export function Samsung(sku) {
   // https://regex101.com/r/smbbzc/1
   const regex = /M3(\d{2})A(\d{1})K43(BB\d{1})-(C[A-Z]{2})/g
   const groups = regex.exec(sku)
@@ -261,7 +261,7 @@ const GeilSeries = {
 }
 
 // GEiL (eg. GEX416GB3200C16ADC)
-function Geil(sku) {
+export function Geil(sku) {
   // https://regex101.com/r/mOcKR8/8
   const regex = /G([A-Z]{2,6})\w(\d{1,2})GB(\d{4})C(\d{2})A?(\w)C/g
   const groups = regex.exec(sku)
@@ -284,7 +284,7 @@ function Geil(sku) {
 }
 
 // Hall of Fame / Galax (eg. HOF4CXLBS3600K17LD162C) or KFA2 (eg. HOF4CXLBS3600K17LD162K)
-function HOF(sku) {
+export function HOF(sku) {
   // https://regex101.com/r/WBL7z2/5
   const regex = /([A-Z]{3,6})4([A-Z]{3})[1,4]?([A-Z]{2,3})(\d{4})[A-Z](\d{2})[A-Z]{2}(\d{2})(\d)([CK])/g
   const groups = regex.exec(sku)
@@ -326,7 +326,7 @@ const KingstonSeries = {
 }
 
 // Kingston Hyper X (eg. HX436C17PB3K4/32)
-function Kingston(sku) {
+export function Kingston(sku) {
   // https://regex101.com/r/sZJJWU/2
   const regex = /HX4(\d{2})C(\d{2})(PB3A?)K?([\d]?)\/(\d{1,2})/g
   const groups = regex.exec(sku)
@@ -352,7 +352,7 @@ const PatriotSeries = {
 }
 
 // Patriot Viper (eg. PV416G373C7K)
-function Patriot(sku) {
+export function Patriot(sku) {
   // https://regex101.com/r/yYVaIh/4
   const regex = /P([BVELWRS]*)4(\d{2})G(\d{3})C(\d{1})K/g
   const groups = regex.exec(sku)
@@ -369,7 +369,7 @@ function Patriot(sku) {
 }
 
 // SuperTalent (eg. F3600UX16G)
-function SuperTalent(sku) {
+export function SuperTalent(sku) {
   // https://regex101.com/r/kKlg3h/3
   const regex = /F(\d{4})U([ABX])(\d{1,2})G/g
   const groups = regex.exec(sku)
@@ -386,7 +386,7 @@ function SuperTalent(sku) {
 }
 
 // Crucial Ballistix Elite (eg. BLE2K8G4D34AEEAK) - no info on cas latency
-function Crucial(sku) {
+export function Crucial(sku) {
   // https://regex101.com/r/WvBqxu/1
   const regex = /BLE([\d]?)\w?([\d])G4D(\d{2})AEEAK/g
   const groups = regex.exec(sku)
@@ -403,7 +403,7 @@ function Crucial(sku) {
 }
 
 // Inno3d iChill RGB (eg. RCX2-16G3600R) - no info on cas latency
-function Inno3d(sku) {
+export function Inno3d(sku) {
   // https://regex101.com/r/R3HIDO/1
   const regex = /RCX([\d])-([\d]{2})G(\d{4})([A|R])/g
   const groups = regex.exec(sku)
@@ -432,7 +432,7 @@ function Inno3d(sku) {
 }
 
 // Zadak Shield (eg. ZD4-SHC3200C14-64GDSD)
-function Zadak(sku) {
+export function Zadak(sku) {
   // https://regex101.com/r/LTr1ZE/1/
   const regex = /ZD4-SH[C|K]([\d]{4})C([\d]{2})-([\d]{2})G/g
   const groups = regex.exec(sku)
@@ -449,8 +449,8 @@ function Zadak(sku) {
 }
 
 // turns any SKU into a Product
-export default function parse(sku) {
-  return {
+export function parse(sku) {
+  const parser = {
     AV: Avexir,
     AX: ADATA,
     BL: Crucial,
@@ -473,5 +473,10 @@ export default function parse(sku) {
     TL: TeamGroup,
     TX: TeamGroup,
     ZD: Zadak,
-  }[sku.slice(0, 2)](sku)
+  }[sku.slice(0, 2)]
+  if (parser === undefined) {
+    // no parser found
+    return
+  }
+  return parser(sku)
 }

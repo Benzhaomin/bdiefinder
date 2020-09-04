@@ -4,11 +4,11 @@
   "description": " Find Samsung B-Die DDR 4 memory kits on Amazon, Newegg and many more.",
   "private": true,
   "scripts": {
-    "test": "echo \"Coming soon (tm)\" && exit 0",
     "dev": "webpack --mode development --watch",
-    "build": "webpack --mode production",
     "lint": "eslint src",
-    "deploy": "npm run lint; npm run build; push-dir --dir=dist --branch=gh-pages"
+    "test": "TESTBUILD=true webpack --mode none; mocha test-dist/app.js",
+    "build": "webpack --mode production",
+    "deploy": "push-dir --dir=dist --branch=gh-pages --remote all --cleanup"
   },
   "repository": {
     "type": "git",
@@ -22,9 +22,11 @@
   },
   "homepage": "https://benzhaomin.github.io/bdiefinder/",
   "devDependencies": {
+    "chai": "^4.2.0",
     "eslint": "^7.8.1",
     "eslint-plugin-github": "^4.1.1",
     "file-loader": "^6.1.0",
+    "mocha": "^8.1.3",
     "normalize.css": "^8.0.1",
     "push-dir": "^0.4.1",
     "umbrellajs": "^3.2.3",

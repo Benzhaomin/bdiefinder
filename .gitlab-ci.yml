@@ -1,4 +1,4 @@
-image: node:13
+image: node:14
 
 before_script:
   - npm install
@@ -11,7 +11,7 @@ test:lint:
   script:
     - npm run lint
 
-test:node:13:
+test:node:14:
   script:
+    - npm run test
     - npm run build
-#    - npm test

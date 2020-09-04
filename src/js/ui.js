@@ -10,7 +10,7 @@ import '../icon.png'
 
 import {u} from 'umbrellajs'
 import {sites} from './data'
-import parse from './parsers'
+import {parse} from './parsers'
 
 export const ui = u
 

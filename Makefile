@@ -1,8 +1,6 @@
-.PHONY: update boostrap clean
+.PHONY: dev test deploy update
 
 all: dist
-
-src:
 
 node_modules:
 	npm install
@@ -19,10 +17,14 @@ dev: node_modules
 test:
 	npm run test
 
+deploy: dist
+	npm run deploy
+
 update:
 	./update_skus.sh
 
 clean:
 	rm -rf dist || true
+	rm -rf test-dist || true
 	rm -rf node_modules || true
 	rm -f /tmp/bdiefinder.html || true

@@ -638,6 +638,41 @@ export const sites = [
     url: 'https://www.amazon.com/s?k=%s',
   },
   {
+    country: 'BG',
+    name: 'Ardes',
+    url: 'https://ardes.bg/products?q=%s'
+  },
+  {
+    country: 'BG',
+    name: 'Jar Computers',
+    url: 'https://www.jarcomputers.com/search?q=%s'
+  },
+  {
+    country: 'BG',
+    name: 'Most Computers',
+    url: 'https://most.bg/catalogsearch/result/?q=%s'
+  },
+  {
+    country: 'BG',
+    name: 'Nikem',
+    url: 'http://nikem-bg.net/magazin.php?search=RAM&p=%s'
+  },
+  {
+    country: 'BG',
+    name: 'Plasico',
+    url: 'https://plasico.bg/tyrsene/%s'
+  },
+  {
+    country: 'BG',
+    name: 'Vali',
+    url: 'https://www.vali.bg/bg/catalog#!?q=%s&s=price_desc'
+  },
+  {
+    country: 'BG',
+    name: 'Vario',
+    url: 'https://www.vario.bg/search.php?s=%s'
+  },
+  {
     country: 'BR',
     name: 'Kabum',
     url: 'https://www.kabum.com.br/cgi-local/site/listagem/listagem.cgi?string=%s&btnG=',
@@ -976,6 +1011,7 @@ export const sites = [
 
 export const countries = {
   AU: 'Australia',
+  BG: 'Bulgaria',
   BR: 'Brazil',
   CA: 'Canada',
   CH: 'Switzerland',

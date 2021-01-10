@@ -517,9 +517,7 @@ export const skus = [
   'F4-4300C19Q2-64GTRG',
   'F4-3200C14D-32GTZN',
   'F4-3200C14Q-64GTZN',
-  /* not guaranteed, see #21
   'F4-3600C16D-32GTZN',
-  */
   'F4-3600C16Q-64GTZN',
   'F4-3600C14D-16GTZNB',
   'F4-3600C14Q-32GTZNB',

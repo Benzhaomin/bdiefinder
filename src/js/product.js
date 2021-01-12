@@ -9,13 +9,13 @@ function getLatency(speed, cas) {
 }
 
 function isExotic(product) {
-  if (!['3000', '3200', '3400', '3600'].includes(product.speed)) {
+  if (!['3200', '3600', '4000'].includes(product.speed)) {
     return true
   }
-  if (!['16', '32'].includes(product.size)) {
+  if (!['16', '32', '64'].includes(product.size)) {
     return true
   }
-  if (!['Corsair', 'Crucial', 'G.Skill', 'Kingston', 'Patriot', 'Team Group'].includes(product.brand)) {
+  if (!['Corsair', 'GEiL', 'G.Skill', 'Kingston', 'Patriot', 'Team Group'].includes(product.brand)) {
     return true
   }
   if (product.ecc) {

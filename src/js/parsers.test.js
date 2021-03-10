@@ -1,6 +1,6 @@
 import {describe, it} from 'mocha'
 import {expect} from 'chai'
-import {ADATA, Apacer, Avexir, Corsair, TeamGroup, GSkill, Samsung, Geil, HOF, Kingston, Patriot, SuperTalent, Crucial, Inno3d, Zadak} from './parsers'
+import {ADATA, Apacer, Avexir, Corsair, TeamGroup, GSkill, Samsung, Geil, HOF, HEX, Kingston, Patriot, SuperTalent, Crucial, Inno3d, Zadak} from './parsers'
 
 const parsers = new Map([
     [ADATA, ['AX4U460038G19-DRZ']],
@@ -12,6 +12,7 @@ const parsers = new Map([
     [Samsung, ['M391A1K43BB1-CRC']],
     [Geil, ['GEX416GB3200C16ADC']],
     [HOF, ['HOF4CXLBS3600K17LD162C']],
+    [HEX, ['HEX4D16G4800C19']],
     [Kingston, ['HX436C17PB3K4/32']],
     [Patriot, ['PV416G373C7K']],
     [SuperTalent, ['F3600UX16G']],

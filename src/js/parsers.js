@@ -5,8 +5,8 @@ import {Product} from './product'
 
 // ADATA (eg. AX4U460038G19-DRZ)
 export function ADATA(sku) {
-  // https://regex101.com/r/MWiKJR/1
-  const regex = /AX4U(\d{4})3(\d)G(\d{2})-([BSDQ])([\w]{1,2}[\d]{0,2})/g
+  // https://regex101.com/r/MWiKJR/2
+  const regex = /AX4U(\d{4})3(\d)G(\d{2})C?-([BSDQ])([\w]{1,2}[\d]{0,2})/g
   const groups = regex.exec(sku)
   const brand = 'ADATA'
   const code = groups[5]
@@ -22,6 +22,8 @@ export function ADATA(sku) {
     series = 'Spectrix D40'
   } else if (code === 'R41' || code === 'T41') {
     series = 'Spectrix D41'
+  } else if (code === 'T60') {
+    series = 'Spectrix D60G'
   } else if (code === 'R80') {
     series = 'Spectrix D80'
   } else if (code === 'RZ') {
@@ -127,23 +129,29 @@ export function TeamGroup(sku) {
     series = 'Xtreem Dark Pro'
     color = code[2] === 'R' ? 'red' : 'grey'
   } else if (code === 'X') {
-    series = 'T-Force Xtreem' // Silver
+    series = 'T-Force Xtreem'
     color = 'silver'
   } else if (code === 'XK') {
-    series = 'T-Force Xtreem' // Silver
+    series = 'T-Force Xtreem'
     color = 'black'
   } else if (code === 'XB') {
     series = 'T-Force Xtreem' // 8Pack Edition
   } else if (code === 'XG') {
     series = 'T-Force Xtreem' // Gold
+    color = 'gold'
   } else if (code === 'XOB') {
     series = 'T-Force Xtreem' // OnePageBook Edition
   } else if (code === 'L') {
     series = 'T-Force Vulcan'
   } else if (code === 'F10') {
-    series = 'Xtreem ARGB'
+    series = 'T-Force Xtreem'
+    color = 'ARGB'
+  } else if (code === 'F13') {
+    series = 'T-Force Xtreem'
+    color = 'ARGB White'
   } else if (code[0] === 'F') {
     series = 'T-Force Night Hawk RGB'
+    color = 'RGB'
   }
 
   return Product(brand, series, sku, speed, cas, size, sticks, color, ecc)
@@ -320,6 +328,23 @@ export function HOF(sku) {
   return Product(brand, series, sku, speed, cas, size, sticks, color, ecc)
 }
 
+// Galax Hall of Fame (ES) (eg. HEX4D16G4800C19)
+export function HEX(sku) {
+  // https://regex101.com/r/fBfV5X/1
+  const regex = /(HEX)4(D)(\d{2})(G)(\d{4})C(\d{2})/g
+  const groups = regex.exec(sku)
+  const brand = 'Galax'
+  const series = 'Hall of Fame (ES)'
+  const speed = groups[4]
+  const cas = groups[5]
+  const size = groups[2]
+  const sticks = groups[1] === 'Q' ? 4 : 2
+  const color = null
+  const ecc = false
+
+  return Product(brand, series, sku, speed, cas, size, sticks, color, ecc)
+}
+
 const KingstonSeries = {
   PB3: 'Hyper X Predator',
   PB3A: 'Hyper X Predator RGB',
@@ -464,6 +489,7 @@ export function parse(sku) {
     GP: Geil,
     GW: Geil,
     HO: HOF,
+    HE: HEX,
     HX: Kingston,
     M3: Samsung,
     PV: Patriot,

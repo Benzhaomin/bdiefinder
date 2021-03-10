@@ -11,6 +11,7 @@ export const skus = [
   'AX4U413338G19-SR80',
   'AX4U413338G19-DR80',
   'AX4U413338G19-DT60',
+  'AX4U360038G14C-DT60',
 
   // Apacer
   'EK.16GA5.GGBK2',
@@ -100,6 +101,8 @@ export const skus = [
   'CMW32GX4M4C3200C14',
   'CMW32GX4M4K4266C19',
   'CMT32GX4M2C3200C14',
+  'CMK16GX4M2G4000C16',
+  'CMK16GX4M2Z4000C16',
   //'CMT16GX4M2K4266C19', "ja?"
 
   // GeIL
@@ -170,6 +173,9 @@ export const skus = [
   'HOF4KXL1BST4600S19TC081CZGG',
   'HOF4KXL1CST4266O19MF162C',
   'HOF4RJL4BST4400T19MF162CL',
+
+  // Galax Hall of Fame (ES)
+  'HEX4D16G4800C19',
 
   // KFA2 Hall of Fame
   'HOF4CXLBS3600K17LD162K',
@@ -261,6 +267,11 @@ export const skus = [
   'TDPPD432G3600HC16GDC01', // 'TDPPD432G3600HC16GDC0', typo on hluxx
   'TF10D432G3200HC14BDC01',
   'TF10D432G3600HC14CDC01',
+  'TF13D416G3200HC14BDC01',
+  'TF13D416G3600HC14CDC01',
+  'TF13D432G3200HC14BDC01',
+  'TF13D432G3600HC14CDC01',
+
 
   // Samsung
   'M378A1K43BB2-CPB',
@@ -587,6 +598,9 @@ export const skus = [
   'F4-3600C14D-32GTRS',
   'F4-3600C14Q-64GTRS',
   'F4-4000C16D-32GTRS',
+  'F4-4000C17D-16GVKB',
+  'F4-4000C17D-16GTRSB',
+  // 'F4-3200C14Q-32GAO', not found on gskill.com, should be "Ares DDR4"
 ]
 
 /* TODO: add so-dimm support
@@ -615,8 +629,14 @@ export const skus = [
   'M474A1K43BB1-CRC',
   'M474A1K43BB1-CTD',
   'M474A2K43BB1-CTD',
+*/
 
+/* TODO: fix Colorful support somehow
 
+  'DDR4',
+  '3600',
+  '8G',
+  '4266',
 */
 
 export const sites = [

@@ -6,7 +6,16 @@ import {parse} from './parsers'
 describe("skus", () => {
     it("checks that every sku can be parsed", () => {
         for (const s of skus) {
-            expect(parse(s), `product should be built from SKU ${s}`).to.not.be.an('undefined')
+            const parsed = parse(s)
+            expect(parsed, `product should be built from SKU ${s}`).to.not.be.an('undefined')
+            expect(parsed.brand, `brand should be not null ${s}`).to.not.be.equal('')
+            expect(parsed.series, `series should be not null ${s}`).to.not.be.equal('')
+            expect(parsed.speed, `speed should be not null ${s}`).to.not.be.equal('')
+            expect(parsed.cas, `cas should be not null ${s}`).to.not.be.equal('')
+            expect(parsed.latency, `latency should be not null ${s}`).to.not.be.equal('')
+            expect(parsed.size, `size should be not null ${s}`).to.not.be.equal('')
+            expect(parsed.sticks, `sticks should be not null ${s}`).to.not.be.equal('')
+            expect(parsed.ranks, `ranks should be not null ${s}`).to.not.be.equal('')
         }
     });
 });

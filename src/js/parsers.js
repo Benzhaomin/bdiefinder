@@ -152,6 +152,9 @@ export function TeamGroup(sku) {
   } else if (code[0] === 'F') {
     series = 'T-Force Night Hawk RGB'
     color = 'RGB'
+  } else if (code === 'DZF') {
+    series = 'T-Force Dark Z FPS'
+    color = 'black'
   }
 
   return Product(brand, series, sku, speed, cas, size, sticks, color, ecc)
@@ -293,8 +296,8 @@ export function Geil(sku) {
 
 // Hall of Fame / Galax (eg. HOF4CXLBS3600K17LD162C) or KFA2 (eg. HOF4CXLBS3600K17LD162K)
 export function HOF(sku) {
-  // https://regex101.com/r/WBL7z2/5
-  const regex = /([A-Z]{3,6})4([A-Z]{3})[1,4]?([A-Z]{2,3})(\d{4})[A-Z](\d{2})[A-Z]{2}(\d{2})(\d)([CK])/g
+  // https://regex101.com/r/pNEsPg/1
+  const regex = /([A-Z]{3,6})4([A-Z]{3})[1-4]?([A-Z]{2,3})(\d{4})[A-Z](\d{2})[A-Z]{2}(\d{2})(\d)([CK])/g
   const groups = regex.exec(sku)
   const brand = groups[8] === 'K' ? 'KFA2' : 'Galax'
   const code = groups[3]
@@ -309,7 +312,7 @@ export function HOF(sku) {
   let series = ''
   if (code === 'BS') {
     series = 'Hall of Fame'
-  } else if (code === 'BST' && code2 === 'CXL') {
+  } else if (code === 'BST' && (code2 === 'CXL' || code2 === 'KXL')) {
     series = 'Hall of Fame Extreme'
   } else if (code === 'BST' && code2 === 'CRL') {
     series = 'Hall of Fame OC Lab Arduino'
@@ -473,6 +476,23 @@ export function Zadak(sku) {
   return Product(brand, series, sku, speed, cas, size, sticks, color, ecc)
 }
 
+// OLOy (eg. ND4U0836144BRADE)
+export function OLOy(sku) {
+  // https://regex101.com/r/iHims8/1/
+  const regex = /ND4U([\d]{2})([\d]{2})([\d]{2})\d([A-Z]{3})DE/g
+  const groups = regex.exec(sku)
+  const brand = 'OLOy'
+  const series = 'Blade'
+  const speed = `${groups[2]}00`
+  const cas = groups[3]
+  const size = groups[1].replaceAll('0', '')
+  const sticks = 2
+  const color = 'RGB'
+  const ecc = false
+
+  return Product(brand, series, sku, speed, cas, size, sticks, color, ecc)
+}
+
 // turns any SKU into a Product
 export function parse(sku) {
   const parser = {
@@ -492,6 +512,7 @@ export function parse(sku) {
     HE: HEX,
     HX: Kingston,
     M3: Samsung,
+    ND: OLOy,
     PV: Patriot,
     RC: Inno3d,
     TD: TeamGroup,

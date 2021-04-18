@@ -173,6 +173,7 @@ export const skus = [
   'HOF4KXL1BST4600S19TC081CZGG',
   'HOF4KXL1CST4266O19MF162C',
   'HOF4RJL4BST4400T19MF162CL',
+  'HOF4RJL3BST4000M19SF162CL',
 
   // Galax Hall of Fame (ES)
   'HEX4D16G4800C19',
@@ -271,6 +272,7 @@ export const skus = [
   'TF13D416G3600HC14CDC01',
   'TF13D432G3200HC14BDC01',
   'TF13D432G3600HC14CDC01',
+  'TDZFD416G4000HC16CDC01', // 'TDZFD16G4000HC16CDC01', typo on hluxx
 
 
   // Samsung
@@ -613,6 +615,9 @@ export const skus = [
   'F4-4000C16D-32GTRSA',
   'F4-4000C16D-32GTRGA',
   // 'F4-3200C14Q-32GAO', not found on gskill.com, should be "Ares DDR4"
+
+  // OLOy
+  'ND4U0836144BRADE',
 ]
 
 /* TODO: add so-dimm support

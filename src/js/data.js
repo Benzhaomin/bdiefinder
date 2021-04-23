@@ -930,22 +930,17 @@ export const sites = [
   {
     country: 'PT',
     name: 'PC Diga',
-    url: 'https://www.pcdiga.com/catalogsearch/result/?q=%s',
+    url: 'https://www.pcdiga.com/#/embedded/query=%s&page=1&query_name=match_and',
   },
   {
     country: 'PT',
     name: 'Global Data',
-    url: 'https://www.globaldata.pt/shop/advancedsearch/result/?q=%s',
+    url: 'https://globaldata.pt/?query=%s',
   },
   {
     country: 'PT',
     name: 'Chiptec',
     url: 'https://www.chiptec.net/catalogsearch/result/?cat=0&q=%s',
-  },
-  {
-    country: 'PT',
-    name: 'Alientech',
-    url: 'https://www.alientech.pt/?s=%s&post_type=product',
   },
   {
     country: 'PT',

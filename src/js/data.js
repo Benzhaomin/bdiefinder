@@ -834,6 +834,11 @@ export const sites = [
   },
   {
     country: 'FR',
+    name: 'LDLC',
+    url: 'https://www.ldlc.com/recherche/%s/,
+  },
+  {
+    country: 'FR',
     name: 'leDénicheur',
     url: 'https://ledenicheur.fr/search?search=%s',
   },

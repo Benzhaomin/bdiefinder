@@ -835,7 +835,7 @@ export const sites = [
   {
     country: 'FR',
     name: 'LDLC',
-    url: 'https://www.ldlc.com/recherche/%s/,
+    url: 'https://www.ldlc.com/recherche/%s/',
   },
   {
     country: 'FR',

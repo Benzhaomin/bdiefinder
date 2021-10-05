@@ -186,6 +186,13 @@ const GskillTridentZRoyalColors = {
   G: 'gold',
 }
 
+const GskillTridentZRoyalEliteColors = {
+  S: 'silver',
+  G: 'gold',
+  SA: 'silver',
+  GA: 'gold',
+}
+
 const GskillRipjawsColors = {
   G: 'black',
   K: 'black',
@@ -219,6 +226,9 @@ export function GSkill(sku) {
   } else if (code.indexOf('TR') === 0) {
     series = 'Trident Z Royal'
     color = GskillTridentZRoyalColors[code.replace('TR', '')]
+  } else if (code.indexOf('TE') === 0) {
+    series = 'Trident Z Royal Elite'
+    color = GskillTridentZRoyalEliteColors[code.replace('TE', '')]
   } else if (code.indexOf('FX') === 0) {
     series = 'Flare X'
   } else if (code.indexOf('SX') === 0) {

@@ -16,6 +16,32 @@ export const skus = [
   // Apacer
   'EK.16GA5.GGBK2',
   'EK.16GA4.GFAK2',
+  // 'AH4U16G42C17YNBAA-2', too different, just ignore it until there are more kits in that same format
+
+  // Acer Apollo
+  /* no support or just hardcode each number
+  'BL.9BWWR.226',
+  'BL.9BWWR.228',
+  'BL.9BWWR.229',
+  'BL.9BWWR.231',
+  'BL.9BWWR.236',
+  'BL.9BWWR.237',
+  'BL.9BWWR.239',
+  'BL.9BWWR.240',
+  'BL.9BWWR.241',
+  'BL.9BWWR.242',
+  'BL.9BWWR.245',
+  'BL.9BWWR.250',
+  'BL.9BWWR.253',
+  'BL.9BWWR.255',
+  'BL.9BWWR.256',
+  'BL.9BWWR.280',
+  'BL.9BWWR.281',
+  'BL.9BWWR.284',
+  'BL.9BWWR.285',
+  'BL.9BWWR.286',
+  'BL.9BWWR.287',
+  */
 
   // Avexir
   'AVD4UZ136001708G-2BZ1RR',
@@ -740,7 +766,7 @@ export const skus = [
 */
 
 /* TODO: fix Colorful support somehow
-
+  'IGPC08G4266D4R8',
   'DDR4',
   '3600',
   '8G',

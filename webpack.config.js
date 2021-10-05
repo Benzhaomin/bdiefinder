@@ -1,22 +1,9 @@
+/* eslint-disable filenames/match-regex */
 /* eslint eslint-comments/no-use: off */
-/* global __dirname */
-const path = require('path')
-const glob = require("glob")
 
-let entry = path.resolve(__dirname, "src/js/app.js")
-let outputPath = path.resolve(__dirname, 'dist')
-
-if (process.env.TESTBUILD) {
-  entry = glob.sync(__dirname + "/src/js/*.test.js");
-  outputPath = path.resolve(__dirname, 'test-dist');
-}
-
+// eslint-disable-next-line no-undef, import/no-commonjs
 module.exports = {
-  entry: entry,
-  output: {
-    filename: 'app.js',
-    path: outputPath,
-  },
+  entry: "./src/js/app.js",
   module: {
     rules: [
       {
@@ -29,5 +16,5 @@ module.exports = {
         ],
       },
     ],
-  },
+  }
 }

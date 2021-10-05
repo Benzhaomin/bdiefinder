@@ -1,14 +1,14 @@
 /**
  * Main app.
  */
-import {sorted, set} from './python'
-import {skus, sites, countries} from './data'
-import {Products} from './product'
-import {store} from './store'
-import {parse} from './parsers'
-import identifier from './identifier'
+import {addToggle, domReady, onSkusChanged, setCountry, toggleHidden, ui} from './ui'
+import {countries, sites, skus} from './data'
+import {set, sorted} from './python'
 import Filters from './filters'
-import {addToggle, toggleHidden, setCountry, onSkusChanged, ui, domReady} from './ui'
+import {Products} from './product'
+import identifier from './identifier'
+import {parse} from './parsers'
+import {store} from './store'
 
 /* Products */
 store.products = Products(skus.map((sku) => parse(sku)))

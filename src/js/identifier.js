@@ -3,8 +3,8 @@
  */
 /* eslint eslint-comments/no-use: off */
 /* eslint-disable github/unescaped-html-literal */
-import {skus} from './data'
 import {parse} from './parsers'
+import {skus} from './data'
 import {ui} from './ui'
 
 export default function identifier(div) {

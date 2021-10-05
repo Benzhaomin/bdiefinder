@@ -1,7 +1,7 @@
 /**
  * Data model.
  */
-import {sorted, set} from './python'
+import {set, sorted} from './python'
 
 // latency = cycle time here
 function getLatency(speed, cas) {

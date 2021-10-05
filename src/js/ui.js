@@ -8,9 +8,9 @@ import '../main.css'
 import 'normalize.css'
 import '../icon.png'
 
-import {u} from 'umbrellajs'
-import {sites} from './data'
 import {parse} from './parsers'
+import {sites} from './data'
+import {u} from 'umbrellajs'
 
 export const ui = u
 

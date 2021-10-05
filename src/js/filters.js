@@ -1,8 +1,8 @@
 /**
  * Expose product filters as button groups.
  */
-import {store} from './store'
 import {addToggle, setSkus, ui} from './ui'
+import {store} from './store'
 
 export default function Filters() {
   const filters = []

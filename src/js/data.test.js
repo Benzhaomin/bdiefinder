@@ -1,6 +1,8 @@
+/* eslint-disable filenames/match-regex */
+/* eslint eslint-comments/no-use: off */
+import {countries, sites, skus} from './data'
 import {describe, it} from 'mocha'
 import {expect} from 'chai'
-import {skus, sites, countries} from './data'
 import {parse} from './parsers'
 
 describe("skus", () => {

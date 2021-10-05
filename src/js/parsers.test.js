@@ -1,6 +1,8 @@
+/* eslint-disable filenames/match-regex */
+/* eslint eslint-comments/no-use: off */
+import {ADATA, Apacer, Avexir, Corsair, Crucial, GSkill, Geil, HEX, HOF, Inno3d, Kingston, OLOy, Patriot, Samsung, SuperTalent, TeamGroup, Zadak} from './parsers'
 import {describe, it} from 'mocha'
 import {expect} from 'chai'
-import {ADATA, Apacer, Avexir, Corsair, TeamGroup, GSkill, Samsung, Geil, HOF, HEX, Kingston, Patriot, SuperTalent, Crucial, Inno3d, Zadak, OLOy} from './parsers'
 
 const parsers = new Map([
     [ADATA, ['AX4U460038G19-DRZ']],

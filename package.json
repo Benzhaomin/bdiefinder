@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "webpack --mode development --watch",
     "lint": "eslint src",
-    "test": "TESTBUILD=true webpack --mode none; mocha test-dist/app.js",
+    "test": "mochapack --mode development --glob '*.test.js' src/js",
     "build": "webpack --mode production",
     "deploy": "push-dir --dir=dist --branch=gh-pages --remote all --cleanup"
   },
@@ -22,11 +22,12 @@
   },
   "homepage": "https://benzhaomin.github.io/bdiefinder/",
   "devDependencies": {
-    "chai": "^4.3.3",
-    "eslint": "^7.21.0",
-    "eslint-plugin-github": "^4.1.2",
+    "chai": "^4.3.4",
+    "eslint": "^7.32.0",
+    "eslint-plugin-github": "^4.3.0",
     "file-loader": "^6.2.0",
-    "mocha": "^8.3.1",
+    "mocha": "^8.4.0",
+    "mochapack": "^2.1.2",
     "normalize.css": "^8.0.1",
     "push-dir": "^0.4.1",
     "umbrellajs": "^3.2.3",

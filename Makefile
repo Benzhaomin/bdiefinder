@@ -25,6 +25,5 @@ update:
 
 clean:
 	rm -rf dist || true
-	rm -rf test-dist || true
 	rm -rf node_modules || true
 	rm -f /tmp/bdiefinder.html || true

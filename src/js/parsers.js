@@ -1,3 +1,5 @@
+/* eslint-disable i18n-text/no-en */
+/* eslint eslint-comments/no-use: off */
 /**
  * Brand specific implementations of SKU parsing.
  */

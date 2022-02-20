@@ -157,6 +157,8 @@ export function TeamGroup(sku) {
   } else if (code === 'DZF') {
     series = 'T-Force Dark Z FPS'
     color = 'black'
+  } else if (code === 'TCE') {
+    series = 'T-Create Expert'
   }
 
   return Product(brand, series, sku, speed, cas, size, sticks, color, ecc)
@@ -350,9 +352,9 @@ export function HEX(sku) {
   const groups = regex.exec(sku)
   const brand = 'Galax'
   const series = 'Hall of Fame (ES)'
-  const speed = groups[4]
-  const cas = groups[5]
-  const size = groups[2]
+  const speed = groups[5]
+  const cas = groups[6]
+  const size = groups[3]
   const sticks = groups[1] === 'Q' ? 4 : 2
   const color = null
   const ecc = false
@@ -505,9 +507,40 @@ export function OLOy(sku) {
   return Product(brand, series, sku, speed, cas, size, sticks, color, ecc)
 }
 
+// HP (eg. 48U41AA)
+export function HP(sku) {
+  // https://regex101.com/r/CF3TJ0/1
+  const regex = /([\d]{2})[UN]([\d])([\d])AA/g
+  const groups = regex.exec(sku)
+  const brand = 'HP'
+  const series = 'V10'
+  const cas = '14'
+  const sticks = 2
+  const color = 'RGB'
+  const ecc = false
+
+  let speed = groups[1]
+  if (speed === '48') {
+    speed = '3200'
+  } else if (speed === '54') {
+    speed = '3600'
+  }
+
+  let size = groups[3]
+  if (size === '1') {
+    size = '16'
+  } else if (size === '5') {
+    size = '32'
+  }
+
+  return Product(brand, series, sku, speed, cas, size, sticks, color, ecc)
+}
+
 // turns any SKU into a Product
 export function parse(sku) {
   const parser = {
+    48: HP,
+    54: HP,
     AV: Avexir,
     AX: ADATA,
     BL: Crucial,
@@ -530,6 +563,7 @@ export function parse(sku) {
     TD: TeamGroup,
     TF: TeamGroup,
     TL: TeamGroup,
+    TT: TeamGroup,
     TX: TeamGroup,
     ZD: Zadak,
   }[sku.slice(0, 2)]

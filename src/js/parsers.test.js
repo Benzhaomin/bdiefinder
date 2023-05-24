@@ -1,12 +1,13 @@
 /* eslint-disable filenames/match-regex */
 /* eslint eslint-comments/no-use: off */
-import {ADATA, Apacer, Avexir, Corsair, Crucial, GSkill, Geil, HEX, HOF, Inno3d, Kingston, OLOy, Patriot, Samsung, SuperTalent, TeamGroup, Zadak} from './parsers'
+import {ADATA, Apacer, Asgard, Avexir, Corsair, Crucial, GSkill, Geil, HEX, HOF, HP, Inno3d, Kingston, OLOy, Patriot, Samsung, SuperTalent, TeamGroup, Zadak} from './parsers'
 import {describe, it} from 'mocha'
 import {expect} from 'chai'
 
 const parsers = new Map([
     [ADATA, ['AX4U460038G19-DRZ']],
     [Apacer, ['EK.16GA5.GGBK2']],
+    [Asgard, ['VMA47UG-AMC1U23T3']],
     [Avexir, ['AVD4UZ136001708G-2BZ1RR']],
     [Corsair, ['CMD32GX4M4B3600C16']],
     [TeamGroup, ['TXD416G3733HC18ADC01']],
@@ -15,6 +16,7 @@ const parsers = new Map([
     [Geil, ['GEX416GB3200C16ADC']],
     [HOF, ['HOF4CXLBS3600K17LD162C']],
     [HEX, ['HEX4D16G4800C19']],
+    [HP, ['54U63AA']],
     [Kingston, ['HX436C17PB3K4/32']],
     [Patriot, ['PV416G373C7K']],
     [SuperTalent, ['F3600UX16G']],

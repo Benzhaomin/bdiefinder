@@ -114,8 +114,8 @@ export function Corsair(sku) {
 
 // Team Group (eg. TXD416G3733HC18ADC01)
 export function TeamGroup(sku) {
-  // https://regex101.com/r/z0CUon/6
-  const regex = /T([\w]{1,3})D4(\d{2})G(\d{4})HC(\d{2})\w([DQ])C?01/g
+  // https://regex101.com/r/aldDGe/1
+  const regex = /T([\w]{1,3})D4(\d{2})G(\d{4})HC(\d{2})\w([DQ]?)\w{2,3}/g
   const groups = regex.exec(sku)
   const brand = 'Team Group'
   const code = groups[1]
@@ -207,12 +207,12 @@ const GskillRipjawsColors = {
 // G-Skill (eg. F4-3200C14D-16GFX)
 export function GSkill(sku) {
   // https://regex101.com/r/CjUiJS/4
-  const regex = /F4-(\d{4})C(\d{2})([DQ2]{1,2})-(\d{2,3})G([A-Z]{2,6})/g
+  const regex = /F4-(\d{4})C(\d{2})([SDQ2]{1,2})-(\d{2,3})G([A-Z]{2,6})/g
   const groups = regex.exec(sku)
   const brand = 'G.Skill'
   const speed = groups[1]
   const cas = groups[2]
-  const sticks = groups[3] === 'Q2' ? '8' : groups[3] === 'Q' ? '4' : '2'
+  const sticks = groups[3] === 'Q2' ? '8' : groups[3] === 'Q' ? '4' : groups[3] === 'D' ? '2' : '1'
   const size = groups[4]
   const code = groups[5]
   const ecc = false
@@ -529,8 +529,45 @@ export function HP(sku) {
   let size = groups[3]
   if (size === '1') {
     size = '16'
+  } else if (size === '3') {
+    size = '8'
   } else if (size === '5') {
     size = '32'
+  }
+
+  return Product(brand, series, sku, speed, cas, size, sticks, color, ecc)
+}
+
+// Asgard (eg. VMA47UG-AMC1U2AV3)
+export function Asgard(sku) {
+  // https://regex101.com/r/uqlVql/1
+  const regex = /VMA4(\d)UG-AMC1U2(\w{2})3/g
+  const groups = regex.exec(sku)
+  const brand = 'Asgard'
+  const size = '8'
+  const sticks = 2
+  const color = 'Black'
+  const ecc = false
+
+  let series = groups[2]
+  if (series === 'AV') {
+    series = 'Bragi V3'
+  } else if (series === '3T') {
+    series = 'Loki'
+  }
+
+  const model = groups[1]
+  let cas = ''
+  let speed = ''
+  if (model === '7') {
+    speed = '3600'
+    cas = '14'
+  } else if (model === '8') {
+    speed = '4000'
+    cas = '17'
+  } else if (model === '9') {
+    speed = '4000'
+    cas = '16'
   }
 
   return Product(brand, series, sku, speed, cas, size, sticks, color, ecc)
@@ -565,6 +602,7 @@ export function parse(sku) {
     TL: TeamGroup,
     TT: TeamGroup,
     TX: TeamGroup,
+    VM: Asgard,
     ZD: Zadak,
   }[sku.slice(0, 2)]
   if (parser === undefined) {

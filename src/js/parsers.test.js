@@ -1,5 +1,3 @@
-/* eslint-disable filenames/match-regex */
-/* eslint eslint-comments/no-use: off */
 import {ADATA, Apacer, Asgard, Avexir, Corsair, Crucial, GSkill, Geil, HEX, HOF, HP, Inno3d, Kingston, OLOy, Patriot, Samsung, SuperTalent, TeamGroup, Zadak} from './parsers'
 import {describe, it} from 'mocha'
 import {expect} from 'chai'

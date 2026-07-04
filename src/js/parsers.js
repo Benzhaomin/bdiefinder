@@ -326,7 +326,7 @@ export function HOF(sku) {
   let series = ''
   if (code === 'BS') {
     series = 'Hall of Fame'
-  } else if (code === 'BST' && (code2 === 'CXL' || code2 === 'KXL')) {
+  } else if (code === 'BST' && (code2 === 'CXL' || code2 === 'KXL'|| code2 === 'SJL')) {
     series = 'Hall of Fame Extreme'
   } else if (code === 'BST' && code2 === 'CRL') {
     series = 'Hall of Fame OC Lab Arduino'

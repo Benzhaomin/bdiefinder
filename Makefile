@@ -1,4 +1,4 @@
-.PHONY: dev test deploy update
+.PHONY: dev test update
 
 all: dist
 
@@ -16,9 +16,6 @@ dev: node_modules
 
 test:
 	npm run test
-
-deploy: dist
-	npm run deploy
 
 update:
 	./update_skus.sh

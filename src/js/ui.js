@@ -69,7 +69,7 @@ function addSku(table, sku, retailers) {
     tr = ui(`<tr>
     <td></td>
     <td>${sku}</td>
-    <td></td>
+    <td>${e}</td>
     <td></td>
     </tr>`)
   }

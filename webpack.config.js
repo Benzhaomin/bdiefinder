@@ -8,12 +8,10 @@ module.exports = {
     rules: [
       {
         test: /\.(png|css|html)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {name: '[name].[ext]'},
-          },
-        ],
+        type: "asset/resource",
+        generator: {
+          filename: "[name][ext]",
+        },
       },
     ],
   }

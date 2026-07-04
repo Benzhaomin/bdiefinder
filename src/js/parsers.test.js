@@ -1,6 +1,5 @@
 import {ADATA, Apacer, Asgard, Avexir, Corsair, Crucial, GSkill, Geil, HEX, HOF, HP, Inno3d, Kingston, OLOy, Patriot, Samsung, SuperTalent, TeamGroup, Zadak} from './parsers'
-import {describe, it} from 'mocha'
-import {expect} from 'chai'
+import {describe, it, expect} from "vitest"
 
 const parsers = new Map([
     [ADATA, ['AX4U460038G19-DRZ']],

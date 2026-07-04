@@ -1,6 +1,5 @@
+import {describe, it, expect} from "vitest"
 import {countries, sites, skus} from './data'
-import {describe, it} from 'mocha'
-import {expect} from 'chai'
 import {parse} from './parsers'
 
 describe("skus", () => {

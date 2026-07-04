@@ -43,7 +43,7 @@ export default function identifier(div) {
           ${product.sticks} sticks
           ${product.rank === '1' ? 'SR' : 'DR'}`)
     } catch (e) {
-      iddetails.html(`<b>SKU not found!</b> It's either not B-Die or unknown to us just yet.`).removeClass('isbdie')
+      iddetails.html(`<b>SKU not found!</b> It's either not B-Die or unknown to us just yet. ${e}`).removeClass('isbdie')
     }
   })
 }
